@@ -41,8 +41,6 @@ public class testCaseConcesionaria {
 		los3Fanaticos.agregarCliente(demian);
 		los3Fanaticos.agregarCliente(anita);
 		assertTrue(los3Fanaticos.getClientes().size()==3);
-		
-		assertTrue(true);
 	}
 	
 }
