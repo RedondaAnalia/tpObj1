@@ -13,6 +13,14 @@ public class Concesionaria {
 		this.clientes= new ArrayList<Cliente>();
 		this.planes= new ArrayList<PlanDeAhorro>();
 	}
+
+	public void agregarCliente(Cliente unCliente) {
+		this.clientes.add(unCliente);
+	}
+
+	public ArrayList<Cliente> getClientes() {
+		return this.clientes;
+	}
 	
 }
 
