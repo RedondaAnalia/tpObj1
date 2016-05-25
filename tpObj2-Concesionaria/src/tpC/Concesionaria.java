@@ -21,6 +21,14 @@ public class Concesionaria {
 	public ArrayList<Cliente> getClientes() {
 		return this.clientes;
 	}
+
+	public void agregarPlan(PlanDeAhorro unPlan) {
+		this.planes.add(unPlan);
+	}
+
+	public ArrayList<PlanDeAhorro> getPlanes() {
+		return this.planes;
+	}
 	
 }
 
