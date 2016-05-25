@@ -1,5 +1,7 @@
 package tpC;
 
+import java.util.ArrayList;
+
 public class Participante {
 
 	private Cliente cliente;
@@ -7,10 +9,11 @@ public class Participante {
 	private PlanDeAhorro planSuscripto;
 	private CuotasPagas cuotasPagas;
 
-	public Participante(Cliente unParticipante) {
-		this.cliente = unParticipante;
-		this.planSuscripto = null;
-		this.cuotasPagas = null;
+	public Participante(Cliente unCliente) {
+		this.cliente = unCliente;
+		this.nroDeOrden = new Integer(0);
+		this.planSuscripto = new PlanDeAhorro();
+		this.cuotasPagas = new CuotasPagas();
 	}
 
 	public Cliente getCliente() {
@@ -33,6 +36,14 @@ public class Participante {
 
 	public PlanDeAhorro getPlan() {
 		return this.planSuscripto;
+	}
+
+	public void pagarCuota(Integer nroCuota, Integer importe) {
+		this.cuotasPagas.pagar(nroCuota, importe);	
+	}
+
+	public Float porcentajePago() {
+		return this.cuotasPagas.porcentajePago();
 	}
 
 
