@@ -1,6 +1,7 @@
 package tpC;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Concesionaria {
 
@@ -28,6 +29,21 @@ public class Concesionaria {
 
 	public ArrayList<PlanDeAhorro> getPlanes() {
 		return this.planes;
+	}
+
+	public ArrayList<PlanDeAhorro> topTenPlanesSuscriptos() {
+		 
+		//ordenar es un metodo de ArrayList y no se si puedo meterlo y o hay alguno q
+		//no encontre... tarea para el viernes
+		 ArrayList<PlanDeAhorro> copia = this.planes;
+		 ArrayList<PlanDeAhorro> ret;
+		 copia.ordenar();
+			for(int i=0; i<=10; i++){
+				ret.add(copia.get(i));
+				i++;
+			}
+			
+		return ret;
 	}
 	
 }

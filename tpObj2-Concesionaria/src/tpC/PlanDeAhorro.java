@@ -16,4 +16,9 @@ public class PlanDeAhorro {
 		return this.participantes.size();
 	}
 	
+	public  ArrayList<Participante> getParticipantes(){
+		return this.participantes;
+	}
+		
+	
 }
