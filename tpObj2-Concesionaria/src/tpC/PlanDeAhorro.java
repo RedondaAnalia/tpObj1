@@ -11,6 +11,7 @@ public class PlanDeAhorro {
 	private FormaDeAdjudicacion adjudicacion;
 	private ArrayList<Participante> participantes;
 	
+	
 	public Integer inscribirParticipante(Participante unParticipante) {
 		this.participantes.add(unParticipante);
 		return this.participantes.size();
@@ -18,6 +19,10 @@ public class PlanDeAhorro {
 	
 	public  ArrayList<Participante> getParticipantes(){
 		return this.participantes;
+	}
+
+	public Integer cantDeCuotas() {
+		return planDePago.cantDeCuotas();
 	}
 		
 	

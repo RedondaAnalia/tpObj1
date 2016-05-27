@@ -6,7 +6,7 @@ import static org.mockito.Mockito.*;
 import org.junit.Before;
 import org.junit.Test;
 
-public class testcaseCliente {
+public class TestcaseCliente {
 	Cliente cliente;
 	PlanDeAhorro mockPlan;
 	PlanDeAhorro mockPlan2;

@@ -13,7 +13,7 @@ public class Participante {
 		this.cliente = unCliente;
 		this.nroDeOrden = new Integer(0);
 		this.planSuscripto = new PlanDeAhorro();
-		this.cuotasPagas = new CuotasPagas();
+		this.cuotasPagas = new CuotasPagas(planSuscripto.cantDeCuotas());
 	}
 
 	public Cliente getCliente() {
@@ -46,7 +46,9 @@ public class Participante {
 		return this.cuotasPagas.porcentajePago();
 	}
 
-
+	public void setCuotasPagas(CuotasPagas cuota){
+		this.cuotasPagas = cuota;
+	}
 	
 
 }

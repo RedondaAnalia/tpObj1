@@ -11,7 +11,7 @@ import org.mockito.MockitoAnnotations;
 import static org.mockito.Mockito.*;
 
 
-public class testCaseConcesionaria {
+public class TestCaseConcesionaria {
 
 	private Concesionaria los3Fanaticos;
 	@Mock private Fabrica peugeot;
