@@ -1,6 +1,7 @@
 package tpC;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Participante {
 
@@ -8,12 +9,23 @@ public class Participante {
 	private Integer nroDeOrden;
 	private PlanDeAhorro planSuscripto;
 	private CuotasPagas cuotasPagas;
+	private Date fchInscripcion;
 
-	public Participante(Cliente unCliente) {
+	public Participante(Cliente unCliente ){
 		this.cliente = unCliente;
 		this.nroDeOrden = new Integer(0);
 		this.planSuscripto = new PlanDeAhorro();
 		this.cuotasPagas = new CuotasPagas(0);
+		this.fchInscripcion = new Date();
+	}
+	
+	public Participante(Cliente unCliente, PlanDeAhorro unPlan) {
+		this.cliente = unCliente;
+		this.nroDeOrden = new Integer(0);
+		this.planSuscripto = new PlanDeAhorro();
+		this.adquirirPlanDeAhorro(unPlan);
+		this.cuotasPagas = new CuotasPagas(0);
+		this.fchInscripcion = new Date(); //confirmar que esto genere algo similar a today()
 	}
 
 	public Cliente getCliente() {
@@ -22,12 +34,12 @@ public class Participante {
 
 	public void adquirirPlanDeAhorro(PlanDeAhorro unPlan) {
 		/*
-		 * Genialidad de parte de DER agrega el participante a la lista de participantes
-		 * del plan y este le devuelve el nro de Orden... a veces me sorprendo a mi mismo
-		 * creo q me tendría q dedicar a esto =D
+		 * Agrega el participante a la lista de participantes
+		 * del plan y este le devuelve el nro de Orden...
 		 */
 		this.nroDeOrden = unPlan.inscribirParticipante(this);
 		this.planSuscripto = unPlan;
+		this.fchInscripcion= new Date();
 	}
 
 	public Integer getNroDeOrden() {
@@ -50,5 +62,8 @@ public class Participante {
 		this.cuotasPagas = cuota;
 	}
 	
+	public Date getFchInscripcion(){
+		return fchInscripcion;
+	}
 
 }

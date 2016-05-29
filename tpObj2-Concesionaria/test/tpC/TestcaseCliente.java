@@ -24,8 +24,8 @@ public class TestcaseCliente {
 
 	@Test
 	public void test01SuscribirClienteA2PlanDeAhorro() {
-		cliente.suscribirPlanDeAhorro (mockPlan);
-		cliente.suscribirPlanDeAhorro (mockPlan2);
+		cliente.agregarPlanDeAhorro (mockPlan);
+		cliente.agregarPlanDeAhorro (mockPlan2);
 		assertTrue (cliente.getPlanes().size()==2);
 		assertTrue (cliente.getPlanes().contains(mockPlan) &&
 				    cliente.getPlanes().contains(mockPlan2));
