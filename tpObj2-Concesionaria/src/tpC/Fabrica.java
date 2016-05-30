@@ -15,5 +15,7 @@ public class Fabrica {
 		Planta planta = this.modelosPorPlanta.get(modelo);
 		return planta.retirarAutoModelo(modelo);
 	}
-	public Planta pedirPlantaConElModelo()
+	public Planta pedirPlantaConElModelo(){
+		pass
+	}
 }
