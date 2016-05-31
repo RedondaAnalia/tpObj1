@@ -15,11 +15,11 @@ public class Concesionaria {
 	}
 	
 	
-
 	public void agregarCliente(Cliente unCliente) {
 		this.clientes.add(unCliente);
 	}
 
+	
 	public ArrayList<Cliente> getClientes() {
 		return this.clientes;
 	}
@@ -41,9 +41,9 @@ Collections.sort(copia, new Comparator<PlanDeAhorro>() {
 		return new Integer(p2.cantDeParticipantes()).compareTo(new Integer(p1.cantDeParticipantes()));
 	}
 });
-				for(int i=0; i<=10; i++){
+				for(int i=0; i<10; i++){//si empiezo en cero, termino en 9.
 				ret.add(copia.get(i).getGrupo());
-				i++;
+			
 			}
 			
 		return ret;
