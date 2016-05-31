@@ -2,20 +2,22 @@ package tpC;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedList;
 
 public class Fabrica {
 
-	private HashMap<ModeloDeAuto, Planta> modelosPorPlanta;
+	private LinkedList<Planta> plantas;
 	
-	public void agregarModeloAPlanta(ModeloDeAuto modelo, Planta planta) {
-		this.modelosPorPlanta.put(modelo, planta);
+	
+	public void agregarPlanta(Planta planta) {
+		this.plantas.add(planta);
 	}	
 	
-	public Auto pedirModelo(ModeloDeAuto modelo){
-		Planta planta = this.modelosPorPlanta.get(modelo);
-		return planta.retirarAutoModelo(modelo);
-	}
-	public Planta pedirPlantaConElModelo(){
-		pass
+	public Planta buscarStock(ModeloDeAuto modelo){
+		for (int i = 0; i < this.plantas.size(); i++)
+		{
+			this.plantas.get(i);
+		}
+		
 	}
 }
