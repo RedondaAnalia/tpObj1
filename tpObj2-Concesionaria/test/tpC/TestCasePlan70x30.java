@@ -10,7 +10,7 @@ import org.mockito.MockitoAnnotations;
 import static org.mockito.Mockito.*;
 
 public class TestCasePlan70x30 {
-	PlanDePago plan;
+	Plan70x30 plan;
 	ModeloDeAuto auto;
 	
 	
@@ -24,6 +24,12 @@ public class TestCasePlan70x30 {
 	public void testValorDeCuota() {
 		when(auto.getValor()).thenReturn(100000);
 		assertTrue(plan.valorDeCuota(auto)==10000);
+	}
+	
+	@Test
+	public void testValorde30(){
+		when(auto.getValor()).thenReturn(100000);
+		assertTrue(plan.valorDe30(auto)==30000);
 	}
 
 }

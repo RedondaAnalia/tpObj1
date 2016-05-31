@@ -9,5 +9,9 @@ public class Plan70x30 extends PlanDePago{
 	public float valorDeCuota(ModeloDeAuto auto){
 		return ((auto.getValor())* 0.7)/cantDeCuotas;
 	}
+	
+	public float valorDe30(ModeloDeAuto auto){
+		return auto.getValor()*0.3;
+	}
 
 }
