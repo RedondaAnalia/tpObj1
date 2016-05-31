@@ -1,12 +1,13 @@
 package tpC;
 
-public class PlanDePago {
+abstract class PlanDePago {
 
-	private Integer cantDeCuotas;
+	public Integer cantDeCuotas;
 	
 	public Integer cantDeCuotas() {
 		return cantDeCuotas;
 	}
+	
 
 }
 
