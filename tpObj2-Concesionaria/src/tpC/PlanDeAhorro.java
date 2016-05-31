@@ -27,6 +27,10 @@ public class PlanDeAhorro {
 	public  ArrayList<Participante> getParticipantes(){
 		return this.participantes;
 	}
+	
+	public Integer getGrupo(){
+		return this.nroGrupo;
+	}
 
 	public Integer cantDeCuotas() {
 		return planDePago.cantDeCuotas();
