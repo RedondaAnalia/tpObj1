@@ -1,7 +1,5 @@
 package tpC;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.LinkedList;
 
 public class Fabrica {
@@ -13,11 +11,12 @@ public class Fabrica {
 		this.plantas.add(planta);
 	}	
 	
-	public Planta buscarStock(ModeloDeAuto modelo){
+	public LinkedList<Auto> buscarStock(ModeloDeAuto modelo){
+		LinkedList<Auto> stockDeModelo = new LinkedList<Auto>();
 		for (int i = 0; i < this.plantas.size(); i++)
 		{
-			this.plantas.get(i);
+			stockDeModelo.addAll(this.plantas.get(i).stockDelModelo(modelo));
 		}
-		
+		return stockDeModelo;
 	}
 }
