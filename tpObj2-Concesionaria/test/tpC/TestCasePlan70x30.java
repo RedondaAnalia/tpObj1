@@ -23,7 +23,7 @@ public class TestCasePlan70x30 {
 	@Test
 	public void testValorDeCuota() {
 		when(auto.getValor()).thenReturn(100000);
-		assertTrue(plan.valorDeCuota(auto)==10000);
+		assertTrue(plan.valorDeCuota(auto)==7000);
 	}
 	
 	@Test
