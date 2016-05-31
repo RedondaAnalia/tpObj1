@@ -1,15 +1,22 @@
 package tpC;
 
+public class Plan100x100 implements PlanDePago{
 
-
-public class Plan100x100 extends PlanDePago{
-
+	public Integer cantDeCuotas;
+	
 	public Plan100x100 (Integer cuotas){
 		this.cantDeCuotas=cuotas;
 	}
 	
-	public float valorDeCuota(ModeloDeAuto auto){
+	public Integer cantDeCuotas() {
+		return cantDeCuotas;
+	}
+	public double valorDeCuota(ModeloDeAuto auto){
 		return (auto.getValor())/cantDeCuotas ;
+	}
+	
+	public double calculoEl30(ModeloDeAuto auto){
+		return 0;
 	}
 
 }
