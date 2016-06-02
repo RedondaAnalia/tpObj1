@@ -5,14 +5,19 @@ import java.util.HashMap;
 
 public class Planta {
 	private HashMap<ModeloDeAuto, LinkedList<Auto>> stock;
+	private Coord ubicacion;
 	
-	public Planta(){
+	public Planta(Coord aUbicacion){
 		this.stock = new HashMap<ModeloDeAuto, LinkedList<Auto> >();
+		this.ubicacion = aUbicacion;
+	}
+	
+	public Coord getUbicacion(){
+		return ubicacion;
 	}
 
-
-	public LinkedList<Auto> stockDelModelo(ModeloDeAuto unAuto) {
-		return this.stock.get(unAuto);
+	public LinkedList<Auto> stockDelModelo(ModeloDeAuto unModelo) {
+		return this.stock.get(unModelo);
 	}
 
 
@@ -32,6 +37,11 @@ public class Planta {
 		LinkedList<Auto> listaDeAutos = this.stock.get(unModelo);
 		Auto autoARetirar = listaDeAutos.pop();
 		return autoARetirar;
+	}
+
+
+	public boolean tieneStockModelo(ModeloDeAuto unModelo) {
+		return !this.stockDelModelo(unModelo).isEmpty();
 	}
 
 
