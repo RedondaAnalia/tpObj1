@@ -6,7 +6,7 @@ public class Stock {
 	
 	private HashMap<ModeloDeAuto, Integer> stock;
 
-	public Integer getStock(ModeloDeAuto aModelo) {
+	public Integer getStockDelModelo(ModeloDeAuto aModelo) {
 		return stock.get(aModelo);
 	}
 	
