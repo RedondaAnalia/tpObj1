@@ -1,5 +1,7 @@
 package tpC;
 
-public class FormaDeAdjudicacion {
+public interface FormaDeAdjudicacion {
 
+	public Integer adjudicar(PlanDeAhorro unPlan);	
+	
 }

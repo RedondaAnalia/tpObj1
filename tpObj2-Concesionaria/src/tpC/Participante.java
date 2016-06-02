@@ -12,20 +12,19 @@ public class Participante {
 	private Date fchInscripcion;
 
 	public Participante(Cliente unCliente ){
-		this.cliente = unCliente;
-		this.nroDeOrden = new Integer(0);
-		this.planSuscripto = new PlanDeAhorro();
-		this.cuotasPagas = new CuotasPagas(0);
-		this.fchInscripcion = new Date();
+		cliente = unCliente;
+		nroDeOrden = new Integer(0);
+		planSuscripto = new PlanDeAhorro();
+		cuotasPagas = new CuotasPagas(100);//este 100 es solo de prueba en 
+		//el siguiente constructor lo sacamos del plan elegido
+		fchInscripcion = new Date();
 	}
 	
 	public Participante(Cliente unCliente, PlanDeAhorro unPlan) {
-		this.cliente = unCliente;
-		this.nroDeOrden = new Integer(0);
-		this.planSuscripto = new PlanDeAhorro();
+		cliente = unCliente;
 		this.adquirirPlanDeAhorro(unPlan);
-		this.cuotasPagas = new CuotasPagas(0);
-		this.fchInscripcion = new Date(); //confirmar que esto genere algo similar a today()
+		cuotasPagas = new CuotasPagas(unPlan.cantDeCuotas());
+		fchInscripcion = new Date(); //confirmar que esto genere algo similar a today()
 	}
 
 	public Cliente getCliente() {
@@ -54,7 +53,7 @@ public class Participante {
 		this.cuotasPagas.pagar(nroCuota, importe);	
 	}
 
-	public Float porcentajePago() {
+	public double porcentajePago() {
 		return this.cuotasPagas.porcentajePago();
 	}
 

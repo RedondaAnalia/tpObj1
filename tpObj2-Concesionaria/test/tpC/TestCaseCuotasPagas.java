@@ -17,13 +17,12 @@ public class TestCaseCuotasPagas {
 
 	@Test
 	public void test() {
-		cuotasPagas.pagar(1, 1000);
-		cuotasPagas.pagar(2, 1000);
-		cuotasPagas.pagar(3, 1000);
-		cuotasPagas.pagar(4, 1000);
-		cuotasPagas.pagar(5, 1000);
-		assertTrue(cuotasPagas.porcentajePago()== 5);
-		//preguntar acerca de float...
+		cuotasPagas.pagar(1, 100);
+		cuotasPagas.pagar(2, 100);
+		cuotasPagas.pagar(3, 100);
+		cuotasPagas.pagar(4, 100);
+		cuotasPagas.pagar(5, 100);
+		assertTrue(cuotasPagas.porcentajePago()== 5.0);
 	}
 
 }

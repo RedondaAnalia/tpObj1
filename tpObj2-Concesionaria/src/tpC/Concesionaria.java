@@ -1,7 +1,6 @@
 package tpC;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Concesionaria {
 
@@ -14,11 +13,13 @@ public class Concesionaria {
 		this.clientes= new ArrayList<Cliente>();
 		this.planes= new ArrayList<PlanDeAhorro>();
 	}
-
+	
+	
 	public void agregarCliente(Cliente unCliente) {
 		this.clientes.add(unCliente);
 	}
 
+	
 	public ArrayList<Cliente> getClientes() {
 		return this.clientes;
 	}
@@ -31,20 +32,21 @@ public class Concesionaria {
 		return this.planes;
 	}
 
-	public ArrayList<PlanDeAhorro> topTenPlanesSuscriptos() {
-		 
-		//ordenar es un metodo de ArrayList y no se si puedo meterlo y o hay alguno q
-		//no encontre... tarea para el viernes
-		 ArrayList<PlanDeAhorro> copia = this.planes;
-		 ArrayList<PlanDeAhorro> ret;
-		 copia.ordenar();
-			for(int i=0; i<=10; i++){
-				ret.add(copia.get(i));
-				i++;
+	public ArrayList<Integer> topTenPlanesSuscriptos() {
+		ArrayList<PlanDeAhorro> copia = this.planes;
+		 ArrayList<Integer> ret=new ArrayList <Integer>();
+Collections.sort(copia, new Comparator<PlanDeAhorro>() {
+	@Override
+	public int compare(PlanDeAhorro p1, PlanDeAhorro p2) {
+		return new Integer(p2.cantDeParticipantes()).compareTo(new Integer(p1.cantDeParticipantes()));
+	}
+});
+				for(int i=0; i<10; i++){//si empiezo en cero, termino en 9.
+				ret.add(copia.get(i).getGrupo());
+			
 			}
 			
 		return ret;
-	}
-	
-}
+}}
+
 

@@ -31,7 +31,7 @@ public class TestCaseParticipante {
 	@Test
 	public void test3PedidoDePorcentajeDeCuotas() {
 		analiaParticipante.setCuotasPagas(cuotas);
-		when(cuotas.porcentajePago()).thenReturn((float) 3);
+		when(cuotas.porcentajePago()).thenReturn((double) 3);
 		assertTrue(analiaParticipante.porcentajePago() == (float)3);
 	}
 	

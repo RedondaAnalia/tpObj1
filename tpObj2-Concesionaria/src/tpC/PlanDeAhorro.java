@@ -11,11 +11,11 @@ public class PlanDeAhorro {
 	private ArrayList<Participante> participantes;
 	private ModeloDeAuto modeloAuto;
 	
-	public PlanDeAhorro(){
+	public PlanDeAhorro(PlanDePago p){
 		participantes = new ArrayList<Participante>();
 		nroGrupo = new Integer(0);
-		planDePago = new PlanDePago();
-		adjudicacion = new FormaDeAdjudicacion();
+		planDePago = p;
+		//adjudicacion = new FormaDeAdjudicacion();
 		modeloAuto = new ModeloDeAuto();
 	}
 	
@@ -27,10 +27,16 @@ public class PlanDeAhorro {
 	public  ArrayList<Participante> getParticipantes(){
 		return this.participantes;
 	}
+	
+	public Integer getGrupo(){
+		return this.nroGrupo;
+	}
 
 	public Integer cantDeCuotas() {
 		return planDePago.cantDeCuotas();
 	}
 		
-	
+	public Integer cantDeParticipantes(){
+		return participantes.size();
+	}
 }
