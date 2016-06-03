@@ -14,7 +14,6 @@ public class Participante {
 	public Participante(Cliente unCliente ){
 		cliente = unCliente;
 		nroDeOrden = new Integer(0);
-		planSuscripto = new PlanDeAhorro();
 		cuotasPagas = new CuotasPagas(100);//este 100 es solo de prueba en 
 		//el siguiente constructor lo sacamos del plan elegido
 		fchInscripcion = new Date();

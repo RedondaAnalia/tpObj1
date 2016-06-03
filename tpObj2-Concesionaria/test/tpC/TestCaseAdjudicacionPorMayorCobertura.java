@@ -1,7 +1,7 @@
 package tpC;
 
 import static org.junit.Assert.*;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 import java.util.ArrayList;
 
@@ -17,10 +17,15 @@ public class TestCaseAdjudicacionPorMayorCobertura {
 	@Mock private Participante demianMock;
 	@Mock private Participante pabloMock;
 	@Mock private PlanDeAhorro unPlanCualquiera;
-	@Mock private ArrayList<Participante> laListaDeParticipantes;
+	private ArrayList<Participante> laListaDeParticipantes;
 	
 	@Before
 	public void setUp() throws Exception {
+		analiaMock = mock(Participante.class);
+		demianMock = mock(Participante.class);
+		pabloMock = mock(Participante.class);
+		unPlanCualquiera = mock(PlanDeAhorro.class);
+		
 		adjudicacion = new AdjudicacionPorMayorCobertura();
 		laListaDeParticipantes = new ArrayList<Participante>();
 		laListaDeParticipantes.add(analiaMock);
@@ -38,7 +43,7 @@ public class TestCaseAdjudicacionPorMayorCobertura {
 		when(analiaMock.getNroDeOrden()).thenReturn(1);
 		when(demianMock.getNroDeOrden()).thenReturn(2);
 		when(pabloMock.getNroDeOrden()).thenReturn(3);
-		when(unPlanCualquiera.getParticipantes().get(0)).thenReturn(analiaMock);
+		when(unPlanCualquiera.getParticipantes()).thenReturn(laListaDeParticipantes);
 		assertEquals(adjudicacion.adjudicar(unPlanCualquiera), pabloMock);
 
 	}

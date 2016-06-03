@@ -7,6 +7,8 @@ public class Concesionaria {
 	private Fabrica fabrica;
 	private ArrayList<Cliente> clientes;
 	private ArrayList<PlanDeAhorro> planes;
+	private Coord ubicacion;
+	private Stock stock;
 	
 	public Concesionaria(Fabrica fab){
 		this.fabrica=fab;
@@ -14,11 +16,17 @@ public class Concesionaria {
 		this.planes= new ArrayList<PlanDeAhorro>();
 	}
 	
+	public Coord getUbicacion(){
+		return ubicacion;
+	}
 	
 	public void agregarCliente(Cliente unCliente) {
 		this.clientes.add(unCliente);
 	}
 
+	public Integer getStockDelModelo(ModeloDeAuto unModelo){
+		return stock.getStockDelModelo(unModelo);
+	}
 	
 	public ArrayList<Cliente> getClientes() {
 		return this.clientes;
