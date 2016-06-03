@@ -9,6 +9,7 @@ import java.util.LinkedList;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
 public class TestCasePlanta {
@@ -18,59 +19,34 @@ private Planta myPlanta;
 @Mock private ModeloDeAuto fordMustang2pFull;
 @Mock private Auto unAuto;
 @Mock private Auto otroAuto;
+@Mock private Stock observerStock;
 
 	@Before
 	public void setUp() throws Exception {
-		MockitoAnnotations.initMocks(this);	
-		myPlanta = new Planta();
-		myPlanta.puedeFabricarElModelo(fordMustang2pFull);
-		myPlanta.puedeFabricarElModelo(fordFiesta4pFull);
+		MockitoAnnotations.initMocks(this);
+		
+		myPlanta = new Planta(new Coord(10,10), observerStock);
 		when(unAuto.getModelo()).thenReturn(fordFiesta4pFull);
 		when(otroAuto.getModelo()).thenReturn(fordMustang2pFull);
 		
 	}
 
 	@Test
-	public void test1_ConsultoStockDeUnModelo(){
-
-		assertTrue(myPlanta.stockDelModelo(fordFiesta4pFull).size() == 0);
-
-	}
-
-	@Test
-	public void test2_fabricoUnAutoYConsultoStock() {
-		myPlanta.autoFabricado(unAuto);
-		LinkedList<Auto> stockDelAuto = myPlanta.stockDelModelo(fordFiesta4pFull);
-		assertTrue(stockDelAuto.size() == 1);
+	public void test1_ConsultarDistanciaAOtroPunto(){
+		Coord newCoord = new Coord(10,20);
+		assertTrue(myPlanta.getUbicacion().distance(newCoord) == 10);
 	}
 	@Test
-	public void test3_fabrico2AutosOtros2AutosIgualesYConsultoStock(){
-		myPlanta.autoFabricado(unAuto);
-		myPlanta.autoFabricado(unAuto);
-		LinkedList<Auto> stockDelAuto = myPlanta.stockDelModelo(fordFiesta4pFull);
-		assertTrue(stockDelAuto.size() == 2);
+	public void test2_agregarModeloYpreguntarSiPuedeFabricar(){
+		myPlanta.puedeFabricarElModelo(fordFiesta4pFull);
+		assertFalse(myPlanta.tieneModelo(fordMustang2pFull));
+		assertTrue(myPlanta.tieneModelo(fordFiesta4pFull));
 	}
 	@Test
-	public void test4_fabrico2AutosOtros2AutosIgualesYOtroAutoYConsultoStock(){
-		myPlanta.autoFabricado(unAuto);
-		myPlanta.autoFabricado(unAuto);
-		myPlanta.autoFabricado(otroAuto);
-		LinkedList<Auto> stockDelAutoFiesta = myPlanta.stockDelModelo(fordFiesta4pFull);
-		LinkedList<Auto> stockDelAutoMustang = myPlanta.stockDelModelo(fordMustang2pFull);
-		assertTrue(stockDelAutoFiesta.size() == 2);
-		assertTrue(stockDelAutoMustang.size() == 1);
+	public void fabricarUnAuto(){
+		myPlanta.puedeFabricarElModelo(fordFiesta4pFull);
+		myPlanta.fabricarElModelo(fordFiesta4pFull);
+		Mockito.verify(observerStock, Mockito.times(1)).incrementarStock(fordFiesta4pFull);
+		
 	}
-	@Test
-	public void test5_retirarAutoFiestaConsultarStock(){
-		myPlanta.autoFabricado(unAuto);
-		myPlanta.autoFabricado(unAuto);
-		myPlanta.autoFabricado(otroAuto);
-		LinkedList<Auto> stockDelAutoFiesta = myPlanta.stockDelModelo(fordFiesta4pFull);
-		LinkedList<Auto> stockDelAutoMustang = myPlanta.stockDelModelo(fordMustang2pFull);
-		Auto autoRetirado = myPlanta.retirarAutoModelo(fordFiesta4pFull);
-		assertTrue(stockDelAutoFiesta.size() == 1);
-		assertTrue(stockDelAutoMustang.size() == 1);
-		assertTrue(autoRetirado == unAuto);
-	}
-	
 }
