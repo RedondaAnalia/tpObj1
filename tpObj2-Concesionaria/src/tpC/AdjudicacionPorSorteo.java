@@ -3,9 +3,9 @@ package tpC;
 public class AdjudicacionPorSorteo implements FormaDeAdjudicacion{
 
 	@Override
-	public Integer adjudicar(PlanDeAhorro unPlan) {
-		
-		return new SorteoLoteriaNacional().primerPremio();
+	public Participante adjudicar(PlanDeAhorro unPlan) {
+		SorteoLoteriaNacional sorteo= new SorteoLoteriaNacional();
+		return unPlan.getParticipantes().get(sorteo.primerPremio());
 	}
 
 

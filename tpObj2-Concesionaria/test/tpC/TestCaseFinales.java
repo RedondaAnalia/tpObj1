@@ -140,7 +140,6 @@ public class TestCaseFinales {
 		plan9.inscribirParticipante(parti3);
 		//Agrego 1 participante al plan 11
 		plan11.inscribirParticipante(parti7);
-		System.out.println(concesionaria.getPlanes());
 		System.out.println(concesionaria.topTenPlanesSuscriptos());
 	}
 	

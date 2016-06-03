@@ -1,6 +1,7 @@
 package tpC;
 
 import java.util.*;
+import java.util.HashMap;
 
 public class Concesionaria {
 
@@ -34,27 +35,38 @@ public class Concesionaria {
 
 	public void agregarPlan(PlanDeAhorro unPlan) {
 		this.planes.add(unPlan);
+		unPlan.setGrupo(planes.size());
 	}
 
 	public ArrayList<PlanDeAhorro> getPlanes() {
 		return this.planes;
 	}
+	
+	public HashMap<Participante, Integer> adjudicarTodosLosPlanes(){
+		HashMap<Participante, Integer> ret= new HashMap<Participante,Integer>();
+		for (PlanDeAhorro p:planes){
+			ret.put(p.adjudicar(), p.getGrupo());
+			return ret;
+		}
+		return ret;
+		
+	}
 
 	public ArrayList<Integer> topTenPlanesSuscriptos() {
-		ArrayList<PlanDeAhorro> copia = this.planes;
 		 ArrayList<Integer> ret=new ArrayList <Integer>();
-Collections.sort(copia, new Comparator<PlanDeAhorro>() {
-	@Override
-	public int compare(PlanDeAhorro p1, PlanDeAhorro p2) {
-		return new Integer(p2.cantDeParticipantes()).compareTo(new Integer(p1.cantDeParticipantes()));
+		 Collections.sort(this.planes, new Comparator<PlanDeAhorro>() {
+			 @Override
+			 public int compare(PlanDeAhorro p1, PlanDeAhorro p2) {
+				 return new Integer(p2.cantDeParticipantes()).compareTo(new Integer(p1.cantDeParticipantes()));
 	}
 });
 				for(int i=0; i<10; i++){//si empiezo en cero, termino en 9.
-				ret.add(copia.get(i).getGrupo());
-			
+				ret.add(this.planes.get(i).getGrupo());
 			}
 			
 		return ret;
-}}
+}
+}
+
 
 
