@@ -39,4 +39,8 @@ public class PlanDeAhorro {
 	public Integer cantDeParticipantes(){
 		return participantes.size();
 	}
+	
+	public Participante adjudicar(){
+		return adjudicacion.adjudicar(this);
+	}
 }
