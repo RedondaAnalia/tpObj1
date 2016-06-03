@@ -43,4 +43,9 @@ public class PlanDeAhorro {
 	public Participante adjudicar(){
 		return adjudicacion.adjudicar(this);
 	}
+
+	public void setGrupo(int size) {
+		nroGrupo=size;
+		
+	}
 }
