@@ -23,7 +23,7 @@ public class Planta {
 	}
 
 
-	public void autoFabricado(Auto unAuto) {
+	private void autoFabricado(Auto unAuto) {
 		LinkedList<Auto> listaDeAutos = this.deposito.get(unAuto.getModelo());
 		listaDeAutos.add(unAuto);
 		this.observerStock.incrementarStock(unAuto.getModelo());
