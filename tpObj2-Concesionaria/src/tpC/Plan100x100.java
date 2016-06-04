@@ -12,11 +12,12 @@ public class Plan100x100 implements PlanDePago{
 	public Integer cantDeCuotas() {
 		return cantDeCuotas;
 	}
+	
 	public double valorDeCuota(ModeloDeAuto auto){
 		return (auto.getValor())/cantDeCuotas ;
 	}
 	
-	public double calculoEl30(ModeloDeAuto auto){
+	public double cuotaFinal(ModeloDeAuto auto){
 		return 0;
 	}
 

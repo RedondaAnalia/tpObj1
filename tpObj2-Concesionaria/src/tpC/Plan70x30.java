@@ -17,7 +17,7 @@ public class Plan70x30 implements PlanDePago{
 		return ((auto.getValor())* 0.7)/cantDeCuotas;
 	}
 	
-	public double calculoEl30(ModeloDeAuto auto){
+	public double cuotaFinal(ModeloDeAuto auto){
 		return auto.getValor()*0.3;
 	}
 

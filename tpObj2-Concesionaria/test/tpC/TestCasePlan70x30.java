@@ -29,7 +29,7 @@ public class TestCasePlan70x30 {
 	@Test
 	public void testValorde30(){
 		when(auto.getValor()).thenReturn(100000);
-		assertTrue(plan.calculoEl30(auto)==30000);
+		assertTrue(plan.cuotaFinal(auto)==30000);
 	}
 
 }
