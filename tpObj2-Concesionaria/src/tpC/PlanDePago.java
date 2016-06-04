@@ -1,5 +1,6 @@
 package tpC;
 
+
 public interface PlanDePago {
 
 	public Integer cantDeCuotas();

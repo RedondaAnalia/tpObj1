@@ -1,5 +1,6 @@
 package tpC;
 
+
 import java.util.LinkedList;
 
 public class Fabrica {

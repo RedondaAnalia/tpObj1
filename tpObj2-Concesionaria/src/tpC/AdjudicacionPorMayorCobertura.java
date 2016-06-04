@@ -1,5 +1,6 @@
 package tpC;
 
+
 public class AdjudicacionPorMayorCobertura implements FormaDeAdjudicacion{
 
 	@Override

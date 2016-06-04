@@ -1,5 +1,6 @@
 package tpC;
 
+
 public class Plan100x100 implements PlanDePago{
 
 	public Integer cantDeCuotas;

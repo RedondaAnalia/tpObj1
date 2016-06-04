@@ -1,5 +1,6 @@
 package tpC;
 
+
 public class Coord {
 	private Integer coordX;
 	private Integer coordY;

@@ -1,13 +1,12 @@
 package tpC;
 
-public class SorteoLoteriaNacional {
-	//Clase exclusiva para mockear el sorteo 
-	public SorteoLoteriaNacional(){
-		
-	}
+import java.util.Random;
 
-	public Integer primerPremio() {
-		
-		return null;//aleatorio
+public class SorteoLoteriaNacional {
+
+	public Integer primerPremio(Integer entero) {
+		Random rnd=new Random();
+		return (int) (rnd.nextDouble() * entero);
+
 	}
 }
