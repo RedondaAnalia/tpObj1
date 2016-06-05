@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
 import java.util.ArrayList;
+import java.util.*;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -44,6 +45,15 @@ public class TestCaseAdjudicacionPorMayorCobertura {
 		when(demianMock.getNroDeOrden()).thenReturn(2);
 		when(pabloMock.getNroDeOrden()).thenReturn(3);
 		when(unPlanCualquiera.getParticipantes()).thenReturn(laListaDeParticipantes);
+		System.out.println("Esta es la lista de Participantes: " + laListaDeParticipantes);
+		System.out.println("Este es el primero de la lista: " + laListaDeParticipantes.get(0));
+		System.out.println("Adjudico al primero de la lista: " + adjudicacion.adjudicar(unPlanCualquiera));
+		System.out.println("Codigo de Analia " + analiaMock.hashCode());
+		System.out.println("Codigo de Pablo "+ pabloMock.hashCode());
+		System.out.println("Codigo de Damian "+ demianMock.hashCode());
+		analiaMock= laListaDeParticipantes.get(0);
+		demianMock=laListaDeParticipantes.get(1);
+		pabloMock=laListaDeParticipantes.get(2);
 		assertEquals(adjudicacion.adjudicar(unPlanCualquiera), pabloMock);
 
 	}
