@@ -49,4 +49,17 @@ public class PlanDeAhorro {
 		nroGrupo=size;
 		
 	}
+	
+	public double mayorPorcentajeDePago(){
+		if (participantes.isEmpty()){
+			return 0;
+		}
+		Participante aux= participantes.get(0);
+		for (Participante p:participantes){
+			if (p.porcentajePago() > aux.porcentajePago()){
+				aux=p;
+			}
+		}
+		return aux.porcentajePago();
+	}
 }

@@ -21,6 +21,10 @@ public class Cliente {
 		this.participantes = new ArrayList<Participante>();
 	}
 	
+	public Date getFchIngreso(){
+		return fchIngreso;
+	}
+	
 	public String getApellido() {	
 		return this.apellido;
 	}
