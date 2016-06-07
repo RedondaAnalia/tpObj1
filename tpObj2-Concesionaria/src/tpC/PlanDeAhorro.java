@@ -51,9 +51,9 @@ public class PlanDeAhorro {
 	}
 	
 	public double mayorPorcentajeDePago(){
-		if (participantes.isEmpty()){
-			return 0;
-		}
+		/*if (participantes.isEmpty()){
+			return 0.0;
+		}*/
 		Participante aux= participantes.get(0);
 		for (Participante p:participantes){
 			if (p.porcentajePago() > aux.porcentajePago()){

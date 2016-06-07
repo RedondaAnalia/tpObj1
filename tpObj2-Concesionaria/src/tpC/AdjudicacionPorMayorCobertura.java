@@ -14,7 +14,8 @@ public class AdjudicacionPorMayorCobertura implements FormaDeAdjudicacion{
 		
 		//Se filtra como está por mayor cobertura...
 		double max= unPlan.mayorPorcentajeDePago();
-		List<Participante> participantesFiltrados= unPlan.getParticipantes().stream().filter(participante -> participante.porcentajePago()== max).collect(Collectors.toList());
+		List<Participante> participantesFiltrados= new ArrayList<Participante>();
+		participantesFiltrados= unPlan.getParticipantes().stream().filter(participante -> participante.porcentajePago()== max).collect(Collectors.toList());
 		if (participantesFiltrados.size()==1){
 			return participantesFiltrados.get(0);
 		}
