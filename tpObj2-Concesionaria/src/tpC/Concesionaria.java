@@ -22,8 +22,8 @@ public class Concesionaria {
 		return ubicacion;
 	}
 	
-	public void agregarCliente(Cliente unCliente) {
-		this.clientes.add(unCliente);
+	public void agregarCliente(String apell, String nombr, Integer doc, String dirPostal,String dirMail,Integer diaNac,Integer mesNac, Integer anioNac){
+		clientes.add(new Cliente(apell, nombr, doc, dirPostal, dirMail, diaNac, mesNac,anioNac,this));
 	}
 
 	public Integer getStockDelModelo(ModeloDeAuto unModelo){

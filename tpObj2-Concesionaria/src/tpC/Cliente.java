@@ -15,10 +15,20 @@ public class Cliente {
 	private String mail;
 	private Date fchNacimiento;
 	private Date fchIngreso;
+	private Concesionaria concesionaria;
 	
-	public Cliente(){
-		this.planes= new ArrayList <PlanDeAhorro>();
-		this.participantes = new ArrayList<Participante>();
+	//anioN 4 digitos.
+	public Cliente(String apell, String nombr, Integer doc, String direcc,String dirmail,Integer diaNac,Integer mesNac, Integer anioNac,Concesionaria conces){
+		planes= new ArrayList <PlanDeAhorro>();
+		participantes = new ArrayList<Participante>();
+		apellido=apell;
+		nombre=nombr;
+		dni=doc;
+		direccion= direcc;
+		mail= dirmail;
+		fchNacimiento= new Date(anioNac, mesNac, diaNac);
+		Date dia= new Date();
+		concesionaria=conces;
 	}
 	
 	public Date getFchIngreso(){
@@ -31,7 +41,7 @@ public class Cliente {
 
 	public void agregarPlanDeAhorro(PlanDeAhorro unPlan) {
 		this.planes.add(unPlan);
-		Participante nuevoParticipante = new Participante(this , unPlan);
+		Participante nuevoParticipante = new Participante(this , unPlan, concesionaria);
 		this.participantes.add(nuevoParticipante);
 	}
 

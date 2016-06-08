@@ -11,6 +11,7 @@ public class Participante {
 	private PlanDeAhorro planSuscripto;
 	private CuotasPagas cuotasPagas;
 	private Date fchInscripcion;
+	private Concesionaria concesionaria;
 
 	public Participante(Cliente unCliente ){
 		cliente = unCliente;
@@ -20,11 +21,12 @@ public class Participante {
 		fchInscripcion = new Date();
 	}
 	
-	public Participante(Cliente unCliente, PlanDeAhorro unPlan) {
+	public Participante(Cliente unCliente, PlanDeAhorro unPlan, Concesionaria conces) {
 		cliente = unCliente;
 		this.adquirirPlanDeAhorro(unPlan);
 		cuotasPagas = new CuotasPagas(unPlan.cantDeCuotas());
-		fchInscripcion = new Date(); //confirmar que esto genere algo similar a today()
+		fchInscripcion = new Date();
+		concesionaria=conces;
 	}
 
 	public Cliente getCliente() {
