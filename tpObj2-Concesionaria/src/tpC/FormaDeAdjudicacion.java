@@ -1,8 +1,6 @@
 package tpC;
 
 
-public interface FormaDeAdjudicacion {
-
-	public Participante adjudicar(PlanDeAhorro unPlan);	
+public abstract class FormaDeAdjudicacion {
 	
 }

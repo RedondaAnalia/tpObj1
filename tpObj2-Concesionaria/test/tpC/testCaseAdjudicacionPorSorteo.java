@@ -1,13 +1,15 @@
 package tpC;
 
+import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
 import java.util.ArrayList;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.Mock;
+import org.mockito.*;
 import org.mockito.MockitoAnnotations;
+import org.mockito.Mock;
 
 public class testCaseAdjudicacionPorSorteo {
 	
@@ -17,12 +19,14 @@ public class testCaseAdjudicacionPorSorteo {
 	@Mock private Participante pabloMock;
 	@Mock private PlanDeAhorro unPlanCualquiera;
 	private ArrayList<Participante> laListaDeParticipantes;
+	@Mock private SorteoLoteriaNacional sorteo;
 
 	@Before
 	public void setUp() throws Exception {
 		analiaMock = mock(Participante.class);
 		demianMock = mock(Participante.class);
 		pabloMock = mock(Participante.class);
+		sorteo= mock(SorteoLoteriaNacional.class);
 		unPlanCualquiera = mock(PlanDeAhorro.class);
 		adjudicacion = new AdjudicacionPorSorteo();
 		laListaDeParticipantes = new ArrayList<Participante>();
@@ -34,35 +38,19 @@ public class testCaseAdjudicacionPorSorteo {
 
 	@Test
 	public void test() {
-		System.out.println("::::::::TEST Adjudicacion Por Sorteo::::::::::");
+		
 		when(unPlanCualquiera.getParticipantes()).thenReturn(laListaDeParticipantes);
 		analiaMock= laListaDeParticipantes.get(0);
 		demianMock=laListaDeParticipantes.get(1);
 		pabloMock=laListaDeParticipantes.get(2);
 		when(unPlanCualquiera.getParticipantes()).thenReturn(laListaDeParticipantes);
 		when(unPlanCualquiera.cantDeParticipantes()).thenReturn(laListaDeParticipantes.size());
-		Participante par= adjudicacion.adjudicar(unPlanCualquiera);
-		System.out.println("Resultado primer adjudicacion: ");
-		if(par==analiaMock){
-			System.out.println("Se adjudico a Analia");
+		when(sorteo.primerPremio(3)).thenReturn(0);		
+		assertEquals(adjudicacion.adjudicar(unPlanCualquiera,sorteo),analiaMock);
+		when(sorteo.primerPremio(3)).thenReturn(1);		
+		assertEquals(adjudicacion.adjudicar(unPlanCualquiera,sorteo),demianMock);
+		when(sorteo.primerPremio(3)).thenReturn(2);		
+		assertEquals(adjudicacion.adjudicar(unPlanCualquiera,sorteo),pabloMock);
 		}
-		if(par==demianMock){
-			System.out.println("Se adjudico a Damian");
-		}
-		if (par==pabloMock){
-			System.out.println("Se adjudicó a Pablo");
-		}
-		Participante par2= adjudicacion.adjudicar(unPlanCualquiera);
-		System.out.println("Resultado segunda adjudicacion: ");
-		if(par2==analiaMock){
-			System.out.println("Se adjudico a Analia");
-		}
-		if(par2==demianMock){
-			System.out.println("Se adjudico a Damian");
-		}
-		if (par2==pabloMock){
-			System.out.println("Se adjudicó a Pablo");
-		}
-	}
 
 }

@@ -1,11 +1,10 @@
 package tpC;
 
 
-public class AdjudicacionPorSorteo implements FormaDeAdjudicacion{
+public class AdjudicacionPorSorteo extends FormaDeAdjudicacion{
 
-	@Override
-	public Participante adjudicar(PlanDeAhorro unPlan) {
-		SorteoLoteriaNacional sorteo= new SorteoLoteriaNacional();
+	
+	public Participante adjudicar(PlanDeAhorro unPlan, SorteoLoteriaNacional sorteo){
 		return unPlan.getParticipantes().get(sorteo.primerPremio(unPlan.cantDeParticipantes()));
 	}
 

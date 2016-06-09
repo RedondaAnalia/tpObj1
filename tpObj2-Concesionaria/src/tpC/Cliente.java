@@ -2,7 +2,9 @@ package tpC;
 
 
 import java.util.*;
-import java.util.Date; 
+import org.joda.*;
+import org.joda.time.LocalDate;
+import org.joda.time.LocalTime;
 
 public class Cliente {
 
@@ -13,12 +15,14 @@ public class Cliente {
 	private Integer dni;
 	private String direccion;
 	private String mail;
-	private Date fchNacimiento;
-	private Date fchIngreso;
+	private LocalDate fchNacimiento;
+	private LocalDate fchIngreso;
 	private Concesionaria concesionaria;
+
+// CONSTRUCTORES.
 	
 	//anioN 4 digitos.
-	public Cliente(String apell, String nombr, Integer doc, String direcc,String dirmail,Integer diaNac,Integer mesNac, Integer anioNac,Concesionaria conces){
+	public Cliente(String apell, String nombr, Integer doc, String direcc,String dirmail,int diaNac,int mesNac, int anioNac,Concesionaria conces){
 		planes= new ArrayList <PlanDeAhorro>();
 		participantes = new ArrayList<Participante>();
 		apellido=apell;
@@ -26,35 +30,60 @@ public class Cliente {
 		dni=doc;
 		direccion= direcc;
 		mail= dirmail;
-		fchNacimiento= new Date(anioNac, mesNac, diaNac);
-		Date dia= new Date();
+		fchNacimiento= new LocalDate(anioNac,mesNac,diaNac);
+		fchIngreso= new LocalDate();
 		concesionaria=conces;
 	}
 	
-	public Date getFchIngreso(){
+//GETTERS.
+	
+	public LocalDate getFchIngreso(){
 		return fchIngreso;
 	}
 	
-	public String getApellido() {	
-		return this.apellido;
-	}
-
-	public void agregarPlanDeAhorro(PlanDeAhorro unPlan) {
-		this.planes.add(unPlan);
-		Participante nuevoParticipante = new Participante(this , unPlan, concesionaria);
-		this.participantes.add(nuevoParticipante);
-	}
-
-	public ArrayList <PlanDeAhorro> getPlanes() {
-		return this.planes;
+	public String getMail(){
+		return mail;
 	}
 	
-	public void addParticipante(Participante unParticipante) {
-		this.participantes.add(unParticipante);	
+	public Integer getDNI(){
+		return dni;
 	}
 	
 	public ArrayList<Participante> getParticipantes() {
-		return this.participantes;
+		return participantes;
 	}
+	
+	public String getDireccion(){
+		return direccion;
+	}
+	public LocalDate getFchNacimiento(){
+		return fchNacimiento;
+	}
+	
+	public String getNombre(){
+		return nombre;
+	}
+	public String getApellido() {	
+		return apellido;
+	}
+	
+	public ArrayList <PlanDeAhorro> getPlanes() {
+		return planes;
+	}
+
+	
+//METODOS.
+	public void agregarPlanDeAhorro(PlanDeAhorro unPlan) {
+		planes.add(unPlan);
+		Participante nuevoParticipante = new Participante(this , unPlan, concesionaria);
+		participantes.add(nuevoParticipante);
+	}
+
+	
+	public void addParticipante(Participante unParticipante) {
+		participantes.add(unParticipante);	
+	}
+	
+	
 
 }
