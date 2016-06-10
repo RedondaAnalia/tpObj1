@@ -12,10 +12,11 @@ public class Concesionaria {
 	private Coord ubicacion;
 	private Stock stock;
 	
-	public Concesionaria(Fabrica fab){
-		this.fabrica=fab;
-		this.clientes= new ArrayList<Cliente>();
-		this.planes= new ArrayList<PlanDeAhorro>();
+	public Concesionaria(Fabrica fab,Coord coordenada){
+		fabrica=fab;
+		clientes= new ArrayList<Cliente>();
+		planes= new ArrayList<PlanDeAhorro>();
+		ubicacion= coordenada;
 	}
 	
 	public Coord getUbicacion(){
@@ -53,8 +54,8 @@ public class Concesionaria {
 		
 	}
 
-	public ArrayList<Integer> topTenPlanesSuscriptos() {
-		 ArrayList<Integer> ret=new ArrayList <Integer>();
+	public ArrayList<PlanDeAhorro> topTenPlanesSuscriptos() {
+		 ArrayList<PlanDeAhorro> ret=new ArrayList <PlanDeAhorro>();
 		 Collections.sort(this.planes, new Comparator<PlanDeAhorro>() {
 			 @Override
 			 public int compare(PlanDeAhorro p1, PlanDeAhorro p2) {
@@ -62,7 +63,7 @@ public class Concesionaria {
 	}
 });
 				for(int i=0; i<10; i++){//si empiezo en cero, termino en 9.
-				ret.add(this.planes.get(i).getGrupo());
+				ret.add(this.planes.get(i));
 			}
 			
 		return ret;

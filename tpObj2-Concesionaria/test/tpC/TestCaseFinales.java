@@ -140,7 +140,16 @@ public class TestCaseFinales {
 		plan9.inscribirParticipante(parti3);
 		//Agrego 1 participante al plan 11
 		plan11.inscribirParticipante(parti7);
-		System.out.println(concesionaria.topTenPlanesSuscriptos());
+		assertEquals(concesionaria.topTenPlanesSuscriptos().get(0), plan1);
+		assertEquals(concesionaria.topTenPlanesSuscriptos().get(1), plan2);
+		assertEquals(concesionaria.topTenPlanesSuscriptos().get(2), plan4);
+		assertEquals(concesionaria.topTenPlanesSuscriptos().get(3), plan3);
+		assertEquals(concesionaria.topTenPlanesSuscriptos().get(4), plan6);
+		assertEquals(concesionaria.topTenPlanesSuscriptos().get(5), plan5);
+		assertEquals(concesionaria.topTenPlanesSuscriptos().get(6), plan7);
+		assertEquals(concesionaria.topTenPlanesSuscriptos().get(7), plan8);
+		assertEquals(concesionaria.topTenPlanesSuscriptos().get(8), plan9);
+		assertEquals(concesionaria.topTenPlanesSuscriptos().get(9), plan11);
 	}
 	
 /*	@Test

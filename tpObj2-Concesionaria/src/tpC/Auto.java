@@ -2,21 +2,22 @@ package tpC;
 
 
 import java.util.Date;
+import org.joda.time.*;;
 
 public class Auto {
 	private ModeloDeAuto modelo;
-	private Date categoria;
+	private LocalDate categoria;
 	
 	public Auto(ModeloDeAuto modelo){
 		this.setModelo(modelo);
-		this.setCategoria(new Date());
+		this.setCategoria(new LocalDate());
 	}
 
-	public Date getCategoria() {
+	public LocalDate getCategoria() {
 		return categoria;
 	}
 
-	public void setCategoria(Date categoria) {
+	public void setCategoria(LocalDate categoria) {
 		this.categoria = categoria;
 	}
 
