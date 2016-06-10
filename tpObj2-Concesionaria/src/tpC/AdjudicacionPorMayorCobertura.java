@@ -8,10 +8,14 @@ import java.util.stream.Collectors;
 import org.joda.time.LocalDate;
 
 import java.util.*;
-
-public class AdjudicacionPorMayorCobertura extends FormaDeAdjudicacion{	
+//Deberia tirar excepcion si no hay Participante para adjudicar!
+public class AdjudicacionPorMayorCobertura extends FormaDeAdjudicacion {	
 	
-	public Participante adjudicar (PlanDeAhorro unPlan) {
+	public Participante adjudicar (PlanDeAhorro unPlan) throws NoHayPartipantesException{
+		
+		if (unPlan.cantDeParticipantes()==0){
+			throw new NoHayPartipantesException();
+		}
 		
 		//Se filtra como está por mayor cobertura...
 		double max= unPlan.mayorPorcentajeDePago();
