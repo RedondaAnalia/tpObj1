@@ -47,6 +47,6 @@ private Planta myPlanta;
 		myPlanta.puedeFabricarElModelo(fordFiesta4pFull);
 		myPlanta.fabricarElModelo(fordFiesta4pFull);
 		Mockito.verify(observerStock, Mockito.times(1)).incrementarStock(fordFiesta4pFull);
-		
+		 
 	}
 }

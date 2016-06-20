@@ -14,4 +14,8 @@ public class ModeloDeAuto {
 		return this.valor;
 	}
 
+	public void setValor(int i) {
+		valor = i;
+	}
+
 }

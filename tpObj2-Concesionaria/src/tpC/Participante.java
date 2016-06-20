@@ -59,7 +59,7 @@ public class Participante {
 
 	
 
-	public void pagarCuota(Integer nroCuota, Integer importe) {
+	public void pagarCuota( Integer nroCuota, Integer importe) {
 		this.cuotasPagas.pagar(nroCuota, importe);	
 	}
 

@@ -32,11 +32,12 @@ public class TestCaseFinales {
 	private PlanDeAhorro plan10;
 	private PlanDeAhorro plan11;
 	private Plan100x100 pago1;
+	
 
 	@Before
 	public void setUp() throws Exception {
 		fabrica= mock (Fabrica.class);
-		concesionaria= new Concesionaria(fabrica);
+		concesionaria= new Concesionaria(fabrica, new Coord(1,1) );
 		parti1= mock(Participante.class);
 		parti2= mock(Participante.class);
 		parti3= mock(Participante.class);

@@ -22,7 +22,7 @@ public class TestCaseCuotasPagas {
 		cuotasPagas.pagar(3, 100);
 		cuotasPagas.pagar(4, 100);
 		cuotasPagas.pagar(5, 100);
-		assertTrue(cuotasPagas.porcentajePago()== 5.0);
+		assertTrue(cuotasPagas.porcentajePago() == 5.0);
 	}
 
 }

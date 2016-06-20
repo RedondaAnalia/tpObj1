@@ -7,6 +7,9 @@ public interface PlanDePago {
 	public double valorDeCuota(ModeloDeAuto auto);
 	public double cuotaFinal(ModeloDeAuto auto);
 	
+	public double gastosAdministrativos(AdministracionConcesionaria admin);	
+	
+	public double gastosSeguros(Seguro seg);
 
 }
 

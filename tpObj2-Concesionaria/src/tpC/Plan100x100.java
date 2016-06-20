@@ -21,4 +21,11 @@ public class Plan100x100 implements PlanDePago{
 		return 0;
 	}
 
+	public double gastosSeguros(Seguro seg){
+		return seg.gastos();
+	}
+	
+	public double gastosAdministrativos(AdministracionConcesionaria admin){
+		return admin.gastos();
+	}
 }
