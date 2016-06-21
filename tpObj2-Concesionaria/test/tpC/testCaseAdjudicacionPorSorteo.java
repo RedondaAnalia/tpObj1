@@ -40,9 +40,9 @@ public class testCaseAdjudicacionPorSorteo {
 	public void test() {
 		
 		when(unPlanCualquiera.getParticipantes()).thenReturn(laListaDeParticipantes);
-		analiaMock= laListaDeParticipantes.get(0);
-		demianMock=laListaDeParticipantes.get(1);
-		pabloMock=laListaDeParticipantes.get(2);
+//		analiaMock= laListaDeParticipantes.get(0);
+//		demianMock=laListaDeParticipantes.get(1);
+//		pabloMock=laListaDeParticipantes.get(2);
 		when(unPlanCualquiera.getParticipantes()).thenReturn(laListaDeParticipantes);
 		when(unPlanCualquiera.cantDeParticipantes()).thenReturn(laListaDeParticipantes.size());
 		when(sorteo.primerPremio(3)).thenReturn(0);		
