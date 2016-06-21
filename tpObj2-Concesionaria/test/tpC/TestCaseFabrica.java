@@ -33,6 +33,7 @@ public class TestCaseFabrica {
 	
 	@Before
 	public void setUp() throws Exception {
+		
 		MockitoAnnotations.initMocks(this);	
 		ford = new Fabrica(stock);
 		ford.agregarPlanta(plantaPacheco);
