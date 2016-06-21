@@ -153,11 +153,7 @@ public class TestCaseFinales {
 		assertEquals(concesionaria.topTenPlanesSuscriptos().get(9), plan11);
 	}
 	
-/*	@Test
-	public void test02EjecutarAdjudicaciones() {
-		fail("Not yet implemented");
-	}
-
+/*
 	@Test
 	public void test03AsegurarStockLocalDeModelosCoincideConStockDePlantas() {
 		fail("Not yet implemented");

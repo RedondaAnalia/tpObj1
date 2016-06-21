@@ -6,17 +6,28 @@ import java.util.List;
 public class Fabrica {
 
 	//Colaboradores internos//
-	private List<Planta> plantas = new LinkedList<Planta>() ;
-	private List<ModeloDeAuto> modelos = new LinkedList<ModeloDeAuto>();
+	private List<Planta> plantas;
+	private List<ModeloDeAuto> modelos ;
+	private Stock stock;
 	
 	
 	//Metodos//
+	public Fabrica(Stock st){
+		plantas = new LinkedList<Planta>();
+		modelos = new LinkedList<ModeloDeAuto>();
+		stock = st;
+	}
+	
 	public void agregarPlanta(Planta planta) {
 		plantas.add(planta);
 		}
 	public void agregarModelo(ModeloDeAuto nuevoModelo) {
 		modelos.add(nuevoModelo);
 	}	
+	
+	public Stock getStock(){
+		return stock;
+	}
 	
 	
 	public LinkedList<Auto> buscarStockEnFabricaDeLaPlanta(Planta aPlanta, ModeloDeAuto aModelo) {

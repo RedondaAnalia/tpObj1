@@ -17,6 +17,7 @@ public class Concesionaria {
 		clientes= new ArrayList<Cliente>();
 		planes= new ArrayList<PlanDeAhorro>();
 		ubicacion= coordenada;
+		stock = fab.getStock();
 	}
 	
 	public Coord getUbicacion(){
