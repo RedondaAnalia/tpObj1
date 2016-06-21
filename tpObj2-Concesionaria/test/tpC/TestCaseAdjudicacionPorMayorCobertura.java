@@ -9,7 +9,8 @@ import java.util.Comparator;
 import java.util.stream.Collectors;
 import java.util.*;
 
-import org.joda.time.LocalDate;
+import org.joda.time.*;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
@@ -46,9 +47,6 @@ public class TestCaseAdjudicacionPorMayorCobertura {
 		
 		adjudicacion = new AdjudicacionPorMayorCobertura();
 		laListaDeParticipantes = new ArrayList<Participante>();
-		//laListaDeParticipantes.set(0,analiaMock);
-		//laListaDeParticipantes.set(1,demianMock);
-		//laListaDeParticipantes.set(2,pabloMock);
 		laListaDeParticipantes.add(analiaMock);
 		laListaDeParticipantes.add(demianMock);
 		laListaDeParticipantes.add(pabloMock);
@@ -56,13 +54,20 @@ public class TestCaseAdjudicacionPorMayorCobertura {
 		MockitoAnnotations.initMocks(this);
 	}
 	
-	
-
+	/*
+	 **** Testeo el manejo de la excepcion	
+	 */
+/*	@Test(expected={NoHayParticipantesException.class})
+	public void testManejoDeExcepcion() throws NoHayParticipantesException{
+		when(unPlanCualquiera.getParticipantes()).thenReturn(laListaDeParticipantes);
+		adjudicacion.adjudicar(unPlanCualquiera);
+	}
+*/
     /*
-    ***Tomo solo un participante con mayor cobertura.
+    ***Tengo un solo un participante con mayor cobertura.
     */
 	@Test 
-	public void testCasoUnicoMayorCobertura() {
+	public void testCasoUnicoMayorCobertura() throws NoHayParticipantesException {
 		
 		analiaMock= laListaDeParticipantes.get(0);
 		demianMock=laListaDeParticipantes.get(1);
@@ -71,7 +76,9 @@ public class TestCaseAdjudicacionPorMayorCobertura {
 		when(demianMock.porcentajePago()).thenReturn((double) 60.0);
 		when(pabloMock.porcentajePago()).thenReturn((double) 70.0);
 		when(unPlanCualquiera.getParticipantes()).thenReturn(laListaDeParticipantes);
+		when(unPlanCualquiera.cantDeParticipantes()).thenReturn(3);
 		when(unPlanCualquiera.mayorPorcentajeDePago()).thenReturn((double)70.0);
+		System.out.println(unPlanCualquiera.cantDeParticipantes());
 		assertEquals(adjudicacion.adjudicar(unPlanCualquiera), pabloMock);
     }
 	
@@ -85,7 +92,7 @@ public class TestCaseAdjudicacionPorMayorCobertura {
 	 */
 	
 	@Test
-	public void testCasoMasAntiguoEnConcesionaria(){
+	public void testCasoMasAntiguoEnConcesionaria() throws NoHayParticipantesException {
 		
 		analiaMock= laListaDeParticipantes.get(0);
 		demianMock=laListaDeParticipantes.get(1);
@@ -95,6 +102,7 @@ public class TestCaseAdjudicacionPorMayorCobertura {
 		when(pabloMock.porcentajePago()).thenReturn((double) 70.0);
 		when(unPlanCualquiera.getParticipantes()).thenReturn(laListaDeParticipantes);
 		when(unPlanCualquiera.mayorPorcentajeDePago()).thenReturn((double)70.0);
+		when(unPlanCualquiera.cantDeParticipantes()).thenReturn(3);
 		when(demianMock.getCliente()).thenReturn(mockCliente1);
 		when(pabloMock.getCliente()).thenReturn(mockCliente2);
 		when(mockCliente1.getFchIngreso()).thenReturn(fecha1);
@@ -111,7 +119,7 @@ public class TestCaseAdjudicacionPorMayorCobertura {
 	 *** antiguedad en concesionaria, y una con mayor antigüedad en el plan.
 	 */
 	@Test
-	public void testCasoMayorAntiguedadEnPlan() {
+	public void testCasoMayorAntiguedadEnPlan() throws NoHayParticipantesException {
 		
 		analiaMock= laListaDeParticipantes.get(0);
 		demianMock=laListaDeParticipantes.get(1);
@@ -125,6 +133,7 @@ public class TestCaseAdjudicacionPorMayorCobertura {
 		when(pabloMock.getCliente()).thenReturn(mockCliente1);
 		when(analiaMock.getCliente()).thenReturn(mockCliente1);
 		when(mockCliente1.getFchIngreso()).thenReturn(fecha1);
+		when(unPlanCualquiera.cantDeParticipantes()).thenReturn(3);
 		when(demianMock.getFchInscripcion()).thenReturn(fecha4);
 		when(pabloMock.getFchInscripcion()).thenReturn(fecha3);
 		when(analiaMock.getFchInscripcion()).thenReturn(fecha2);

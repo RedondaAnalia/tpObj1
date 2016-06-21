@@ -11,10 +11,10 @@ import java.util.*;
 //Deberia tirar excepcion si no hay Participante para adjudicar!
 public class AdjudicacionPorMayorCobertura extends FormaDeAdjudicacion {	
 	
-	public Participante adjudicar (PlanDeAhorro unPlan) throws NoHayPartipantesException{
+	public Participante adjudicar (PlanDeAhorro unPlan) throws NoHayParticipantesException{
 		
 		if (unPlan.cantDeParticipantes()==0){
-			throw new NoHayPartipantesException();
+			throw new NoHayParticipantesException("No hay participantes");
 		}
 		
 		//Se filtra como está por mayor cobertura...

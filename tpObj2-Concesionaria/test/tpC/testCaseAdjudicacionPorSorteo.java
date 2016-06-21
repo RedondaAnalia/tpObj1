@@ -37,7 +37,7 @@ public class testCaseAdjudicacionPorSorteo {
 	}
 
 	@Test
-	public void test() {
+	public void test() throws NoHayParticipantesException {
 		
 		when(unPlanCualquiera.getParticipantes()).thenReturn(laListaDeParticipantes);
 		analiaMock= laListaDeParticipantes.get(0);

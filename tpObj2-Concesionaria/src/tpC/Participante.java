@@ -4,7 +4,7 @@ package tpC;
 import java.util.ArrayList;
 import java.util.Date;
 
-import org.joda.time.LocalDate;
+import org.joda.time.*;
 
 public class Participante {
 
@@ -15,7 +15,7 @@ public class Participante {
 	private LocalDate fchInscripcion;
 	private Concesionaria concesionaria;
 
-	public Participante(Cliente unCliente ){
+	public Participante(Cliente unCliente){
 		cliente = unCliente;
 		nroDeOrden = new Integer(0);
 		cuotasPagas = new CuotasPagas(100);//este 100 es solo de prueba en 
