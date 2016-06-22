@@ -2,6 +2,6 @@ package tpC;
 
 
 
-public abstract class FormaDeAdjudicacion {
-	
+public interface FormaDeAdjudicacion {
+	public Participante adjudicar(PlanDeAhorro plan) throws NoHayParticipantesException;
 }

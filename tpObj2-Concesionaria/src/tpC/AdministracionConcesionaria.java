@@ -11,5 +11,9 @@ public class AdministracionConcesionaria {
 	public double gastos() {
 		return gastos;
 	}
+	
+	public void setGastosAdmin(double cargo){
+		gastos=cargo;
+	}
 
 }

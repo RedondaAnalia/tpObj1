@@ -9,9 +9,9 @@ import org.joda.time.LocalDate;
 
 import java.util.*;
 //Deberia tirar excepcion si no hay Participante para adjudicar!
-public class AdjudicacionPorMayorCobertura extends FormaDeAdjudicacion {	
+public class AdjudicacionPorMayorCobertura implements FormaDeAdjudicacion {	
 	
-	public Participante adjudicar (PlanDeAhorro unPlan) throws NoHayParticipantesException{
+	public Participante adjudicar(PlanDeAhorro unPlan) throws NoHayParticipantesException{
 		
 		if (unPlan.cantDeParticipantes()==0){
 			throw new NoHayParticipantesException("No hay participantes");

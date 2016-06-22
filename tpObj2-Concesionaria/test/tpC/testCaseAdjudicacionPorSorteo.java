@@ -28,29 +28,25 @@ public class testCaseAdjudicacionPorSorteo {
 		pabloMock = mock(Participante.class);
 		sorteo= mock(SorteoLoteriaNacional.class);
 		unPlanCualquiera = mock(PlanDeAhorro.class);
-		adjudicacion = new AdjudicacionPorSorteo();
-		laListaDeParticipantes = new ArrayList<Participante>();
-		laListaDeParticipantes.add(analiaMock);
-		laListaDeParticipantes.add(demianMock);
-		laListaDeParticipantes.add(pabloMock);
+		adjudicacion = new AdjudicacionPorSorteo(sorteo);
+		laListaDeParticipantes = mock (ArrayList.class);
 		MockitoAnnotations.initMocks(this);
 	}
 
 	@Test
 	public void test() throws NoHayParticipantesException {
-		
+		//ESTO FUNCIONAAABAA... LLORO :'(
 		when(unPlanCualquiera.getParticipantes()).thenReturn(laListaDeParticipantes);
-		analiaMock= laListaDeParticipantes.get(0);
-		demianMock=laListaDeParticipantes.get(1);
-		pabloMock=laListaDeParticipantes.get(2);
-		when(unPlanCualquiera.getParticipantes()).thenReturn(laListaDeParticipantes);
-		when(unPlanCualquiera.cantDeParticipantes()).thenReturn(laListaDeParticipantes.size());
+		when(unPlanCualquiera.cantDeParticipantes()).thenReturn(3);
+		when(laListaDeParticipantes.get(0)).thenReturn(analiaMock);
+		when(laListaDeParticipantes.get(1)).thenReturn(demianMock);
+		when(laListaDeParticipantes.get(2)).thenReturn(pabloMock);
 		when(sorteo.primerPremio(3)).thenReturn(0);		
-		assertEquals(adjudicacion.adjudicar(unPlanCualquiera,sorteo),analiaMock);
+		assertEquals(analiaMock,adjudicacion.adjudicar(unPlanCualquiera));
 		when(sorteo.primerPremio(3)).thenReturn(1);		
-		assertEquals(adjudicacion.adjudicar(unPlanCualquiera,sorteo),demianMock);
+		assertEquals(demianMock,adjudicacion.adjudicar(unPlanCualquiera));
 		when(sorteo.primerPremio(3)).thenReturn(2);		
-		assertEquals(adjudicacion.adjudicar(unPlanCualquiera,sorteo),pabloMock);
+		assertEquals(pabloMock, adjudicacion.adjudicar(unPlanCualquiera));
 		}
 
 }

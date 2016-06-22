@@ -1,10 +1,15 @@
 package tpC;
 
 
-public class AdjudicacionPorSorteo extends FormaDeAdjudicacion{
-
+public class AdjudicacionPorSorteo implements FormaDeAdjudicacion{
+	SorteoLoteriaNacional sorteo;
 	
-	public Participante adjudicar(PlanDeAhorro unPlan, SorteoLoteriaNacional sorteo) throws NoHayParticipantesException{
+	public AdjudicacionPorSorteo(SorteoLoteriaNacional azar){
+		sorteo=azar;
+	}
+	
+	
+	public Participante adjudicar(PlanDeAhorro unPlan) throws NoHayParticipantesException{
 		if (unPlan.cantDeParticipantes()==0){
 			throw new NoHayParticipantesException("No hay participantes");
 		}

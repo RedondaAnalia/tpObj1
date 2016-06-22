@@ -41,7 +41,7 @@ public class PlanDeAhorro {
 		return participantes.size();
 	}
 	
-	public Participante adjudicar(){
+	public Participante adjudicar() throws NoHayParticipantesException{
 		return adjudicacion.adjudicar(this);
 	}
 
@@ -50,10 +50,10 @@ public class PlanDeAhorro {
 		
 	}
 	
-	public double mayorPorcentajeDePago(){
-		/*if (participantes.isEmpty()){
-			return 0.0;
-		}*/
+	public double mayorPorcentajeDePago() throws NoHayParticipantesException{
+		if (participantes.isEmpty()){
+			throw new NoHayParticipantesException("No hay participantes");
+		}
 		Participante aux= participantes.get(0);
 		for (Participante p:participantes){
 			if (p.porcentajePago() > aux.porcentajePago()){

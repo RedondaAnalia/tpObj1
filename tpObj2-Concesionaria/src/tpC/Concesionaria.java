@@ -45,7 +45,7 @@ public class Concesionaria {
 		return this.planes;
 	}
 	
-	public HashMap<Participante, Integer> adjudicarTodosLosPlanes(){
+	public HashMap<Participante, Integer> adjudicarTodosLosPlanes() throws NoHayParticipantesException{
 		HashMap<Participante, Integer> ret= new HashMap<Participante,Integer>();
 		for (PlanDeAhorro p:planes){
 			ret.put(p.adjudicar(), p.getGrupo());
