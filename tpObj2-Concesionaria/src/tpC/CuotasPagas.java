@@ -28,7 +28,7 @@ public class CuotasPagas {
 	public void pagar(Integer nroCuota, Integer valor) {
 		
 		cuotas[nroCuota] = new Cuota(nroCuota, valor);
-		cantidadCuotasPagas= cantidadCuotasPagas ++;
+		cantidadCuotasPagas++;
 		}
 	
 } 

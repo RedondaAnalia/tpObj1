@@ -8,7 +8,7 @@ public class AdjudicacionPorSorteo implements FormaDeAdjudicacion{
 		sorteo=azar;
 	}
 	
-	
+	 
 	public Participante adjudicar(PlanDeAhorro unPlan) throws NoHayParticipantesException{
 		if (unPlan.cantDeParticipantes()==0){
 			throw new NoHayParticipantesException("No hay participantes");
