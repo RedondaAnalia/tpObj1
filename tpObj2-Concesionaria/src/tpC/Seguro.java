@@ -1,20 +1,26 @@
+/**
+ * @author Demian
+ */
+
 package tpC;
 
 public class Seguro {
 	private double valorSeguro;
-	private String nombreCompania;
 	
-	public Seguro(double valor, String name){
+/**
+ * Propósito: Registrar el valor de la cuota del seguro
+ * @param double
+ */
+	public Seguro(double valor){
 		valorSeguro = valor;
-		nombreCompania = name;
 	}
 
-	public double gastos() {
+/**
+ * Propósito: Retorna el valor de la cuota del seguro	
+ * @return double
+ */
+	public double cuotaSeguro() {
 		return valorSeguro;
-	}
-	
-	public String getNombreCompania(){
-		return nombreCompania;
 	}
 
 	

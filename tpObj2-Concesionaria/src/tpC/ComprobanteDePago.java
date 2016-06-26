@@ -1,3 +1,7 @@
+/**
+ * @author Demian
+ */
+
 package tpC;
 
 import org.joda.time.LocalDate;
@@ -5,29 +9,44 @@ import org.joda.time.LocalDate;
 public class ComprobanteDePago {
 
 	Participante participante;
-	Integer alicuota; //el valor de la cuota lo pasa el concecionario
-	Integer gastosAdmin; //se lo pedimos a la administracion
-	Integer seguroDeVida; //se lo pasa la aseguradora
+	double alicuota;
+	double gastosAdmin; 
+	double seguroDeVida; 
 	Integer nroCuota;
 	LocalDate fchPago;
+/**
+ * Propósito: Registrar el pago de una Cuota y su fecha
+ * @param unaCuota
+ */
 	
-	
-	public ComprobanteDePago(Integer alic, Integer curroAdmin, Integer curroSeg, Integer nroDeCuota){
-		alicuota = alic;	
-		gastosAdmin = curroAdmin;	
-		seguroDeVida = curroSeg;	
+	public ComprobanteDePago(Cuota unaCuota){
+		alicuota = unaCuota.getValorAlicuota();	
+		gastosAdmin = unaCuota.getCargoAdministrativo();	
+		seguroDeVida = unaCuota.getCargoSeguro();	
 		fchPago = new LocalDate();
-		nroCuota = nroDeCuota;
+		nroCuota = unaCuota.getNroCuota();
 	}
 
-	public Integer getMontoAPagar() {
-		return alicuota;
+/**
+ * Propósito: Retorna el monto total de la cuota.
+ * @return double
+ */
+	public double getMontoTotalPagado() {
+		return alicuota+gastosAdmin+seguroDeVida;
 	}
 
-	public LocalDate getFchVencimiento() {
+/**
+ * Propósito: Retorna la fecha de pago.
+ * @return LocalDate
+ */
+	public LocalDate getFchDePago() {
 		return fchPago;
 	}
 
+/**
+ * Propósito: Retorna el número de la cuota pagada.
+ * @return Integer
+ */	
 	public Integer getNroCuota() {
 		return nroCuota;
 	}

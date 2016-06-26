@@ -4,48 +4,53 @@ import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
+import static org.mockito.Mockito.*;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 
 public class TestCaseCuotasPagas {
 
-	CuotasPagas cuotasPagas;
-	
+	private CuotasPagas cuotasPagas;
+	@Mock private ComprobanteDePago unaCuotaPagaMock;
 	
 	@Before
 	public void setUp() throws Exception {
-	cuotasPagas = new CuotasPagas(100);
+		unaCuotaPagaMock = mock(ComprobanteDePago.class);
+		cuotasPagas = new CuotasPagas(100);
+		MockitoAnnotations.initMocks(this);
+
 	}
 
 	@Test
 	public void test1_Pago5CuotasYVeoElPorsentajeDeCuotasPagas() {
-		cuotasPagas.pagar(1, 100);
-		cuotasPagas.pagar(2, 100);
-		cuotasPagas.pagar(3, 100);
-		cuotasPagas.pagar(4, 100);
-		cuotasPagas.pagar(5, 100);
+		cuotasPagas.pagar(unaCuotaPagaMock);
+		cuotasPagas.pagar(unaCuotaPagaMock);
+		cuotasPagas.pagar(unaCuotaPagaMock);
+		cuotasPagas.pagar(unaCuotaPagaMock);
+		cuotasPagas.pagar(unaCuotaPagaMock);
 		assertTrue(cuotasPagas.porcentajePago() == 5.0);
+		assertFalse(cuotasPagas.porcentajePago() != 5.0);
 	}
 	
 	@Test
-	public void test2_Pago5CuotasYVeoCuantasCuotasPagasTengo() {
-		cuotasPagas.pagar(1, 100);
-		cuotasPagas.pagar(2, 100);
-		cuotasPagas.pagar(3, 100);
-		cuotasPagas.pagar(4, 100);
-		cuotasPagas.pagar(5, 100);
-		assertTrue(cuotasPagas.getCantCuotasPagas() == 5);
+	public void test2_Pago6CuotasYVeoCuantasCuotasPagasTengo() {
+		cuotasPagas.pagar(unaCuotaPagaMock);
+		cuotasPagas.pagar(unaCuotaPagaMock);
+		cuotasPagas.pagar(unaCuotaPagaMock);
+		cuotasPagas.pagar(unaCuotaPagaMock);
+		cuotasPagas.pagar(unaCuotaPagaMock);
+		cuotasPagas.pagar(unaCuotaPagaMock);
+		assertTrue(cuotasPagas.getCantCuotasPagas() == 6);
+		assertFalse(cuotasPagas.getCantCuotasPagas() != 6);
 	}
-	/* No segui trabajando... me dijeron que hay que cambiar toda la clase :'(
+	
 	@Test
-	public void test3_Pago5CuotasYVeoCuantosComprobantesDePagoTengo() {
-		cuotasPagas.pagar(1, 100);
-		cuotasPagas.pagar(2, 100);
-		cuotasPagas.pagar(3, 100);
-		cuotasPagas.pagar(4, 100);
-		cuotasPagas.pagar(5, 100);
+	public void test3_Pago4CuotasYPidoListaDePagos() {
+		cuotasPagas.pagar(unaCuotaPagaMock);
+		cuotasPagas.pagar(unaCuotaPagaMock);
+		cuotasPagas.pagar(unaCuotaPagaMock);
+		cuotasPagas.pagar(unaCuotaPagaMock);
 		System.out.println(cuotasPagas.getComprobantesDePago());
-		Cuota[] listaDeComprobantes = cuotasPagas.getComprobantesDePago();
-		for comprobante in listaDeComprobantes
-		assertTrue( == 5);
 	}	
-	*/
+	
 }

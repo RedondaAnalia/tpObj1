@@ -15,6 +15,8 @@ public class TestcaseCliente {
 	Participante mockParticipante1;
 	Participante mockParticipante2;
 	Concesionaria mockConces;
+	
+	
 	@Before
 	public void setUp() throws Exception {
 		mockConces= mock(Concesionaria.class);
@@ -45,7 +47,7 @@ public class TestcaseCliente {
 		assertTrue (cliente.getPlanes().contains(mockPlan) &&
 				    cliente.getPlanes().contains(mockPlan2));
 	}
-
+ 
 	@Test
 	public void test02AgregarParticipantesAlCliente() {
 		cliente.addParticipante(mockParticipante1);
@@ -55,4 +57,10 @@ public class TestcaseCliente {
 				    cliente.getParticipantes().contains(mockParticipante2));
 	}
 	
+	@Test
+	public void test03SuscribirClienteA2PlanDeAhorroYPedirParticipaciones() {
+		cliente.agregarPlanDeAhorro (mockPlan);
+		cliente.agregarPlanDeAhorro (mockPlan2);
+		System.out.println(cliente.getParticipantes());
+	}	
 }

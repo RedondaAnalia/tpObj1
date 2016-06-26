@@ -1,8 +1,8 @@
+/**
+ * @author Analía - Demian - Pablo
+ */
+
 package tpC;
-
-
-import java.util.ArrayList;
-import java.util.Date;
 
 import org.joda.time.*;
 
@@ -15,38 +15,69 @@ public class Participante {
 	private LocalDate fchInscripcion;
 	private Concesionaria concesionaria;
 
+/**
+ * Propósito: Registrar la participación de un cliente en un plan de ahorro	
+ * Precond: Este constructor es solo para testear, tiene 100 cuotas a pagar 
+ * @param Cliente
+ */
 	public Participante(Cliente unCliente){
+		
 		cliente = unCliente;
 		nroDeOrden = new Integer(0);
-		cuotasPagas = new CuotasPagas(100);//este 100 es solo de prueba en 
-		//el siguiente constructor lo sacamos del plan elegido
+		cuotasPagas = new CuotasPagas(100); //este valor esta puesto solo para testear
 		fchInscripcion = new LocalDate();
 	}
 	
+/**
+ * Propósito: Registrar la participación de un cliente en un plan de ahorro		
+ * @param Cliente
+ * @param PlanDeAhorro
+ * @param Concesionaria
+ */
 	public Participante(Cliente unCliente, PlanDeAhorro unPlan, Concesionaria conces) {
 		cliente = unCliente;
 		this.adquirirPlanDeAhorro(unPlan);
 		cuotasPagas = new CuotasPagas(unPlan.cantDeCuotas());
 		fchInscripcion = new LocalDate();
-		concesionaria=conces;
+		concesionaria = conces;
 	}
-
+	
+/**
+ * Propósito: Retorna el cliente de la participación
+ * @return Cliente
+ */
 	public Cliente getCliente() {
 		return cliente;
 	}
 	
+/**
+ * Propósito: Retorna el número de orden del participante en el plan al cual pertenece	
+ * @return Integer
+ */
 	public Integer getNroDeOrden() {
 		return this.nroDeOrden;
 	}
-
+	
+/**
+ * Propósito: Retorna el plan de ahorro al cual está suscripto	
+ * @return PlanDeAhorro
+ */
 	public PlanDeAhorro getPlan() {
 		return this.planSuscripto;
 	}
 	
+/**
+ * Propósito: Retorna la fecha de inscripción al plan	
+ * @return LocalDate
+ */
 	public LocalDate getFchInscripcion(){
 		return fchInscripcion;
 	}
 
+/**
+ * Propósito: Inscribir al participante en un plan de ahorro determinado	
+ * @param PlanDeAhorro
+ */
 	public void adquirirPlanDeAhorro(PlanDeAhorro unPlan) {
 		/*
 		 * Agrega el participante a la lista de participantes
@@ -58,19 +89,38 @@ public class Participante {
 	}
 
 	
-
-	public void pagarCuota( Integer nroCuota, Integer importe) {
-		this.cuotasPagas.pagar(nroCuota, importe);	
+/**
+ * Propósito: Pagar una cuota del plan
+ * @param Cuota
+ */
+	public void pagarCuota(Cuota unaCuota) {
+		ComprobanteDePago cuotaPaga = this.concesionaria.pagar(unaCuota);	
+		this.cuotasPagas.pagar(cuotaPaga);
+	}
+	
+/**
+ * Propósito: Retorna la cantidad de cuotas pagas	
+ * @return Integer
+ */
+	public Integer getCuotasPagas(){
+		return cuotasPagas.getCantCuotasPagas();
 	}
 
+/**
+ * Propósito: Retorna el porcentaje del plan que lleva pago	
+ * @return double
+ */
 	public double porcentajePago() {
 		return this.cuotasPagas.porcentajePago();
 	}
 
-	public void setCuotasPagas(CuotasPagas cuota){
-		this.cuotasPagas = cuota;
+/**
+ * Propósito: Setear las cuotas del plan	
+ * @param CuotasPagas
+ */
+	public void setCuotasPagas(CuotasPagas cuotas) {
+		this.cuotasPagas = cuotas;
 	}
-	
-	
+
 
 }
