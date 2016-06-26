@@ -147,8 +147,8 @@ public class Concesionaria {
  * @param unaCuota
  * @return ComprobanteDePago
  */
-public ComprobanteDePago pagar(Cuota unaCuota) {
-	return new ComprobanteDePago(unaCuota);
+public ComprobanteDePago pagar(Cuota unaCuota, Participante unPart) {
+	return new ComprobanteDePago(unaCuota, unPart);
 }
 	
 }

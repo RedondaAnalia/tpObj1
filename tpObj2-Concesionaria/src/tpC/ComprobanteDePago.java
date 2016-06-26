@@ -17,9 +17,11 @@ public class ComprobanteDePago {
 /**
  * Propósito: Registrar el pago de una Cuota y su fecha
  * @param unaCuota
+ * @param unPart 
  */
 	
-	public ComprobanteDePago(Cuota unaCuota){
+	public ComprobanteDePago(Cuota unaCuota, Participante unPart){
+		participante = unPart;
 		alicuota = unaCuota.getValorAlicuota();	
 		gastosAdmin = unaCuota.getCargoAdministrativo();	
 		seguroDeVida = unaCuota.getCargoSeguro();	

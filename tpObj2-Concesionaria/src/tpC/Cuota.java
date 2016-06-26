@@ -6,6 +6,14 @@ public class Cuota {
 	private double cargoSeguro;
 	private double cargoAdministrativo;
 	
+	/**
+	 * 
+	 * @param Integer (número de la Cuota)
+	 * @param double (valor de la alicuota)
+	 * @param double (valor del seguro)
+	 * @param double (valor del cargo administrativo)
+	 */
+	
 	public Cuota(Integer nroCta, double alic, double seg, double admin){
 		nroCuota = nroCta;
 		valorAlicuota = alic;
@@ -14,28 +22,32 @@ public class Cuota {
 	}
 
 	/**
-	 * @return the nroCuota
+	 * Propósito: Retorna el numero de cuota
+	 * @return Integer
 	 */
 	public Integer getNroCuota() {
 		return nroCuota;
 	}
 
 	/**
-	 * @return the valorAlicuota
+	 * Propósito: Retorna el valor de la alicuota del auto
+	 * @return double
 	 */
 	public double getValorAlicuota() {
 		return valorAlicuota;
 	}
 
 	/**
-	 * @return the cargoSeguro
+	 * Propósito: Retorna el valor del costo del seguro
+	 * @return double
 	 */
 	public double getCargoSeguro() {
 		return cargoSeguro;
 	}
 
 	/**
-	 * @return the cargoAdministrativo
+	 * Propósito: Retorna el valor del costo administrativo
+	 * @return double
 	 */
 	public double getCargoAdministrativo() {
 		return cargoAdministrativo;
