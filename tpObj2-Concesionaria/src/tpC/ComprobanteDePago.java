@@ -5,6 +5,8 @@
 package tpC;
 
 import org.joda.time.LocalDate;
+// No se pueden encapsular los colaboradores internos iguales a los de cuota, 
+//en un objeto de tipo cuota???
 
 public class ComprobanteDePago {
 

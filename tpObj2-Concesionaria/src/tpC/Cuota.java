@@ -1,5 +1,6 @@
 package tpC;
-
+// me parece que cuota deberia conocer al participante al que se le genera la cuota...
+// y quizas hasta a la concesionaria a la cual se le va a acreditar ese pago...
 public class Cuota {
 	private Integer nroCuota;
 	private double valorAlicuota;

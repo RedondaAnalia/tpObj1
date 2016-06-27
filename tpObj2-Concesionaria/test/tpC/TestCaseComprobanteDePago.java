@@ -12,7 +12,6 @@ import static org.mockito.Mockito.*;
 public class TestCaseComprobanteDePago {
 
 	ComprobanteDePago ticketPago;
-	LocalDate fchPago;
 	@Mock Participante demian;
 	@Mock Cuota unaCuota;
 
@@ -20,7 +19,6 @@ public class TestCaseComprobanteDePago {
 	public void setUp() throws Exception {
 		
 		demian = mock(Participante.class);
-		
 		unaCuota = mock(Cuota.class);
 		when(unaCuota.getNroCuota()).thenReturn(3);
 		when(unaCuota.getValorAlicuota()).thenReturn(1800.0);
@@ -39,12 +37,13 @@ public class TestCaseComprobanteDePago {
 	
 	@Test
 	public void test02FechaDePago() {
-		assertTrue(true);
+		LocalDate date= new LocalDate();
+		assertEquals(ticketPago.fchPago,date);
 	}
 	
 	@Test
 	public void test03NumeroDeCuota() {
-		assertTrue(ticketPago.getNroCuota() == 3);
+		assertEquals(ticketPago.getNroCuota(),(Integer)3);
 	}
 	
 }

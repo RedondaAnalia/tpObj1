@@ -94,8 +94,7 @@ public class Participante {
  * @param Cuota
  */
 	public void pagarCuota(Cuota unaCuota) {
-		ComprobanteDePago cuotaPaga = this.concesionaria.pagar(unaCuota);	
-		this.cuotasPagas.pagar(cuotaPaga);
+		cuotasPagas.pagar(new ComprobanteDePago(unaCuota,this));
 	}
 	
 /**

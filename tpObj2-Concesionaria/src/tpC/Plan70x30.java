@@ -22,7 +22,7 @@ public class Plan70x30 implements PlanDePago{
 	}
 	
 	public double gastosSeguros(Seguro seg){
-		return seg.gastos();
+		return seg.cuotaSeguro();
 	}
 	
 	public double gastosAdministrativos(AdministracionConcesionaria admin){

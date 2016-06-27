@@ -49,13 +49,13 @@ public class CuotasPagas {
  * @return double
  */
 	public double porcentajePago(){
-		Double c= new Double(this.getCantCuotasPagas());
-		Double d= new Double(this.getCantCuotasAPagar());
-		return 100.0*(c/d);
+		Double cuotaspagas= new Double(this.getCantCuotasPagas());
+		Double cuotasimpagas= new Double(this.getCantCuotasAPagar());
+		return 100.0*(cuotaspagas/cuotasimpagas);
 	}
 
 /**
- * Propósito: Regitra el pago de una cuota	
+ * Propósito: Registra el pago de una cuota	
  * @param ComprobanteDePago
  */
 	public void pagar(ComprobanteDePago unaCuotaPaga) {

@@ -115,7 +115,7 @@ public class Concesionaria {
 				return new Integer(p2.cantDeParticipantes()).compareTo(new Integer(p1.cantDeParticipantes()));
 			}
 		});
-		for (int i = 0; i < 10; i++) {// si empiezo en cero, termino en 9.
+		for (int i = 0; i < 10; i++) {// como empiezo en cero, termino en 9.
 			ret.add(this.planes.get(i));
 		}
 
@@ -141,14 +141,5 @@ public class Concesionaria {
 		Integer nroCuota = unParticipante.getCuotasPagas()+1;
 		return this.administracion.imprimirCuota(unPlan, nroCuota);
 	}
-
-/**
- * Propósito: Pagar una cuota	
- * @param unaCuota
- * @return ComprobanteDePago
- */
-public ComprobanteDePago pagar(Cuota unaCuota, Participante unPart) {
-	return new ComprobanteDePago(unaCuota, unPart);
-}
 	
 }
