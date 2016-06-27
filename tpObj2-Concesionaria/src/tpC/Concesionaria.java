@@ -142,4 +142,8 @@ public class Concesionaria {
 		return this.administracion.imprimirCuota(unPlan, nroCuota);
 	}
 	
+	public ComprobanteDePago recibirPago(Cuota unaCuota, Participante participante){
+		return new ComprobanteDePago(unaCuota,participante);
+	}
+	
 }

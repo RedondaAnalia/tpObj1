@@ -14,6 +14,7 @@ public class TestCaseParticipante {
 	@Mock private Cliente analiaMock;
 	@Mock private PlanDeAhorro planMock;
 	@Mock private CuotasPagas cuotas;
+	private 
 	
 	@Before
 	public void setUp() throws Exception {
@@ -25,14 +26,15 @@ public class TestCaseParticipante {
 	public void test1CreacionDeParticipanteYPedidoNroDeOrden() {
 		when(planMock.inscribirParticipante(analiaParticipante)).thenReturn(3);
 		analiaParticipante.adquirirPlanDeAhorro(planMock);
-		assertTrue(analiaParticipante.getNroDeOrden()== 3);
+		assertEquals((Integer) 3, analiaParticipante.getNroDeOrden());
 	}
 
+
 	@Test
-	public void test3PedidoDePorcentajeDeCuotas() {
+	public void test2PedidoDePorcentajeDeCuotas() {
 		analiaParticipante.setCuotasPagas(cuotas);
 		when(cuotas.porcentajePago()).thenReturn((double) 3);
-		assertTrue(analiaParticipante.porcentajePago() == (float)3);
+		assertEquals((float)3, analiaParticipante.porcentajePago(), 0);
 	}
 	
 

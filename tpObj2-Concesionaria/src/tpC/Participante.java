@@ -1,7 +1,7 @@
 /**
  * @author Analía - Demian - Pablo
  */
-
+//VER SETCUOTASPAGAS()
 package tpC;
 
 import org.joda.time.*;
@@ -25,9 +25,7 @@ public class Participante {
 		cliente = unCliente;
 		nroDeOrden = new Integer(0);
 		cuotasPagas = new CuotasPagas(100); //este valor esta puesto solo para testear
-		fchInscripcion = new LocalDate();
 	}
-	
 /**
  * Propósito: Registrar la participación de un cliente en un plan de ahorro		
  * @param Cliente
@@ -94,7 +92,7 @@ public class Participante {
  * @param Cuota
  */
 	public void pagarCuota(Cuota unaCuota) {
-		cuotasPagas.pagar(new ComprobanteDePago(unaCuota,this));
+		cuotasPagas.pagar(concesionaria.recibirPago(unaCuota,this));
 	}
 	
 /**
@@ -115,7 +113,7 @@ public class Participante {
 
 /**
  * Propósito: Setear las cuotas del plan	
- * @param CuotasPagas
+ * @param CuotasPagas //ES NECESARIO?? CUANDO SE USARIA SI TODOS LOS PLANES EMPIEZAN DE CERO??
  */
 	public void setCuotasPagas(CuotasPagas cuotas) {
 		this.cuotasPagas = cuotas;
