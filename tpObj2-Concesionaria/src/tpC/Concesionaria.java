@@ -141,6 +141,7 @@ public class Concesionaria {
 	public Cuota generarCuota(Participante unParticipante) throws TerminoDePagarCuotasException {
 		return administracion.imprimirCuota(unParticipante);
 	}
+
 	
 	public ComprobanteDePago recibirPago(Cuota unaCuota){
 		return new ComprobanteDePago(unaCuota);

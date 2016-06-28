@@ -46,8 +46,8 @@ public class TestcaseCliente {
 		cliente.agregarPlanDeAhorro (mockPlan);
 		cliente.agregarPlanDeAhorro (mockPlan2);
 		assertEquals ((int) 2, cliente.getPlanes().size());
-		assertTrue (cliente.getPlanes().contains(mockPlan) &&
-				    cliente.getPlanes().contains(mockPlan2));
+		assertTrue (cliente.getPlanes().contains(mockPlan));
+		assertTrue (cliente.getPlanes().contains(mockPlan2));
 	}
  
 	@Test
@@ -55,14 +55,8 @@ public class TestcaseCliente {
 		cliente.addParticipante(mockParticipante1);
 		cliente.addParticipante(mockParticipante2);
 		assertEquals ((int) 2, cliente.getParticipantes().size());
-		assertTrue (cliente.getParticipantes().contains(mockParticipante1) &&
-				    cliente.getParticipantes().contains(mockParticipante2));
+		assertTrue (cliente.getParticipantes().contains(mockParticipante1));
+		assertTrue (cliente.getParticipantes().contains(mockParticipante2));
 	}
-	
-	@Test
-	public void test03SuscribirClienteA2PlanDeAhorroYPedirParticipaciones() {
-		cliente.agregarPlanDeAhorro (mockPlan);
-		cliente.agregarPlanDeAhorro (mockPlan2);
-		System.out.println(cliente.getParticipantes());
-	}	
+		
 }

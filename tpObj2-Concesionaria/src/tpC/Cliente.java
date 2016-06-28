@@ -51,28 +51,61 @@ public class Cliente {
 	
 //GETTERS.
 	
+/**
+ * Propósito: Retorna la fecha en la que el cliente comienza a ser cliente de la concesionaria.
+ * @return LocalDate
+ */
+	
 	public LocalDate getFchIngreso(){
 		return fchIngreso;
 	}
+/**
+ * Propósito:Retorna la direccion de mail del cliente.	
+ * @return String
+ */
 	
 	public String getMail(){
 		return mail;
 	}
 	
+/**
+ * Propósito: Retorna el número de DNI del cliente.	
+ * @return Integer
+ */
 	public Integer getDNI(){
 		return dni;
 	}
+
+/**
+ * Propósito: Retorna las participaciones del cliente en la concesionaria.
+ * @return ArrayList <Participante>
+ */
 	
 	public ArrayList<Participante> getParticipantes() {
 		return participantes;
 	}
 	
+/**
+ * Propósito: Retorna la dirección postal del cliente.
+ * @return String
+ */
+	
 	public String getDireccion(){
 		return direccion;
 	}
+
+/**
+ * Propósito: Retorna la fecha de nacimiento del cliente.
+ * @return LocalDate
+ */
 	public LocalDate getFchNacimiento(){
 		return fchNacimiento;
 	}
+
+/**
+ * Propósito: retorna el nombre del cliente.
+ * @return String
+ */
 	
 	public String getNombre(){
 		return nombre;
