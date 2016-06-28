@@ -101,6 +101,6 @@ public class TestCaseFabrica {
 	
 	@Test
 	public void test6_ConcordanciaEnStockFabricaPlantas() {
-		ford.
+     
 	}
 }

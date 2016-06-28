@@ -25,25 +25,15 @@ public class TestCaseComprobanteDePago {
 		when(unaCuota.getCargoAdministrativo()).thenReturn(800.0);
 		when(unaCuota.getCargoSeguro()).thenReturn(750.0);
 		
-		ticketPago = new ComprobanteDePago(unaCuota, demian);
+		ticketPago = new ComprobanteDePago(unaCuota);
 		
 		MockitoAnnotations.initMocks(this);
 	}
 
-	@Test
-	public void test01MontoTotalPagado() {
-		assertTrue(ticketPago.getMontoTotalPagado() == 1800.0+ 800.0+ 750.0);
-	}
 	
 	@Test
-	public void test02FechaDePago() {
-		LocalDate date= new LocalDate();
-		assertEquals(ticketPago.fchPago,date);
-	}
-	
-	@Test
-	public void test03NumeroDeCuota() {
-		assertEquals(ticketPago.getNroCuota(),(Integer)3);
+	public void test01FechaDePago() {
+		assertEquals(LocalDate.class, ticketPago.fchPago.getClass());
 	}
 	
 }
