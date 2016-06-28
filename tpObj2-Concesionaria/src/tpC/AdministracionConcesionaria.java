@@ -42,7 +42,7 @@ public class AdministracionConcesionaria {
  */
 	public void setGastosAdmin(double cargo){
 		gastos=cargo;
-	}
+	} 
 	
 /**
  * Propósito: Generar la cuota determinada del plan determinado
@@ -50,12 +50,19 @@ public class AdministracionConcesionaria {
  * @param Integer
  * @return Cuota
  */
-	public Cuota imprimirCuota(PlanDeAhorro unPlan, Integer nroCuota){
-		double alic = unPlan.getModelo().getValor();
+	public Cuota imprimirCuota(Participante part)throws TerminoDePagarCuotasException{
+		if(part.getCuotasPagas()== part.getPlan().cantDeCuotas()){
+			throw new TerminoDePagarCuotasException("Termino de pagar las cuotas de la financiación");
+		}
+		double alic = part.getPlan().valorActualAlicuota();
 		
-		return new Cuota(nroCuota, alic, this.aseguradora.cuotaSeguro() ,this.gastos );
+		return new Cuota(part.getCuotasPagas()+1 , alic, aseguradora.cuotaSeguro() ,gastos, part );
 	}
 	
+	/**
+	 * Propósito: cambiar valor del seguro
+	 * @param Seguro
+	 */
 	public void recategorizarSeguro(Seguro nuevoSeguro){
 		aseguradora = nuevoSeguro;
 	}

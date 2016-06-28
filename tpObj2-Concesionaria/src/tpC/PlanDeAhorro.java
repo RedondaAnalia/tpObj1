@@ -118,4 +118,14 @@ public class PlanDeAhorro {
 	public ModeloDeAuto getModelo(){
 		return modeloAuto;
 	}
+	
+/**
+ * Propósito: Retorna valor de alicuota
+ * @return double
+ */
+	public double valorActualAlicuota(){
+		return planDePago.valorDeCuota(modeloAuto);
+	}
+
 }
+

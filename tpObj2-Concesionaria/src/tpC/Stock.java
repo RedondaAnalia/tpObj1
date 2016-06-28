@@ -17,13 +17,19 @@ public class Stock {
 	
 	public void incrementarStock(ModeloDeAuto aModelo){
 		if(!stock.containsKey(aModelo))
-			stock.put(aModelo,0);
+			this.agregarModelo(aModelo);
 		stock.put(aModelo, stock.get(aModelo)+1);
-		
 	}
-	public void decrementarStock(ModeloDeAuto aModelo){
-		//PRECOND: El stock del modelo debe ser mayor a 0
+
+	public void decrementarStock(ModeloDeAuto aModelo)throws NoHayStockException {
+		if(this.stock.get(aModelo)==0){
+			throw new NoHayStockException("No hay stock del modelo");
+		}
 		stock.put(aModelo, stock.get(aModelo)-1);
+	}
+	
+	public void agregarModelo(ModeloDeAuto unModelo){
+		stock.put(unModelo,0);
 	}
 }
 

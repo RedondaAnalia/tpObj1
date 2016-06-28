@@ -36,8 +36,7 @@ public class Planta {
 	}
 
 
-	public Auto retirarAutoModelo(ModeloDeAuto unModelo) {
-		// PRECOND: debe existir el modelo del auto
+	public Auto retirarAutoModelo(ModeloDeAuto unModelo) throws NoHayStockException, NoExisteElMoeloDelAutoException{
 		LinkedList<Auto> listaDeAutos = this.deposito.get(unModelo);
 		this.observerStock.decrementarStock(unModelo);
 		Auto autoARetirar = listaDeAutos.pop();

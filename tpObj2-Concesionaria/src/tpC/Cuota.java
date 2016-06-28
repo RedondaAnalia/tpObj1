@@ -2,6 +2,7 @@ package tpC;
 // me parece que cuota deberia conocer al participante al que se le genera la cuota...
 // y quizas hasta a la concesionaria a la cual se le va a acreditar ese pago...
 public class Cuota {
+	private Participante participante;
 	private Integer nroCuota;
 	private double valorAlicuota;
 	private double cargoSeguro;
@@ -13,13 +14,15 @@ public class Cuota {
 	 * @param double (valor de la alicuota)
 	 * @param double (valor del seguro)
 	 * @param double (valor del cargo administrativo)
+	 * @param Participante 
 	 */
 	
-	public Cuota(Integer nroCta, double alic, double seg, double admin){
+	public Cuota(Integer nroCta, double alic, double seg, double admin, Participante part){
 		nroCuota = nroCta;
 		valorAlicuota = alic;
 		cargoAdministrativo = admin;
 		cargoSeguro = seg;
+		participante = part;		
 	}
 
 	/**
@@ -52,6 +55,14 @@ public class Cuota {
 	 */
 	public double getCargoAdministrativo() {
 		return cargoAdministrativo;
+	}
+
+	/**
+	 * Propósito: calcula el monto a pagar de la cuota
+	 * @return double
+	 */
+	public double montoAPagar() {
+		return cargoAdministrativo + cargoSeguro + valorAlicuota;
 	}
 	
 	

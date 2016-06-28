@@ -1,3 +1,6 @@
+/**
+ * @author Anita
+ */
 package tpC;
 
 
@@ -20,8 +23,19 @@ public class Cliente {
 	private Concesionaria concesionaria;
 
 // CONSTRUCTORES.
-	
-	//anioN 4 digitos.
+	/**
+	 * 
+	 * @param String (para Apellido)
+	 * @param String (para Nombre)
+	 * @param Integer (para DNI)
+	 * @param String (para Direccion)
+	 * @param String (para mail)
+	 * @param Integer (dia de nacimiento)
+	 * @param Integer (mes de nacimiento)
+	 * @param Integer (año de nacimiento)
+	 * @param Concesionaria
+	 */
+	//Precond: anioNac debe tener 4 digitos.
 	public Cliente(String apell, String nombr, Integer doc, String direcc,String dirmail,int diaNac,int mesNac, int anioNac,Concesionaria conces){
 		planes= new ArrayList <PlanDeAhorro>();
 		participantes = new ArrayList<Participante>();

@@ -20,13 +20,4 @@ public class Plan70x30 implements PlanDePago{
 	public double cuotaFinal(ModeloDeAuto auto){
 		return auto.getValor()*0.3;
 	}
-	
-	public double gastosSeguros(Seguro seg){
-		return seg.cuotaSeguro();
-	}
-	
-	public double gastosAdministrativos(AdministracionConcesionaria admin){
-		return admin.gastos();
-	}
-
 }
