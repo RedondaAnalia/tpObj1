@@ -22,6 +22,10 @@ public class Seguro {
 	public double cuotaSeguro() {
 		return valorSeguro;
 	}
+	
+	public void setValorSeguro(double valor){
+		valorSeguro = valor;
+	}
 
 	
 }

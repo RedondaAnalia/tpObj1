@@ -27,6 +27,7 @@ public class Concesionaria {
 		planes = new ArrayList<PlanDeAhorro>();
 		ubicacion = coordenada;
 		stock = fab.getStock();
+		administracion = new AdministracionConcesionaria(0, new Seguro(0));
 	}
 	
 /**
@@ -146,4 +147,11 @@ public class Concesionaria {
 		return new ComprobanteDePago(unaCuota,participante);
 	}
 	
+	public void actualizarGastosAdministrativos(double valor){
+		administracion.setGastosAdmin(valor);
+	}
+	
+	public void cambiarSeguro(Seguro nuevoSeguro){
+		administracion.recategorizarSeguro(nuevoSeguro);
+	}
 }

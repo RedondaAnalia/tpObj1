@@ -18,11 +18,12 @@ public class TestCaseConcesionaria {
 	@Mock private PlanDeAhorro plan7030Mock;
 	@Mock private PlanDeAhorro plan100Mock;
 	@Mock private Coord ubicacion;
+	@Mock private AdministracionConcesionaria adminMock;
+	@Mock private Seguro unSeguro;
 	
 	@Before
 	public void setUp() throws Exception {
-		
-		
+			
 		peugeot = mock(Fabrica.class);
 		ubicacion= mock (Coord.class);
 		los3Fanaticos= new Concesionaria(peugeot,ubicacion);
@@ -31,9 +32,8 @@ public class TestCaseConcesionaria {
 		anitaMock = mock(Cliente.class);
 		plan7030Mock = mock(PlanDeAhorro.class);
 		plan100Mock = mock(PlanDeAhorro.class);
-		
-		MockitoAnnotations.initMocks(this);
-		
+		unSeguro = mock(Seguro.class);
+		MockitoAnnotations.initMocks(this);		
 	}
 	
 	
@@ -65,6 +65,15 @@ public class TestCaseConcesionaria {
 		assertEquals(los3Fanaticos.getUbicacion(),ubicacion);
 	}
 	
+	@Test
+	public void test4_GenerarValorDeCuota(){
+		when(unSeguro.cuotaSeguro()).thenReturn(250.0);
+		los3Fanaticos.cambiarSeguro(unSeguro);
+		los3Fanaticos.actualizarGastosAdministrativos(150.0);
+		double valorCuotaTest = los3Fanaticos.generarValorDeCuota(100); //el 100 es un valor de alicuota
+			
+		assertEquals(500.0, valorCuotaTest, 0.0);
+	}
 	
 }
 

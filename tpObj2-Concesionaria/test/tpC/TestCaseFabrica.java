@@ -98,4 +98,9 @@ public class TestCaseFabrica {
 		ford.cambiarPrecioModelo(fordMustang2pFull, 5000000);
 		Mockito.verify(fordMustang2pFull, Mockito.times(1)).setValor(5000000);;
 	}
+	
+	@Test
+	public void test6_ConcordanciaEnStockFabricaPlantas() {
+		ford.
+	}
 }

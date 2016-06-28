@@ -25,14 +25,14 @@ public class AdministracionConcesionaria {
  * @return double
  */
 	public double calcularCuota(double alicuota){
-		return alicuota + this.gastos + this.aseguradora.cuotaSeguro();
+		return (alicuota + gastos + aseguradora.cuotaSeguro());
 	}
 	
 /**
  * Propósito: Retorna el valor total de los gastos adminstrativos
  * @return double
  */
-	public double gastos() {
+	public double getGastos() {
 		return gastos;
 	}
 	
@@ -54,5 +54,9 @@ public class AdministracionConcesionaria {
 		double alic = unPlan.getModelo().getValor();
 		
 		return new Cuota(nroCuota, alic, this.aseguradora.cuotaSeguro() ,this.gastos );
+	}
+	
+	public void recategorizarSeguro(Seguro nuevoSeguro){
+		aseguradora = nuevoSeguro;
 	}
 }

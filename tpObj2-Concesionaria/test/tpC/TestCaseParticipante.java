@@ -13,8 +13,7 @@ public class TestCaseParticipante {
 	private Participante analiaParticipante;
 	@Mock private Cliente analiaMock;
 	@Mock private PlanDeAhorro planMock;
-	@Mock private CuotasPagas cuotas;
-	private 
+	@Mock private CuotasPagas cuotas; 
 	
 	@Before
 	public void setUp() throws Exception {
