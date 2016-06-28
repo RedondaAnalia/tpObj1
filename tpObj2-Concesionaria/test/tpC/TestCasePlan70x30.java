@@ -11,25 +11,29 @@ import static org.mockito.Mockito.*;
 
 public class TestCasePlan70x30 {
 	Plan70x30 plan;
-	ModeloDeAuto auto;
+	@Mock ModeloDeAuto mockAuto;
 	
 	
 	@Before
 	public void setUp() throws Exception {
-		auto= mock(ModeloDeAuto.class);
+		mockAuto= mock(ModeloDeAuto.class);
 		plan= new Plan70x30(10);
 	}
 
 	@Test
 	public void testValorDeCuota() {
-		when(auto.getValor()).thenReturn(100000);
-		assertTrue(plan.valorDeCuota(auto)==7000);
+		when(mockAuto.getValor()).thenReturn(100000);
+		assertEquals(7000,plan.valorDeCuota(mockAuto),0);
 	}
 	
 	@Test
-	public void testValorde30(){
-		when(auto.getValor()).thenReturn(100000);
-		assertTrue(plan.cuotaFinal(auto)==30000);
+	public void testValorCuotaFinal(){
+		when(mockAuto.getValor()).thenReturn(100000);
+		assertEquals(30000,plan.cuotaFinal(mockAuto),0);
 	}
 
+	@Test
+	public void testCantidadDeCuotas(){
+		assertEquals((Integer)10, plan.cantDeCuotas());
+	}
 }

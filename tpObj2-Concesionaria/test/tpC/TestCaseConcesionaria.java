@@ -40,18 +40,18 @@ public class TestCaseConcesionaria {
 	@Test
 	public void test1_agrego3ClientesALaListaYPrueboLaCantidad(){
 		los3Fanaticos.agregarCliente("Objetos","Juan Carlos",37690389,"Roque Saenz Peña 0","objetosq@juan",21,11,1989);
-		assertTrue(los3Fanaticos.getClientes().size()==1);
+		assertEquals((int) 1, los3Fanaticos.getClientes().size());
 		los3Fanaticos.agregarCliente("Objetos","Juan Carlos",37690389,"Roque Saenz Peña 0","objetosq@juan",21,11,1989);
-		assertTrue(los3Fanaticos.getClientes().size()==2);
+		assertEquals((int) 2, los3Fanaticos.getClientes().size());
 		los3Fanaticos.agregarCliente("Objetos","Juan Carlos",37690389,"Roque Saenz Peña 0","objetosq@juan",21,11,1989);
-		assertTrue(los3Fanaticos.getClientes().size()==3);
+		assertEquals((int) 3, los3Fanaticos.getClientes().size());
 	}
 	
 	@Test
 	public void test2_agrego2PlanesDeAhorroyVerificoInsercion(){
 		los3Fanaticos.agregarPlan(plan100Mock);
 		los3Fanaticos.agregarPlan(plan7030Mock);
-		assertTrue(los3Fanaticos.getPlanes().size()== 2);
+		assertEquals((int) 2, los3Fanaticos.getPlanes().size());
 		assertTrue(los3Fanaticos.getPlanes().contains(plan100Mock));
 		assertTrue(los3Fanaticos.getPlanes().contains(plan7030Mock));
 	}

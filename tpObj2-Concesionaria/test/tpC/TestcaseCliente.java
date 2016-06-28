@@ -2,6 +2,8 @@ package tpC;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 
 import java.util.Calendar;
 
@@ -10,11 +12,11 @@ import org.junit.Test;
 import org.joda.time.*;
 public class TestcaseCliente {
 	Cliente cliente;
-	PlanDeAhorro mockPlan;
-	PlanDeAhorro mockPlan2;
-	Participante mockParticipante1;
-	Participante mockParticipante2;
-	Concesionaria mockConces;
+	@Mock PlanDeAhorro mockPlan;
+	@Mock PlanDeAhorro mockPlan2;
+	@Mock Participante mockParticipante1;
+	@Mock Participante mockParticipante2;
+	@Mock Concesionaria mockConces;
 	
 	
 	@Before
@@ -43,7 +45,7 @@ public class TestcaseCliente {
 	public void test01SuscribirClienteA2PlanDeAhorro() {
 		cliente.agregarPlanDeAhorro (mockPlan);
 		cliente.agregarPlanDeAhorro (mockPlan2);
-		assertTrue (cliente.getPlanes().size()==2);
+		assertEquals ((int) 2, cliente.getPlanes().size());
 		assertTrue (cliente.getPlanes().contains(mockPlan) &&
 				    cliente.getPlanes().contains(mockPlan2));
 	}
@@ -52,7 +54,7 @@ public class TestcaseCliente {
 	public void test02AgregarParticipantesAlCliente() {
 		cliente.addParticipante(mockParticipante1);
 		cliente.addParticipante(mockParticipante2);
-		assertTrue (cliente.getParticipantes().size()==2);
+		assertEquals ((int) 2, cliente.getParticipantes().size());
 		assertTrue (cliente.getParticipantes().contains(mockParticipante1) &&
 				    cliente.getParticipantes().contains(mockParticipante2));
 	}

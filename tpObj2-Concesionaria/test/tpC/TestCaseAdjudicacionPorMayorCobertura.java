@@ -57,12 +57,12 @@ public class TestCaseAdjudicacionPorMayorCobertura {
 	/*
 	 **** Testeo el manejo de la excepcion	
 	 */
-/*	@Test(expected={NoHayParticipantesException.class})
+	@Test(expected=NoHayParticipantesException.class)
 	public void testManejoDeExcepcion() throws NoHayParticipantesException{
 		when(unPlanCualquiera.getParticipantes()).thenReturn(laListaDeParticipantes);
 		adjudicacion.adjudicar(unPlanCualquiera);
 	}
-*/
+
     /*
     ***Tengo un solo un participante con mayor cobertura.
     */

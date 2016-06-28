@@ -71,6 +71,11 @@ public class TestCaseFabrica {
 		when(plantaPuertoMadryn.tieneModelo(fordMustang2pFull)).thenReturn(true);
 		when(plantaPacheco.tieneModelo(fordMustang2pFull)).thenReturn(false);
 	}
+	
+	@Test
+	public void test0_Getter() throws NoHayStockException {
+		assertNotNull(ford.getStock());
+	}
 
 	@Test
 	public void test1_buscarStockEnFabricaDeUnfordFiesta4pFull() {
@@ -81,7 +86,7 @@ public class TestCaseFabrica {
 	
 	@Test
 	public void test2_distanciaEntreUnaFabricaYUnaPlanta() {
-		assertTrue(ford.distanciaConcesionariaPlanta(los3fanaticos,plantaVarela)== 4000.00);
+		assertEquals((double) 4000,ford.distanciaConcesionariaPlanta(los3fanaticos,plantaVarela), 0);
 	}
 	@Test
 	public void test3_buscarFabricaMasCercanaQuePuedaFabricarUnModelo() {

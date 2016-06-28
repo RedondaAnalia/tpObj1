@@ -1,7 +1,6 @@
 package tpC;
 
 
-//import java.util.Date;
 import org.joda.time.*;;
 
 public class Auto {

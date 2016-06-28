@@ -20,7 +20,7 @@ public class TestCaseStock {
 	}
 
 	@Test
-	public void test() {
+	public void test() throws NoHayStockException {
 		stock.incrementarStock(fordFiesta2pFull);
 		stock.incrementarStock(fordFiesta2pFull);
 		stock.incrementarStock(fordMustang2pFull);

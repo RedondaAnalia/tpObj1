@@ -92,7 +92,7 @@ public class Participante {
  * @param Cuota
  */
 	public void pagarCuota(Cuota unaCuota) {
-		cuotasPagas.pagar(concesionaria.recibirPago(unaCuota,this));
+		cuotasPagas.pagar(concesionaria.recibirPago(unaCuota));
 	}
 	
 /**

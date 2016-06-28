@@ -136,15 +136,14 @@ public class Concesionaria {
  * Propósito: Emite una cuota para ser pagada
  * @param Participante
  * @return Cuota
+ * @throws TerminoDePagarCuotasException 
  */
-	public Cuota generarCuota(Participante unParticipante){
-		PlanDeAhorro unPlan = unParticipante.getPlan();
-		Integer nroCuota = unParticipante.getCuotasPagas()+1;
-		return this.administracion.imprimirCuota(unPlan, nroCuota);
+	public Cuota generarCuota(Participante unParticipante) throws TerminoDePagarCuotasException {
+		return administracion.imprimirCuota(unParticipante);
 	}
 	
-	public ComprobanteDePago recibirPago(Cuota unaCuota, Participante participante){
-		return new ComprobanteDePago(unaCuota,participante);
+	public ComprobanteDePago recibirPago(Cuota unaCuota){
+		return new ComprobanteDePago(unaCuota);
 	}
 	
 	public void actualizarGastosAdministrativos(double valor){
