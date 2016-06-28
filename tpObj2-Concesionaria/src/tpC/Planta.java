@@ -36,7 +36,10 @@ public class Planta {
 	}
 
 
-	public Auto retirarAutoModelo(ModeloDeAuto unModelo) throws NoHayStockException, NoExisteElMoeloDelAutoException{
+	public Auto retirarAutoModelo(ModeloDeAuto unModelo) throws NoHayStockException, NoExisteElModeloDelAutoException{
+		if (!this.tieneStockModelo(unModelo)){
+			throw new NoExisteElModeloDelAutoException ("El modelo de ese auto no tiene stock");
+		}
 		LinkedList<Auto> listaDeAutos = this.deposito.get(unModelo);
 		this.observerStock.decrementarStock(unModelo);
 		Auto autoARetirar = listaDeAutos.pop();

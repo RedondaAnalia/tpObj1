@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 import org.joda.time.LocalDate;
 
 import java.util.*;
-//Deberia tirar excepcion si no hay Participante para adjudicar!
+
 public class AdjudicacionPorMayorCobertura implements FormaDeAdjudicacion {	
 	
 	public Participante adjudicar(PlanDeAhorro unPlan) throws NoHayParticipantesException{
