@@ -34,19 +34,27 @@ private Planta myPlanta;
 	@Test
 	public void test1_ConsultarDistanciaAOtroPunto(){
 		Coord newCoord = new Coord(10,20);
-		assertTrue(myPlanta.getUbicacion().distance(newCoord) == 10);
+		assertEquals(10, myPlanta.getUbicacion().distance(newCoord),0);
 	}
+	
 	@Test
 	public void test2_agregarModeloYpreguntarSiPuedeFabricar(){
 		myPlanta.puedeFabricarElModelo(fordFiesta4pFull);
 		assertFalse(myPlanta.tieneModelo(fordMustang2pFull));
 		assertTrue(myPlanta.tieneModelo(fordFiesta4pFull));
 	}
+	
 	@Test
-	public void fabricarUnAuto(){
+	public void test3_fabricarUnAuto(){
 		myPlanta.puedeFabricarElModelo(fordFiesta4pFull);
 		myPlanta.fabricarElModelo(fordFiesta4pFull);
 		Mockito.verify(observerStock, Mockito.times(1)).incrementarStock(fordFiesta4pFull);
 		 
+	}
+	
+	@Test(expected= NoExisteElModeloDelAutoException.class)
+	public void test4_testeoDeCapturaDeExcepcion() throws NoExisteElModeloDelAutoException,NoHayStockException{
+		myPlanta.puedeFabricarElModelo(fordFiesta4pFull);
+		myPlanta.retirarAutoModelo(fordFiesta4pFull);
 	}
 }

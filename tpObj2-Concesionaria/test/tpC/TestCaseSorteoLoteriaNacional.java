@@ -15,9 +15,7 @@ public class TestCaseSorteoLoteriaNacional {
 
 	@Test
 	public void test() {
-		assertTrue(0 <= sorteo.primerPremio(10));
-		assertTrue(sorteo.primerPremio(10)<=10);
-		
+		assertEquals(Integer.class,sorteo.primerPremio(9).getClass());
 	}
 
 }

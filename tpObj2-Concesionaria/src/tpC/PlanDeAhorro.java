@@ -107,8 +107,6 @@ public class PlanDeAhorro {
 			}
 		}
 		return aux.porcentajePago();
-		//Ana y/o Pablo. No debería devolver "aux" solamente
-		//No estaría entendiendo el fin del método
 	}
 	
 /**
