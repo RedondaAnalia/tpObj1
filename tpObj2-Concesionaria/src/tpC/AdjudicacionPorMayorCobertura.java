@@ -1,4 +1,4 @@
-package tpC;
+package tpC; 
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 
 import org.joda.time.LocalDate;
 
-import java.util.*;
+import java.util.*; 
 
 public class AdjudicacionPorMayorCobertura implements FormaDeAdjudicacion {	
 	

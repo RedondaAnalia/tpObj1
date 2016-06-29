@@ -59,4 +59,10 @@ public class TestcaseCliente {
 		assertTrue (cliente.getParticipantes().contains(mockParticipante2));
 	}
 		
+	@Test
+	public void test03SuscribirClienteA2PlanDeAhorroYPedirParticipaciones() {
+		cliente.agregarPlanDeAhorro (mockPlan);
+		cliente.agregarPlanDeAhorro (mockPlan2);
+		System.out.println(cliente.getParticipantes());
+	}
 }

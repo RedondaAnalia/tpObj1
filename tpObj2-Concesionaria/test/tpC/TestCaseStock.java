@@ -31,5 +31,12 @@ public class TestCaseStock {
 		assertTrue(stock.getStockDelModelo(fordFiesta2pFull) == 1);
 		assertTrue(stock.getStockDelModelo(fordMustang2pFull) == 2);
 	}
+	
+	@Test (expected = NoHayStockException.class)
+	public void test2_pruebaDeException()throws NoHayStockException{
+		stock.incrementarStock(fordFiesta2pFull);
+		stock.decrementarStock(fordFiesta2pFull);
+		stock.decrementarStock(fordFiesta2pFull);
+	}
 
 }

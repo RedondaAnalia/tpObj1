@@ -17,8 +17,8 @@ public class TestCaseStockConcesionaria {
 	private Planta planta2;
 	@Mock private ModeloDeAuto fordMustang2pFull;
 	@Mock private ModeloDeAuto fordFiesta2pFull;
-	int stockDeFordFiesta = 0;
-	int stockDeFordMustang = 0;
+	int stockDeFordFiesta;
+	int stockDeFordMustang;
 	
 	@Before
 	public void setUp() throws Exception {
