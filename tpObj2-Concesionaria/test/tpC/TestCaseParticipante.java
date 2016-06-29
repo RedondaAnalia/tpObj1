@@ -12,29 +12,27 @@ import static org.mockito.Mockito.*;
 public class TestCaseParticipante {
 	
 	private Participante analiaParticipante;
-	private Participante analiaParticipante2;
 	@Mock private Cliente analiaMock;
-	private Cliente analiaCliente;
 	@Mock private PlanDeAhorro planMock;
 	@Mock private CuotasPagas cuotas; 
 	@Mock private Concesionaria mockConces;
-	private PlanDeAhorro plan;
 	@Mock PlanDePago mockPago;
 	@Mock FormaDeAdjudicacion mockAdj;
 	@Mock ModeloDeAuto mockModeloDeAuto;
+	@Mock Cuota mockCuota;
+	@Mock ComprobanteDePago mockComprobante;
 	
 	@Before
 	public void setUp() throws Exception {
-		analiaCliente= new Cliente("Diaz", "Analia", 3, "calle", "dirmail", 21, 11, 1967, mockConces);
 		analiaMock=mock(Cliente.class);
 		planMock= mock(PlanDeAhorro.class);
 		mockConces=mock(Concesionaria.class);
 		mockPago=mock(PlanDePago.class);
+		mockCuota=mock(Cuota.class);
+		mockComprobante=mock(ComprobanteDePago.class);
 		when(mockPago.cantDeCuotas()).thenReturn(10);
 		when(planMock.cantDeCuotas()).thenReturn(10);
-		plan= new PlanDeAhorro(mockPago, mockAdj, mockModeloDeAuto);
 		analiaParticipante = new Participante(analiaMock, planMock, mockConces);
-		analiaParticipante2= new Participante (analiaCliente,plan,mockConces);
 		MockitoAnnotations.initMocks(this);	
 	}
 
@@ -55,10 +53,22 @@ public class TestCaseParticipante {
 	
 	@Test
 	public void test_getters(){
-		assertEquals(analiaCliente, analiaParticipante2.getCliente());
-		assertEquals(plan, analiaParticipante2.getPlan());
+		analiaMock=mock(Cliente.class);
+		analiaParticipante = new Participante(analiaMock, planMock, mockConces);
+		assertEquals(analiaMock, analiaParticipante.getCliente());
+		assertEquals(planMock, analiaParticipante.getPlan());
 		LocalDate date=new LocalDate();
-		assertEquals(date, analiaParticipante2.getFchInscripcion());
+		assertEquals(date, analiaParticipante.getFchInscripcion());
+		assertEquals((Integer)0,analiaParticipante.getCuotasPagas());
+	}
+	
+	@Test
+	public void test_PagarCuota(){
+		assertEquals((Integer)0,analiaParticipante.getCuotasPagas());
+		when(mockConces.recibirPago(mockCuota)).thenReturn(mockComprobante);
+		analiaParticipante.pagarCuota(mockCuota);
+		assertEquals((Integer)1,analiaParticipante.getCuotasPagas());
+		
 	}
 	
 

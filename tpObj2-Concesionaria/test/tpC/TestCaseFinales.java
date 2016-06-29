@@ -34,13 +34,16 @@ public class TestCaseFinales {
 	private PlanDeAhorro plan11;
 	private Plan100x100 pago1;
 	private ModeloDeAuto mockAuto;
-	
+	private Seguro unSeguro;
+	private AdministracionConcesionaria mockAdministracion;
 
 	@Before
 	public void setUp() throws Exception {
 		fabrica= mock (Fabrica.class);
+		unSeguro=mock (Seguro.class);
+		mockAdministracion= mock (AdministracionConcesionaria.class);
 		adjudicacion= mock(FormaDeAdjudicacion.class);
-		concesionaria= new Concesionaria(fabrica, new Coord(1,1) );
+		concesionaria= new Concesionaria(fabrica, new Coord(1,1),mockAdministracion);
 		parti1= mock(Participante.class);
 		parti2= mock(Participante.class);
 		parti3= mock(Participante.class);

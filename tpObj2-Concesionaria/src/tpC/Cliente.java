@@ -35,18 +35,19 @@ public class Cliente {
 	 * @param Integer (año de nacimiento)
 	 * @param Concesionaria
 	 */
-	//Precond: anioNac debe tener 4 digitos.
-	public Cliente(String apell, String nombr, Integer doc, String direcc,String dirmail,int diaNac,int mesNac, int anioNac,Concesionaria conces){
+	//Precond: añoDeNacimiento debe tener 4 digitos.
+	public Cliente(String suApellido, String suNombre, Integer numDeDNI, String suDireccionPostal, String suMail,
+			int diaDeNacimiento,int mesDeNacimiento, int añoDeNacimiento,Concesionaria laConcesionaria){
 		planes= new ArrayList <PlanDeAhorro>();
 		participantes = new ArrayList<Participante>();
-		apellido=apell;
-		nombre=nombr;
-		dni=doc;
-		direccion= direcc;
-		mail= dirmail;
-		fchNacimiento= new LocalDate(anioNac,mesNac,diaNac);
+		apellido=suApellido;
+		nombre=suNombre;
+		dni=numDeDNI;
+		direccion= suDireccionPostal;
+		mail=suMail;
+		fchNacimiento= new LocalDate(añoDeNacimiento,mesDeNacimiento,diaDeNacimiento);
 		fchIngreso= new LocalDate();
-		concesionaria=conces;
+		concesionaria=laConcesionaria;
 	}
 	
 //GETTERS.
@@ -110,9 +111,19 @@ public class Cliente {
 	public String getNombre(){
 		return nombre;
 	}
+	
+/**
+ * Propósito: retorna el apellido del cliente.
+ * @return String
+ */
 	public String getApellido() {	
 		return apellido;
 	}
+
+/**
+ * Propósito: Retorna la lista de planes de ahorro a los cuales esta suscripto el cliente
+ * @return ArrayList<PlanDeAhorro>
+ */
 	
 	public ArrayList <PlanDeAhorro> getPlanes() {
 		return planes;
@@ -120,17 +131,14 @@ public class Cliente {
 
 	
 //METODOS.
-	public void agregarPlanDeAhorro(PlanDeAhorro unPlan) {
-		planes.add(unPlan);
-		Participante nuevoParticipante = new Participante(this , unPlan, concesionaria);
+/**
+ * Propósito: Agrega un nuevo Plan De Ahorro al cliente.
+ */
+	public void agregarPlanDeAhorro(PlanDeAhorro unPlanDeAhorro) {
+		planes.add(unPlanDeAhorro);
+		Participante nuevoParticipante = new Participante(this , unPlanDeAhorro, concesionaria);
 		participantes.add(nuevoParticipante);
 	}
-
-	
-	public void addParticipante(Participante unParticipante) {
-		participantes.add(unParticipante);	
-	}
-	
 	
 
 }

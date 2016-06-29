@@ -22,6 +22,11 @@ public class Planta {
 	public LinkedList<Auto> stockDelModelo(ModeloDeAuto unModelo) {
 		return this.deposito.get(unModelo);
 	}
+	
+	//////VERLO CON PAAABLOOOO!!!!!!
+	public Integer cantDelModelo(ModeloDeAuto unModelo) {
+		return this.deposito.get(unModelo).size();
+	}
 
 
 	private void autoFabricado(Auto unAuto) {

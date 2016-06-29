@@ -65,7 +65,8 @@ public class PlanDeAhorro {
 		return this.participantes.size();
 	}
 
-	/**
+
+/**
  * Propósito: Retorna la cantidad de participantes suscriptos al plan	
  * @return Integer
  */
@@ -81,6 +82,7 @@ public class PlanDeAhorro {
 	public Participante adjudicar() throws NoHayParticipantesException{
 		return adjudicacion.adjudicar(this);
 	}
+
 
 /**
  * Propósito: Setea el número de grupo	

@@ -3,17 +3,24 @@ package tpC;
 
 public class AdjudicacionPorSorteo implements FormaDeAdjudicacion{
 	SorteoLoteriaNacional sorteo;
-	
-	public AdjudicacionPorSorteo(SorteoLoteriaNacional azar){
-		sorteo=azar;
+
+/**
+ * Propósito: Crea una instancia de Adjudicacion Por Sorteo	
+ * @param Sorteo Loteria Nacional
+ */
+	public AdjudicacionPorSorteo(SorteoLoteriaNacional unSorteo){
+		sorteo=unSorteo;
 	}
-	
-	 
-	public Participante adjudicar(PlanDeAhorro unPlan) throws NoHayParticipantesException{
-		if (unPlan.cantDeParticipantes()==0){
+
+/**
+ * Propósito: Adjudica a un participante por un numero al azar.
+ * @return Participante	 
+ */
+	public Participante adjudicar(PlanDeAhorro unPlanDeAhorro) throws NoHayParticipantesException{
+		if (unPlanDeAhorro.cantDeParticipantes()==0){
 			throw new NoHayParticipantesException("No hay participantes");
 		}
-		return unPlan.getParticipantes().get(sorteo.primerPremio(unPlan.cantDeParticipantes()));
+		return unPlanDeAhorro.getParticipantes().get(sorteo.primerPremio(unPlanDeAhorro.cantDeParticipantes()));
 	}
 
 

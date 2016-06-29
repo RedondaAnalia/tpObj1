@@ -15,30 +15,19 @@ public class Participante {
 	private LocalDate fchInscripcion;
 	private Concesionaria concesionaria;
 
-/**
- * Propósito: Registrar la participación de un cliente en un plan de ahorro	
- * Precond: Este constructor es solo para testear, tiene 100 cuotas a pagar 
- * @param Cliente
- */
-/*	public Participante(Cliente unCliente){
-		
-		cliente = unCliente;
-		nroDeOrden = new Integer(0);
-		cuotasPagas = new CuotasPagas(100); //este valor esta puesto solo para testear
-	}
-*/	
+	
 /**
  * Propósito: Registrar la participación de un cliente en un plan de ahorro		
  * @param Cliente
  * @param PlanDeAhorro
  * @param Concesionaria
  */
-	public Participante(Cliente unCliente, PlanDeAhorro unPlan, Concesionaria conces) {
+	public Participante(Cliente unCliente, PlanDeAhorro unPlanDeAhorro, Concesionaria unaConcesionaria) {
 		cliente = unCliente;
-		this.adquirirPlanDeAhorro(unPlan);
-		cuotasPagas = new CuotasPagas(unPlan.cantDeCuotas());
+		this.adquirirPlanDeAhorro(unPlanDeAhorro);
+		cuotasPagas = new CuotasPagas(unPlanDeAhorro.cantDeCuotas());
 		fchInscripcion = new LocalDate();
-		concesionaria = conces;
+		concesionaria = unaConcesionaria;
 	}
 	
 /**
@@ -77,13 +66,13 @@ public class Participante {
  * Propósito: Inscribir al participante en un plan de ahorro determinado	
  * @param PlanDeAhorro
  */
-	public void adquirirPlanDeAhorro(PlanDeAhorro unPlan) {
+	public void adquirirPlanDeAhorro(PlanDeAhorro unPlanDeAhorro) {
 		/*
 		 * Agrega el participante a la lista de participantes
 		 * del plan y este le devuelve el nro de Orden...
 		 */
-		this.nroDeOrden = unPlan.inscribirParticipante(this);
-		this.planSuscripto = unPlan;
+		this.nroDeOrden = unPlanDeAhorro.inscribirParticipante(this);
+		this.planSuscripto = unPlanDeAhorro;
 		this.fchInscripcion= new LocalDate();
 	}
 

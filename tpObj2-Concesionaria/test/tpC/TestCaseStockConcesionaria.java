@@ -19,16 +19,18 @@ public class TestCaseStockConcesionaria {
 	@Mock private ModeloDeAuto fordFiesta2pFull;
 	Integer stockDeFordFiesta;
 	Integer stockDeFordMustang;
+	@Mock private AdministracionConcesionaria mockAdministracion;
 	
 	@Before
 	public void setUp() throws Exception {
 		MockitoAnnotations.initMocks(this);
 		stockDeFordFiesta = 0;
 		stockDeFordMustang = 0;
+		mockAdministracion= mock(AdministracionConcesionaria.class);
 		stock = new Stock();
 		fabrica = mock(Fabrica.class);
 		when(fabrica.getStock()).thenReturn(stock);
-		carOne = new Concesionaria(fabrica, new Coord(1, 1));
+		carOne = new Concesionaria(fabrica, new Coord(1, 1),mockAdministracion);
 		planta1 = new Planta(new Coord(1,2), stock);
 		planta2 = new Planta(new Coord(2,1), stock);
 	}

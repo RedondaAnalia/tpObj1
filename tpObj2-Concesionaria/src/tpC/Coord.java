@@ -13,9 +13,9 @@ public class Coord {
 	 * @param Integer
 	 * @param Integer
 	 */
-	public Coord(Integer x, Integer y){
-		this.coordX = x;
-		this.coordY = y;
+	public Coord(Integer ejeX, Integer ejeY){
+		this.coordX = ejeX;
+		this.coordY = ejeY;
 	}
 
 	/**
@@ -23,8 +23,8 @@ public class Coord {
 	 * @param Coord
 	 * @return double
 	 */
-	public double distance(Coord secondCoord){
-		Coord result = restar(this, secondCoord);
+	public double distance(Coord segundaCoord){
+		Coord result = restar(this, segundaCoord);
 		double distance = Math.sqrt(Math.pow(result.coordX, 2) + Math.pow(result.coordY, 2));
 		return distance;
 	}
@@ -35,8 +35,8 @@ public class Coord {
 	 * @param Coord
 	 * @return Coord
 	 */
-	private Coord restar(Coord firstCoord, Coord secondCoord) {
-		Coord newCoord = new Coord(firstCoord.coordX-secondCoord.coordX, firstCoord.coordY - secondCoord.coordY);
-		return newCoord;
+	private Coord restar(Coord primeraCoord, Coord segundaCoord) {
+		Coord nuevaCoord = new Coord(primeraCoord.coordX-segundaCoord.coordX, primeraCoord.coordY - segundaCoord.coordY);
+		return nuevaCoord;
 	}
 }

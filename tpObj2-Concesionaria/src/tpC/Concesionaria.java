@@ -18,16 +18,17 @@ public class Concesionaria {
 
 /**
  * Propósito: Administrar clientes y planes de ahorro para la adquisición de autos	
- * @param fab
- * @param coordenada
+ * @param unaFabrica
+ * @param unaUbicacion
+ * @param unaAdministracion
  */
-	public Concesionaria(Fabrica fab, Coord coordenada) {
-		fabrica = fab;
+	public Concesionaria(Fabrica unaFabrica, Coord unaUbicacion, AdministracionConcesionaria unaAdministracion) {
+		fabrica = unaFabrica;
 		clientes = new ArrayList<Cliente>();
 		planes = new ArrayList<PlanDeAhorro>();
-		ubicacion = coordenada;
-		stock = fab.getStock();
-		administracion = new AdministracionConcesionaria(0, new Seguro(0));
+		ubicacion = unaUbicacion;
+		stock = fabrica.getStock();
+		administracion = unaAdministracion;
 	}
 	
 /**
@@ -49,10 +50,10 @@ public class Concesionaria {
  * @param localDate (mes de nacimiento)
  * @param localDate (año de nacimiento)
  */
-	public void agregarCliente(String apell, String nombr, Integer doc, String dirPostal, String dirMail,
-			Integer diaNac, Integer mesNac, Integer anioNac) {
-		clientes.add(new Cliente(apell, nombr, doc, dirPostal, dirMail, diaNac, mesNac, anioNac, this));
+	public void agregarCliente(String suApellido, String suNombre, int numDeDNI, String suDireccionPostal, String suMail,int diaDeNacimiento,int mesDeNacimiento, int añoDeNacimiento) {
+		clientes.add(new Cliente(suApellido, suNombre, numDeDNI, suDireccionPostal, suMail, diaDeNacimiento, mesDeNacimiento, añoDeNacimiento, this));
 	}
+	
 	
 /**
  * Propósito: Retorna el stock que hay del modelo requerido en la fábrica
@@ -62,6 +63,7 @@ public class Concesionaria {
 	public Integer getStockDelModelo(ModeloDeAuto unModelo) {
 		return stock.getStockDelModelo(unModelo);
 	}
+	
 	
 /**
  * Propósito: Retorna la lista de clientes de la concesionaria
@@ -75,9 +77,9 @@ public class Concesionaria {
  * Propósito: Agregar un nuevo plan de ahorro a la concesionaria
  * @param PlanDeAhorro
  */
-	public void agregarPlan(PlanDeAhorro unPlan) {
-		this.planes.add(unPlan);
-		unPlan.setGrupo(planes.size());
+	public void agregarPlan(PlanDeAhorro unPlanDeAhorro) {
+		this.planes.add(unPlanDeAhorro);
+		unPlanDeAhorro.setGrupo(planes.size());
 	}
 	
 /**
@@ -88,21 +90,6 @@ public class Concesionaria {
 		return this.planes;
 	}
 
-/**
- * Propósito: Adjudicar todos los planes de ahorro 
- * @return HashMap<Participante, Integer>
- * @throws NoHayParticipantesException
- */
-	public HashMap<Participante, Integer> adjudicarTodosLosPlanes() throws NoHayParticipantesException {
-		HashMap<Participante, Integer> ret = new HashMap<Participante, Integer>();
-		for (PlanDeAhorro p : planes) {
-			ret.put(p.adjudicar(), p.getGrupo());
-			return ret;
-		}
-		return ret;
-
-	}
-	
 /**
  * Propósito: Calcular cuales son los diez planes de ahorro 
  * con mayor cantidad de participantes 
@@ -128,8 +115,8 @@ public class Concesionaria {
  * @param double
  * @return double
  */
-	public double generarValorDeCuota(double alicuota){
-		return administracion.calcularCuota(alicuota);
+	public double generarValorDeCuota(Participante unParticipante){
+		return administracion.calcularCuota(unParticipante);
 	}
 	
 /**
@@ -142,16 +129,15 @@ public class Concesionaria {
 		return administracion.imprimirCuota(unParticipante);
 	}
 
-	
+
+/**
+ * Propósito: Emite un comprobante de pago.
+ * @param Cuota
+ * @return Comprobante De Pago
+ */
+
+		
 	public ComprobanteDePago recibirPago(Cuota unaCuota){
-		return new ComprobanteDePago(unaCuota);
-	}
-	
-	public void actualizarGastosAdministrativos(double valor){
-		administracion.setGastosAdmin(valor);
-	}
-	
-	public void cambiarSeguro(Seguro nuevoSeguro){
-		administracion.recategorizarSeguro(nuevoSeguro);
-	}
+		return administracion.recibirPago(unaCuota);
+	}	
 }

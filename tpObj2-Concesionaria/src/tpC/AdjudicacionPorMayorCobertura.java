@@ -11,16 +11,16 @@ import java.util.*;
 
 public class AdjudicacionPorMayorCobertura implements FormaDeAdjudicacion {	
 	
-	public Participante adjudicar(PlanDeAhorro unPlan) throws NoHayParticipantesException{
+	public Participante adjudicar(PlanDeAhorro unPlanDeAhorro) throws NoHayParticipantesException{
 		
-		if (unPlan.cantDeParticipantes()==0){
+		if (unPlanDeAhorro.cantDeParticipantes()==0){
 			throw new NoHayParticipantesException("No hay participantes");
 		}
 		
 		//Se filtra como está por mayor cobertura...
-		double max= unPlan.mayorPorcentajeDePago();
+		double max= unPlanDeAhorro.mayorPorcentajeDePago();
 		List<Participante> participantesFiltrados= new ArrayList<Participante>();
-		participantesFiltrados= unPlan.getParticipantes().stream().filter(participante -> participante.porcentajePago()== max).collect(Collectors.toList());
+		participantesFiltrados= unPlanDeAhorro.getParticipantes().stream().filter(participante -> participante.porcentajePago()== max).collect(Collectors.toList());
 		if (participantesFiltrados.size()==1){
 			return participantesFiltrados.get(0);
 		}

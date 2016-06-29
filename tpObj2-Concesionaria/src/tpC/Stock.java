@@ -11,21 +11,21 @@ public class Stock {
 		stock = new HashMap<ModeloDeAuto, Integer>();
 	}
 
-	public Integer getStockDelModelo(ModeloDeAuto aModelo) {
-		return stock.get(aModelo);
+	public Integer getStockDelModelo(ModeloDeAuto unModelo) {
+		return stock.get(unModelo);
 	}
 	
-	public void incrementarStock(ModeloDeAuto aModelo){
-		if(!stock.containsKey(aModelo))
-			this.agregarModelo(aModelo);
-		stock.put(aModelo, stock.get(aModelo)+1);
+	public void incrementarStock(ModeloDeAuto unModelo){
+		if(!stock.containsKey(unModelo))
+			this.agregarModelo(unModelo);
+		stock.put(unModelo, stock.get(unModelo)+1);
 	}
 
-	public void decrementarStock(ModeloDeAuto aModelo)throws NoHayStockException {
-		if(this.stock.get(aModelo)==0){
+	public void decrementarStock(ModeloDeAuto unModelo)throws NoHayStockException {
+		if(this.stock.get(unModelo)==0){
 			throw new NoHayStockException("No hay stock del modelo");
 		}
-		stock.put(aModelo, stock.get(aModelo)-1);
+		stock.put(unModelo, stock.get(unModelo)-1);
 	}
 	
 	public void agregarModelo(ModeloDeAuto unModelo){

@@ -23,6 +23,11 @@ public class Seguro {
 		return valorSeguro;
 	}
 	
+/**
+ * Propósito: Setear un nuevo valor en costos de seguro
+ * @param valor
+ */
+	
 	public void setValorSeguro(double valor){
 		valorSeguro = valor;
 	}

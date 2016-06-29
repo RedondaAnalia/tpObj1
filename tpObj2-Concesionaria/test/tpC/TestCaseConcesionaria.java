@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import static org.mockito.Mockito.*;
 
@@ -20,19 +21,23 @@ public class TestCaseConcesionaria {
 	@Mock private Coord ubicacion;
 	@Mock private AdministracionConcesionaria adminMock;
 	@Mock private Seguro unSeguro;
+	@Mock private Participante mockParticipante;
+	@Mock private Cuota mockCuota;
 	
 	@Before
 	public void setUp() throws Exception {
 			
 		peugeot = mock(Fabrica.class);
+		mockCuota= mock(Cuota.class);
 		ubicacion= mock (Coord.class);
-		los3Fanaticos= new Concesionaria(peugeot,ubicacion);
+		los3Fanaticos= new Concesionaria(peugeot, ubicacion, adminMock);
 		pabloMock = mock(Cliente.class);
 		demianMock = mock(Cliente.class);
 		anitaMock = mock(Cliente.class);
 		plan7030Mock = mock(PlanDeAhorro.class);
 		plan100Mock = mock(PlanDeAhorro.class);
 		unSeguro = mock(Seguro.class);
+		mockParticipante=mock(Participante.class);
 		MockitoAnnotations.initMocks(this);		
 	}
 	
@@ -61,19 +66,31 @@ public class TestCaseConcesionaria {
 
 		peugeot = mock(Fabrica.class);
 		ubicacion= mock (Coord.class);
-		los3Fanaticos= new Concesionaria(peugeot,ubicacion);
+		los3Fanaticos= new Concesionaria(peugeot,ubicacion,adminMock);
 		assertEquals(los3Fanaticos.getUbicacion(),ubicacion);
 	}
 	
 	@Test
 	public void test4_GenerarValorDeCuota(){
-		when(unSeguro.cuotaSeguro()).thenReturn(250.0);
-		los3Fanaticos.cambiarSeguro(unSeguro);
-		los3Fanaticos.actualizarGastosAdministrativos(150.0);
-		double valorCuotaTest = los3Fanaticos.generarValorDeCuota(100); //el 100 es un valor de alicuota
-			
-		assertEquals(500.0, valorCuotaTest, 0.0);
+		when(adminMock.calcularCuota(mockParticipante)).thenReturn(50.0);
+		los3Fanaticos= new Concesionaria(peugeot, ubicacion, adminMock);
+		los3Fanaticos.generarValorDeCuota(mockParticipante);
+		Mockito.verify(adminMock,Mockito.times(1)).calcularCuota(mockParticipante);
 	}
 	
+	@Test
+	public void test5_generarCuota() throws TerminoDePagarCuotasException{
+		los3Fanaticos= new Concesionaria(peugeot, ubicacion, adminMock);
+		when(adminMock.imprimirCuota(mockParticipante)).thenReturn(mockCuota);
+		los3Fanaticos.generarCuota(mockParticipante);
+		Mockito.verify(adminMock,Mockito.times(1)).imprimirCuota(mockParticipante);
+	}
+	
+	@Test
+	public void test6_EmisionDePagos(){
+		los3Fanaticos= new Concesionaria(peugeot, ubicacion, adminMock);
+		los3Fanaticos.recibirPago(mockCuota);
+		Mockito.verify(adminMock,Mockito.times(1)).recibirPago(mockCuota);
+	}
 }
 

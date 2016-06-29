@@ -5,27 +5,34 @@ import org.joda.time.*;;
 
 public class Auto {
 	private ModeloDeAuto modelo;
-	private LocalDate categoria;
+	private Integer categoria;
 	
-	public Auto(ModeloDeAuto modelo){
-		this.setModelo(modelo);
-		this.setCategoria(new LocalDate());
+/**
+ * Propósito: Crea una instancia de Auto, a partir de un ModeloDeAuto
+ * @param modelo
+ * @return Auto
+ */
+	public Auto(ModeloDeAuto unModelo){
+		modelo= unModelo;
+		categoria=((new LocalDate()).getYear());
 	}
+	
 
-	public LocalDate getCategoria() {
+/**
+ * Propósito: Devuelve el año de fabricación del auto.
+ * @return Integer (Año de fabricación)
+ */
+	public Integer getCategoria() {
 		return categoria;
 	}
-
-	public void setCategoria(LocalDate categoria) {
-		this.categoria = categoria;
-	}
-
+	
+/**
+ * Propósito: Devuelve el Modelo Del Auto.
+ * @return ModeloDeAuto
+ */
 	public ModeloDeAuto getModelo() {
 		return modelo;
 	}
 
-	public void setModelo(ModeloDeAuto modelo) {
-		this.modelo = modelo;
-	}
 }
 

@@ -12,14 +12,17 @@ public class TestCaseAdministracionConcesionaria {
 
 	AdministracionConcesionaria administracion;
 	@Mock private Seguro seguroMock;
+	@Mock private Seguro seguroMock2;
 	@Mock private PlanDeAhorro planMock;
 	@Mock ModeloDeAuto modeloMock;
 	@Mock Participante unParticipante;
+	@Mock Cuota mockCuota;
 	
 	@Before
 	public void setUp() throws Exception {
 		MockitoAnnotations.initMocks(this);
 		unParticipante = mock(Participante.class);
+		mockCuota=mock(Cuota.class);
 		planMock = mock(PlanDeAhorro.class);
 		seguroMock = mock(Seguro.class);
 		modeloMock = mock(ModeloDeAuto.class);
@@ -29,7 +32,12 @@ public class TestCaseAdministracionConcesionaria {
 	@Test
 	public void test01_CargosDeAdministracionYSeguros() {
 		when(seguroMock.cuotaSeguro()).thenReturn(250.0);
-		assertEquals(administracion.calcularCuota(1000.0), 1750.0, 0.0);
+		when(unParticipante.getPlan()).thenReturn(planMock);
+		when(planMock.valorActualAlicuota()).thenReturn((double)1000);
+		assertEquals(administracion.calcularCuota(unParticipante), 1750.0, 0.0);
+		administracion.recategorizarSeguro(seguroMock2);
+		when(seguroMock2.cuotaSeguro()).thenReturn(350.0);
+		assertEquals(administracion.calcularCuota(unParticipante), 1850.0, 0.0);	
 	}
 	
 	@Test
@@ -58,6 +66,11 @@ public class TestCaseAdministracionConcesionaria {
 		when(unParticipante.getCuotasPagas()).thenReturn(10);
 		when(planMock.cantDeCuotas()).thenReturn(10);
 		administracion.imprimirCuota(unParticipante);
+	}
+	
+	@Test
+	public void test05_EmisionDeRecibos(){
+		assertEquals(ComprobanteDePago.class,administracion.recibirPago(mockCuota).getClass());
 	}
 
 }

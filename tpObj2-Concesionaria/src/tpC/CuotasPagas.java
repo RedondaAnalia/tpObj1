@@ -12,13 +12,15 @@ public class CuotasPagas {
 	private Integer cantidadDeCuotasAPagar;
 	
 /**
- * Propósito: Registrar las cuotas pagas 	
+ * Propósito: Registrar las cuotas pagas
+ * @return CuotasPagas 	
  */
-	public CuotasPagas(Integer cantDeCtsAPagar){
+	public CuotasPagas(Integer cantidadDeCuotasDelPlan){
 		cuotas = new ArrayList<ComprobanteDePago>();
 		cantidadCuotasPagas = 0;
-		cantidadDeCuotasAPagar = cantDeCtsAPagar;
+		cantidadDeCuotasAPagar = cantidadDeCuotasDelPlan;
 	}
+	
 	
 /**
  * Propósito: Retorna las cuotas pagas	
@@ -28,6 +30,7 @@ public class CuotasPagas {
 		return cuotas;
 	}
 	
+	
 /**
  * Propósito: Retorna la cantidad de cuotas pagas	
  * @return Integer
@@ -36,13 +39,15 @@ public class CuotasPagas {
 		return cantidadCuotasPagas;
 	}
 	
-	/**
-	 * Propósito: Retorna la cantidad de cuotas del plan	
-	 * @return Integer
-	 */
-		public Integer getCantCuotasAPagar(){
-			return cantidadDeCuotasAPagar;
-		}
+
+/**
+ * Propósito: Retorna la cantidad de cuotas del plan	
+ * @return Integer
+ */
+	public Integer getCantCuotasAPagar(){
+		return cantidadDeCuotasAPagar;
+	}
+	
 	
 /**
  * Propósito: Retorna el porcentaje pago del plan	
@@ -54,6 +59,7 @@ public class CuotasPagas {
 		return 100.0*(cuotaspagas/cuotasimpagas);
 	}
 
+	
 /**
  * Propósito: Registra el pago de una cuota	
  * @param ComprobanteDePago
