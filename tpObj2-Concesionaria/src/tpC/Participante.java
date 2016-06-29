@@ -20,12 +20,13 @@ public class Participante {
  * Precond: Este constructor es solo para testear, tiene 100 cuotas a pagar 
  * @param Cliente
  */
-	public Participante(Cliente unCliente){
+/*	public Participante(Cliente unCliente){
 		
 		cliente = unCliente;
 		nroDeOrden = new Integer(0);
 		cuotasPagas = new CuotasPagas(100); //este valor esta puesto solo para testear
 	}
+*/	
 /**
  * Propósito: Registrar la participación de un cliente en un plan de ahorro		
  * @param Cliente
