@@ -22,23 +22,14 @@ public class PlanDeAhorro {
  * 			  su forma de pago y adjudicación del mismo	
  * @param PlanDePago
  */
-	public PlanDeAhorro(PlanDePago p){
+	public PlanDeAhorro(PlanDePago p, FormaDeAdjudicacion adj, ModeloDeAuto modeloDeAuto){
 		participantes = new ArrayList<Participante>();
 		nroGrupo = new Integer(0);
 		planDePago = p;
-		//adjudicacion = new FormaDeAdjudicacion();
-		modeloAuto = new ModeloDeAuto();
+		adjudicacion = adj;
+		modeloAuto = modeloDeAuto;
 	}
 	
-/**
- * Propósito: Retorna la cantidad de participantes inscriptos al plan 	
- * @param Participante
- * @return Integer
- */
-	public Integer inscribirParticipante(Participante unParticipante) {
-		this.participantes.add(unParticipante);
-		return this.participantes.size();
-	}
 	
 /**
  * Propósito: Retorna la lista de participantes inscriptos en el plan	
@@ -63,8 +54,18 @@ public class PlanDeAhorro {
 	public Integer cantDeCuotas() {
 		return planDePago.cantDeCuotas();
 	}
-		
+
 /**
+ * Propósito: Retorna la cantidad de participantes inscriptos al plan 	
+ * @param Participante
+ * @return Integer
+ */
+	public Integer inscribirParticipante(Participante unParticipante) {
+		this.participantes.add(unParticipante);
+		return this.participantes.size();
+	}
+
+	/**
  * Propósito: Retorna la cantidad de participantes suscriptos al plan	
  * @return Integer
  */
@@ -85,8 +86,8 @@ public class PlanDeAhorro {
  * Propósito: Setea el número de grupo	
  * @param Integer
  */
-	public void setGrupo(Integer size) {
-		nroGrupo=size;
+	public void setGrupo(Integer numeroDeGrupo) {
+		nroGrupo=numeroDeGrupo;
 		
 	}
 	

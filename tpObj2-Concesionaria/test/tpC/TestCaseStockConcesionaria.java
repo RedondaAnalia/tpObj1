@@ -17,8 +17,8 @@ public class TestCaseStockConcesionaria {
 	private Planta planta2;
 	@Mock private ModeloDeAuto fordMustang2pFull;
 	@Mock private ModeloDeAuto fordFiesta2pFull;
-	int stockDeFordFiesta;
-	int stockDeFordMustang;
+	Integer stockDeFordFiesta;
+	Integer stockDeFordMustang;
 	
 	@Before
 	public void setUp() throws Exception {
@@ -45,8 +45,8 @@ public class TestCaseStockConcesionaria {
 		planta2.fabricarElModelo(fordFiesta2pFull);
 		stockDeFordFiesta = planta1.stockDelModelo(fordFiesta2pFull).size() + planta2.stockDelModelo(fordFiesta2pFull).size();
 		stockDeFordMustang = planta1.stockDelModelo(fordMustang2pFull).size() + planta2.stockDelModelo(fordMustang2pFull).size();
-		assertTrue(carOne.getStockDelModelo(fordFiesta2pFull)== stockDeFordFiesta);
-		assertTrue(carOne.getStockDelModelo(fordMustang2pFull)== stockDeFordMustang);
+		assertEquals(carOne.getStockDelModelo(fordFiesta2pFull),  stockDeFordFiesta);
+		assertEquals(carOne.getStockDelModelo(fordMustang2pFull), stockDeFordMustang);
 	}
 
 }

@@ -8,6 +8,7 @@ import static org.mockito.Mockito.*;
 
 public class TestCaseFinales {
 
+	private FormaDeAdjudicacion adjudicacion;
 	private Concesionaria concesionaria;
 	private Fabrica fabrica;
 	private Participante parti1;
@@ -32,11 +33,13 @@ public class TestCaseFinales {
 	private PlanDeAhorro plan10;
 	private PlanDeAhorro plan11;
 	private Plan100x100 pago1;
+	private ModeloDeAuto mockAuto;
 	
 
 	@Before
 	public void setUp() throws Exception {
 		fabrica= mock (Fabrica.class);
+		adjudicacion= mock(FormaDeAdjudicacion.class);
 		concesionaria= new Concesionaria(fabrica, new Coord(1,1) );
 		parti1= mock(Participante.class);
 		parti2= mock(Participante.class);
@@ -48,19 +51,19 @@ public class TestCaseFinales {
 		parti8= mock(Participante.class);
 		parti9= mock(Participante.class);
 		parti10= mock(Participante.class);
+		mockAuto= mock (ModeloDeAuto.class);
 		pago1= new Plan100x100(6);
-		plan1= new PlanDeAhorro(pago1);
-		plan2= new PlanDeAhorro(pago1);
-		plan3= new PlanDeAhorro(pago1);
-		plan4= new PlanDeAhorro(pago1);
-		plan5= new PlanDeAhorro(pago1);
-		plan6= new PlanDeAhorro(pago1);
-		plan7= new PlanDeAhorro(pago1);
-		plan8= new PlanDeAhorro(pago1);
-		plan9= new PlanDeAhorro(pago1);
-		plan10= new PlanDeAhorro(pago1);
-		plan11= new PlanDeAhorro(pago1);
-		
+		plan1= new PlanDeAhorro(pago1,adjudicacion,mockAuto);
+		plan2= new PlanDeAhorro(pago1,adjudicacion,mockAuto);
+		plan3= new PlanDeAhorro(pago1,adjudicacion,mockAuto);
+		plan4= new PlanDeAhorro(pago1,adjudicacion,mockAuto);
+		plan5= new PlanDeAhorro(pago1,adjudicacion,mockAuto);
+		plan6= new PlanDeAhorro(pago1,adjudicacion,mockAuto);
+		plan7= new PlanDeAhorro(pago1,adjudicacion,mockAuto);
+		plan8= new PlanDeAhorro(pago1,adjudicacion,mockAuto);
+		plan9= new PlanDeAhorro(pago1,adjudicacion,mockAuto);
+		plan10= new PlanDeAhorro(pago1,adjudicacion,mockAuto);
+		plan11= new PlanDeAhorro(pago1,adjudicacion,mockAuto);
 	}
 
 	@Test
