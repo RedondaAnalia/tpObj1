@@ -45,8 +45,8 @@ public class TestCaseStockConcesionaria {
 		planta1.fabricarElModelo(fordFiesta2pFull);
 		planta2.fabricarElModelo(fordMustang2pFull);
 		planta2.fabricarElModelo(fordFiesta2pFull);
-		stockDeFordFiesta = planta1.stockDelModelo(fordFiesta2pFull).size() + planta2.stockDelModelo(fordFiesta2pFull).size();
-		stockDeFordMustang = planta1.stockDelModelo(fordMustang2pFull).size() + planta2.stockDelModelo(fordMustang2pFull).size();
+		stockDeFordFiesta = planta1.lstDeAutosDelModelo(fordFiesta2pFull).size() + planta2.lstDeAutosDelModelo(fordFiesta2pFull).size();
+		stockDeFordMustang = planta1.lstDeAutosDelModelo(fordMustang2pFull).size() + planta2.lstDeAutosDelModelo(fordMustang2pFull).size();
 		assertEquals(carOne.getStockDelModelo(fordFiesta2pFull),  stockDeFordFiesta);
 		assertEquals(carOne.getStockDelModelo(fordMustang2pFull), stockDeFordMustang);
 	}

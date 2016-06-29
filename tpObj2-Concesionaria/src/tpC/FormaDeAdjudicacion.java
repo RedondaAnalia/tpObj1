@@ -1,3 +1,6 @@
+/**
+ * @author Anita - Demian
+ */
 package tpC;
 
 public interface FormaDeAdjudicacion {

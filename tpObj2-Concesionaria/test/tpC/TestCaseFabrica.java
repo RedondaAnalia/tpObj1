@@ -60,9 +60,9 @@ public class TestCaseFabrica {
 		LinkedList<Auto> theList2 = new LinkedList<Auto>();
 		theList2.add(fiesta4pF3);
 		LinkedList<Auto> theList3 = new LinkedList<Auto>();
-		when(plantaPacheco.stockDelModelo(fordFiesta4pFull)).thenReturn(theList1);
-		when(plantaVarela.stockDelModelo(fordFiesta4pFull)).thenReturn(theList2);
-		when(plantaPuertoMadryn.stockDelModelo(fordFiesta4pFull)).thenReturn(theList3);
+		when(plantaPacheco.lstDeAutosDelModelo(fordFiesta4pFull)).thenReturn(theList1);
+		when(plantaVarela.lstDeAutosDelModelo(fordFiesta4pFull)).thenReturn(theList2);
+		when(plantaPuertoMadryn.lstDeAutosDelModelo(fordFiesta4pFull)).thenReturn(theList3);
 		when(los3fanaticos.getUbicacion()).thenReturn(new Coord(1000, 5473));
 		when(plantaVarela.getUbicacion()).thenReturn(new Coord(1000, 1473));
 		when(plantaPuertoMadryn.getUbicacion()).thenReturn(new Coord(3234, 1473));

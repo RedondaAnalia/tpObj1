@@ -64,7 +64,7 @@ private Planta myPlanta;
 		myPlanta.fabricarElModelo(fordFiesta4pFull);
 		myPlanta.fabricarElModelo(fordFiesta4pFull);
 		myPlanta.retirarAutoModelo(fordFiesta4pFull);
-		assertEquals((Integer)1,myPlanta.cantDelModelo(fordFiesta4pFull));
+		assertEquals((Integer)1,myPlanta.cantDeAutosDelModelo(fordFiesta4pFull));
 		
 	}
 }

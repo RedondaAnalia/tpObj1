@@ -71,7 +71,7 @@ public class AdministracionConcesionaria {
 /**
  * Propósito: Emite un comprobante de pago.
  * @param Cuota
- * @return Comprobante De Pago
+ * @return ComprobanteDePago
  */
 	public ComprobanteDePago recibirPago(Cuota unaCuota){
 		return new ComprobanteDePago(unaCuota);

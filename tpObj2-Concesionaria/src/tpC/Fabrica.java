@@ -1,3 +1,6 @@
+/**
+ * @author Pablo
+ */
 package tpC;
 
 import java.util.LinkedList;
@@ -56,7 +59,7 @@ public class Fabrica {
  */
 	
 	public LinkedList<Auto> buscarStockEnFabricaDeLaPlanta(Planta unaPlanta, ModeloDeAuto unModeloDeAuto) {
-			return unaPlanta.stockDelModelo(unModeloDeAuto);
+			return unaPlanta.lstDeAutosDelModelo(unModeloDeAuto);
 	}
 	
 /**

@@ -1,3 +1,6 @@
+/**
+ *@author Anita
+ */
 package tpC;
 
 public class NoHayStockException extends Exception {

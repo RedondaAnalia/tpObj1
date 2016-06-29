@@ -1,3 +1,6 @@
+/**
+ *@author Anita
+ */
 package tpC; 
 
 import java.util.ArrayList;
@@ -11,6 +14,11 @@ import java.util.*;
 
 public class AdjudicacionPorMayorCobertura implements FormaDeAdjudicacion {	
 	
+	/**
+	 * Propósito: Adjudicar un plan de ahorro específico.
+	 * @param PlanDeAhorro
+	 * @return Participante
+	 */
 	public Participante adjudicar(PlanDeAhorro unPlanDeAhorro) throws NoHayParticipantesException{
 		
 		if (unPlanDeAhorro.cantDeParticipantes()==0){

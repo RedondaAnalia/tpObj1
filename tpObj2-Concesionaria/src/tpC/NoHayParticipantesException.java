@@ -1,3 +1,7 @@
+/**
+ * @author Anita - Demian
+ */
+
 package tpC;
 
 public class NoHayParticipantesException extends Exception {
