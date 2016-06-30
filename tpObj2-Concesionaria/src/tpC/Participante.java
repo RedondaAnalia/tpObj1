@@ -14,7 +14,7 @@ public class Participante {
 	private CuotasPagas cuotasPagas;
 	private LocalDate fchInscripcion;
 	private Concesionaria concesionaria;
-
+	private StateParticipante calidadDelParticipante;
 	
 /**
  * Propósito: Registrar la participación de un cliente en un plan de ahorro		
@@ -25,6 +25,7 @@ public class Participante {
 	public Participante(Cliente unCliente, PlanDeAhorro unPlanDeAhorro, Concesionaria unaConcesionaria) {
 		cliente = unCliente;
 		this.adquirirPlanDeAhorro(unPlanDeAhorro);
+		calidadDelParticipante = new ParticipanteStd();
 		cuotasPagas = new CuotasPagas(unPlanDeAhorro.cantDeCuotas());
 		fchInscripcion = new LocalDate();
 		concesionaria = unaConcesionaria;
@@ -124,5 +125,13 @@ public class Participante {
 	public double valorDelAutoSuscripto(){
 		return this.getPlan().getModelo().getValor();
 	}
+	
+/**
+ * Propósito: Marca al participante como adjudicado
+ */
+	public void stateAdjudicado() {
+		new ParticipanteAdjudicado();
+	}
+
 	
 }

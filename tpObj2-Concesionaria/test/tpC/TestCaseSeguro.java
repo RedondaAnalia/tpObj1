@@ -27,7 +27,7 @@ public class TestCaseSeguro {
 	@Test
 	public void test3_cotizarSeguro(){
 		assertEquals(730.0, leMeridian.cotizarSeguroPara(10000.0, 68),0);
-		assertEquals(550.0, leMeridian.cotizarSeguroPara(10000.0, 50),0);
+		assertEquals(550.0, leMeridian.cotizarSeguroPara(10000.0, 40),0);
 	}
 
 }

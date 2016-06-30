@@ -135,10 +135,29 @@ public class Concesionaria {
  * Propósito: Emite un comprobante de pago.
  * @param Cuota
  * @return Comprobante De Pago
- */
-
-		
+ */	
 	public ComprobanteDePago recibirPago(Cuota unaCuota){
 		return administracion.recibirPago(unaCuota);
+	}
+
+/**
+ * Propósito: Adjudicar un plan de ahorro
+ * @param planDeAhorro
+ * @throws NoHayParticipantesException
+ */
+	public void adjudicar(PlanDeAhorro plan1) throws NoHayParticipantesException {
+		Participante partLocal = plan1.adjudicar();
+		partLocal.stateAdjudicado();
+		administracion.generarCuponDeAdjudicacion(partLocal, this);
 	}	
+	
+/**
+ * 	Propósito: Calcular la distancia de la planta más cercana que produce el modelo
+ * @param ModeloDeAuto
+ * @return double
+ */
+	public double distanciaAPlantaMasCercana(ModeloDeAuto unModelo){
+		return fabrica.distanciaConcesionariaPlantaMasCercanaConElModelo(this, unModelo);
+	}
+	
 }

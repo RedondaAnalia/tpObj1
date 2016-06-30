@@ -159,11 +159,36 @@ public class TestCaseFinales {
 		assertEquals(concesionaria.topTenPlanesSuscriptos().get(9), plan11);
 	}
 	
-/*
 	@Test
-	public void test03AsegurarStockLocalDeModelosCoincideConStockDePlantas() {
+	public void test02EjecutarAdjudicaciones() throws NoHayParticipantesException {
+		concesionaria.agregarPlan(plan1);
+		plan1.inscribirParticipante(parti1);
+		plan1.inscribirParticipante(parti2);
+		plan1.inscribirParticipante(parti3);
+		plan1.inscribirParticipante(parti4);
+		plan1.inscribirParticipante(parti5);
+		plan1.inscribirParticipante(parti6);
+		plan1.inscribirParticipante(parti7);
+		plan1.inscribirParticipante(parti8);
+		plan1.inscribirParticipante(parti9);
+		plan1.inscribirParticipante(parti10);
+		concesionaria.adjudicar(plan1);
+		
+	}
+
+	@Test
+	public void test03InformacionDeStockLocal_vs_Plantas() {
 		fail("Not yet implemented");
 	}
-*/
+	
+	@Test
+	public void test04EfectuarPagosDeCuotas() {
+		fail("Not yet implemented");
+	}
+	
+	@Test
+	public void test05RegistrarCuponesDeAdjudicacion() {
+		fail("Not yet implemented");
+	}
 }
 
