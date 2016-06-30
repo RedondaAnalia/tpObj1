@@ -11,8 +11,6 @@ public class ComprobanteDePago {
 	LocalDate fchPago;
 	private Cuota cuota;
 
-	
-	
 /**
  * Propósito: Crear una instancia para el registro del pago de una Cuota y su fecha
  * @param Cuota 

@@ -23,5 +23,11 @@ public class TestCaseSeguro {
 		leMeridian.setValorSeguro(250.0);
 		assertEquals(leMeridian.cuotaSeguro(), 250, 0.0);
 	}
+	
+	@Test
+	public void test3_cotizarSeguro(){
+		assertEquals(730.0, leMeridian.cotizarSeguroPara(10000.0, 68),0);
+		assertEquals(550.0, leMeridian.cotizarSeguroPara(10000.0, 50),0);
+	}
 
 }

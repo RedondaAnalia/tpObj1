@@ -108,6 +108,21 @@ public class Participante {
 	public void setCuotasPagas(CuotasPagas cuotas) {
 		this.cuotasPagas = cuotas;
 	}
-
-
+	
+/**
+ * 	Propósito: Retorna la edad del participante
+ * @return Integer
+ */
+	public Integer edadCliente(){
+		return new LocalDate().getYear() - this.getCliente().getFchNacimiento().getYear();
+	}
+	
+/**
+ * 	Propósito: retorna el valor del auto suscripto
+ * @return double
+ */
+	public double valorDelAutoSuscripto(){
+		return this.getPlan().getModelo().getValor();
+	}
+	
 }
