@@ -4,6 +4,7 @@
 
 package tpC;
 
+import java.util.ArrayList;
 
 public class AdjudicacionPorSorteo implements FormaDeAdjudicacion{
 	SorteoLoteriaNacional sorteo;
@@ -24,7 +25,12 @@ public class AdjudicacionPorSorteo implements FormaDeAdjudicacion{
 		if (unPlanDeAhorro.cantDeParticipantes()==0){
 			throw new NoHayParticipantesException("No hay participantes");
 		}
-		return unPlanDeAhorro.getParticipantes().get(sorteo.primerPremio(unPlanDeAhorro.cantDeParticipantes()));
+		ArrayList<Participante> clone= (ArrayList<Participante>) unPlanDeAhorro.getParticipantes().clone();
+		clone.stream().filter(participante->(participante.getCalidadDelParticipante.getClass())== ParticipanteStd.class);
+		if (clone.size()==0){
+			throw new NoHayParticipantesException("No hay participantes para adjudicar");
+		}
+		return clone.get(sorteo.primerPremio(clone.size()));
 	}
 
 

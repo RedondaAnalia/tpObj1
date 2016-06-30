@@ -24,11 +24,16 @@ public class AdjudicacionPorMayorCobertura implements FormaDeAdjudicacion {
 		if (unPlanDeAhorro.cantDeParticipantes()==0){
 			throw new NoHayParticipantesException("No hay participantes");
 		}
+		ArrayList<Participante> clone= (ArrayList<Participante>) unPlanDeAhorro.getParticipantes().clone();
+		clone.stream().filter(participante->(participante.getCalidadDelParticipante.getClass())== ParticipanteStd.class);
+		if (clone.size()==0){
+			throw new NoHayParticipantesException("No hay participantes para adjudicar");
+		}
 		
 		//Se filtra como está por mayor cobertura...
 		double max= unPlanDeAhorro.mayorPorcentajeDePago();
 		List<Participante> participantesFiltrados= new ArrayList<Participante>();
-		participantesFiltrados= unPlanDeAhorro.getParticipantes().stream().filter(participante -> participante.porcentajePago()== max).collect(Collectors.toList());
+		participantesFiltrados= clone.stream().filter(participante -> participante.porcentajePago()== max).collect(Collectors.toList());
 		if (participantesFiltrados.size()==1){
 			return participantesFiltrados.get(0);
 		}
