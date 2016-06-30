@@ -16,6 +16,7 @@ public class Concesionaria {
 	private Coord ubicacion;
 	private Stock stock;
 
+
 /**
  * Propósito: Administrar clientes y planes de ahorro para la adquisición de autos	
  * @param unaFabrica

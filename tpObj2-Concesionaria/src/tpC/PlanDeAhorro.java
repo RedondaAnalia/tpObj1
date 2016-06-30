@@ -29,6 +29,17 @@ public class PlanDeAhorro {
 		adjudicacion = adj;
 		modeloAuto = modeloDeAuto;
 	}
+
+/**
+* Propósito: Retorna la lista de participantes inscriptos en el plan	
+* @return ArrayList<Participante>
+*/	
+	
+	
+	public PlanDePago getPlanDePago(){
+		return planDePago;
+	}
+	
 	
 	
 /**
