@@ -91,7 +91,7 @@ public class AdministracionConcesionaria {
 	private double calcularMontodeAdjudicacion(Participante adjudicado,Concesionaria concesionario) {
 		ModeloDeAuto modeloAdjudicado = adjudicado.getPlan().getModelo();
 		double valorUltimaCuota = adjudicado.getPlan().getPlanDePago().cuotaFinal(modeloAdjudicado);
-		double valorDelFlete = flete.consultarValorDelFlete(concesionario.distanciaPlantaMasCercana(modeloAdjudicado));
+		double valorDelFlete = flete.consultarValorDelFlete(concesionario.distanciaAPlantaMasCercana(modeloAdjudicado));
 		return (valorUltimaCuota + valorDelFlete);
 	}
 }
