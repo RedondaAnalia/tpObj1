@@ -117,5 +117,17 @@ public class Fabrica {
 		}
 		return plantaMasCercana; 
 	}
+/**
+ * 	Propósito: Retorna de la planta más cercana al concesionario
+ *  un auto del modelo pedido
+ * @param Concesionaria
+ * @param ModeloDeAuto
+ * @return Auto
+ * @throws NoHayStockException
+ * @throws NoExisteElModeloDelAutoException
+ */
+	public Auto enviarAutoA(Concesionaria concesionaria, ModeloDeAuto unModelo) throws NoHayStockException, NoExisteElModeloDelAutoException {
+		Planta plantaCercana = this.plantaMasCercana(concesionaria, unModelo);
+		return plantaCercana.retirarAutoModelo(unModelo);
+	}
 }
-  

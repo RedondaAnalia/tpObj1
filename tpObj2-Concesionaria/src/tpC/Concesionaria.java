@@ -15,6 +15,7 @@ public class Concesionaria {
 	private AdministracionConcesionaria administracion;
 	private Coord ubicacion;
 	private Stock stock;
+	private ArrayList<Auto> deposito;
 
 
 /**
@@ -30,6 +31,7 @@ public class Concesionaria {
 		ubicacion = unaUbicacion;
 		stock = fabrica.getStock();
 		administracion = unaAdministracion;
+		deposito = new ArrayList<Auto>();
 	}
 	
 /**
@@ -159,5 +161,13 @@ public class Concesionaria {
 	public double distanciaAPlantaMasCercana(ModeloDeAuto unModelo){
 		return fabrica.distanciaConcesionariaPlantaMasCercanaConElModelo(this, unModelo);
 	}
-	
+	/**
+	 * Propósito: Almacenar autos en la concesionaria para ser entregados
+	 * @param ModeloDeAuto	
+	 * @throws NoExisteElModeloDelAutoException 
+	 * @throws NoHayStockException 
+	 */
+		public void pedirAutoALaFabrica(ModeloDeAuto unModelo) throws NoHayStockException, NoExisteElModeloDelAutoException{
+			deposito.add(fabrica.enviarAutoA(this, unModelo));
+		}
 }

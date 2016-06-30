@@ -15,7 +15,14 @@ public class Participante {
 	private LocalDate fchInscripcion;
 	private Concesionaria concesionaria;
 	private StateParticipante calidadDelParticipante;
-	
+/**
+* Propósito: Retorna el estado actual del participante dentro del plan subscripto		
+* @return StateParticipante
+*/	
+public StateParticipante getCalidadDelParticipante() {
+		return calidadDelParticipante;
+	}
+
 /**
  * Propósito: Registrar la participación de un cliente en un plan de ahorro		
  * @param Cliente
