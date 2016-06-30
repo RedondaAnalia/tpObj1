@@ -31,11 +31,9 @@ public class PlanDeAhorro {
 	}
 
 /**
-* Propósito: Retorna la lista de participantes inscriptos en el plan	
-* @return ArrayList<Participante>
+* Propósito: Retorna el plan de pago	
+* @return PlanDePago
 */	
-	
-	
 	public PlanDePago getPlanDePago(){
 		return planDePago;
 	}

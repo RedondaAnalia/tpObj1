@@ -4,10 +4,14 @@
 
 package tpC;
 
+import java.util.ArrayList;
+
 public class AdministracionConcesionaria {
 
 	private double gastos;
 	private Seguro aseguradora;
+	private AgenciaDeFletes flete;
+	private ArrayList<CuponDeAdjudicacion> talonarioDeCuponesDeAdjudicacion;
 
 /**
  * Propósito: Calcular los costos de las cuotas y generarlas
@@ -17,6 +21,7 @@ public class AdministracionConcesionaria {
 	public AdministracionConcesionaria(double gastosAdministrativos, Seguro unaAseguradora){
 		gastos = gastosAdministrativos;
 		aseguradora = unaAseguradora;
+		talonarioDeCuponesDeAdjudicacion = new ArrayList<CuponDeAdjudicacion>();
 	}
 	
 /**
@@ -56,7 +61,7 @@ public class AdministracionConcesionaria {
 		}
 		double alic = participante.getPlan().valorActualAlicuota();
 		
-		return new Cuota(participante.getCuotasPagas()+1 , alic, aseguradora.cuotaSeguro() ,gastos, participante );
+		return new Cuota(participante.getCuotasPagas()+1 , alic, aseguradora.cotizarSeguroPara(participante.valorDelAutoSuscripto(),participante.edadCliente()) ,gastos, participante );
 	}
 	
 /**
@@ -75,5 +80,18 @@ public class AdministracionConcesionaria {
  */
 	public ComprobanteDePago recibirPago(Cuota unaCuota){
 		return new ComprobanteDePago(unaCuota);
+	}
+	
+	public void generarCuponDeAdjudicacion(Participante adjudicado,Concesionaria concesionario){
+		CuponDeAdjudicacion cupon = new CuponDeAdjudicacion(adjudicado, calcularMontodeAdjudicacion(adjudicado,concesionario)); 
+		talonarioDeCuponesDeAdjudicacion.add(cupon);
+		
+	}
+
+	private double calcularMontodeAdjudicacion(Participante adjudicado,Concesionaria concesionario) {
+		ModeloDeAuto modeloAdjudicado = adjudicado.getPlan().getModelo();
+		double valorUltimaCuota = adjudicado.getPlan().getPlanDePago().cuotaFinal(modeloAdjudicado);
+		double valorDelFlete = flete.consultarValorDelFlete(concesionario.distanciaPlantaMasCercana(modeloAdjudicado));
+		return (valorUltimaCuota + valorDelFlete);
 	}
 }

@@ -1,17 +1,13 @@
 package tpC;
 
 public class CuponDeAdjudicacion {
-	private Cliente cliente;
-	private ModeloDeAuto auto;
-	private Integer nRoDeOrden;
+	private Participante participante;
 	private double montoParaAdjudicar;
-	private boolean pago = false;
+
 	
-	public CuponDeAdjudicacion(Participante beneficiado, double montoParaAdjudicar){
-		cliente = beneficiado.getCliente();
-		auto = beneficiado.modeloElegido();
-		nRoDeOrden = beneficiado.getNroDeOrden();
-		montoParaAdjudicar = 
+	public CuponDeAdjudicacion(Participante beneficiado, double unMontoParaAdjudicar){
+		participante = beneficiado;
+		montoParaAdjudicar = unMontoParaAdjudicar;
 	}
 
 }

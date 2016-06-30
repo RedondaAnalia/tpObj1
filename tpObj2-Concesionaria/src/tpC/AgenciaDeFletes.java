@@ -5,8 +5,7 @@ public class AgenciaDeFletes {
 	
 	private double precioPorKilometro;
 
-	public double consultarValorDelFlete(Coord x, Coord y){
-		double distancia = x.distance(y);
+	public double consultarValorDelFlete(double distancia){
 		return distancia * precioPorKilometro;
 	}
 

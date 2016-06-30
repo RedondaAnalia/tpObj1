@@ -61,7 +61,11 @@ public class Fabrica {
 	public LinkedList<Auto> buscarStockEnFabricaDeLaPlanta(Planta unaPlanta, ModeloDeAuto unModeloDeAuto) {
 			return unaPlanta.lstDeAutosDelModelo(unModeloDeAuto);
 	}
-	
+
+	public double distanciaConcesionariaPlantaMasCercanaConElModelo(Concesionaria concesionario, ModeloDeAuto unModelo){
+		Planta planta = plantaMasCercana(concesionario,unModelo);
+		return distanciaConcesionariaPlanta(concesionario, planta);
+	}
 /**
  * Propósito: Determina la distancia entre una concesionaria y una planta.
  * @param Concesionaria
@@ -103,7 +107,7 @@ public class Fabrica {
 	public Planta plantaMasCercana(Concesionaria los3fanaticos, ModeloDeAuto unModelo) {
 		//PRECOND = No funciona para plantas interplanetarias
 		Planta plantaMasCercana= null;
-		double mejorDistancia= 10000.00;
+		double mejorDistancia= 20038.00;
 		for(int i=0; i < plantas.size(); i++){
 			double distanciaDePlanta = distanciaConcesionariaPlanta(los3fanaticos, plantas.get(i));
 			if (distanciaDePlanta < mejorDistancia && plantas.get(i).tieneModelo(unModelo) ){
