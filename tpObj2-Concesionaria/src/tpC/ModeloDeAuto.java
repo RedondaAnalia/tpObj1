@@ -3,12 +3,13 @@
  */
 package tpC;
 
+import java.util.ArrayList;
 
 public class ModeloDeAuto {
 	private String denominacion;
 	private Integer añoLanzamientoAlMercado;
 	private Integer cantidadDePuertas;
-	private Boolean full; 
+	private ArrayList<Accesorios> listaDeAccesiorios; 
 	private Integer valor;
 	
 /**
@@ -23,7 +24,8 @@ public class ModeloDeAuto {
 		denominacion=nombre;
 		añoLanzamientoAlMercado=anhoLanzamiento;
 		cantidadDePuertas=cantPuertas;
-		full= false;
+		listaDeAccesiorios= new ArrayList<Accesorios>();
+		listaDeAccesiorios.add(new AccesoriosBase());
 		valor=precio;
 	}
 	
@@ -32,7 +34,11 @@ public class ModeloDeAuto {
  * @return Integer
  */
 	public Integer getValor(){
-		return this.valor;
+
+		Integer valorAccesiorios = 0;
+		for (Accesorios accesorios : listaDeAccesiorios)
+			valorAccesiorios = valorAccesiorios + accesorios.precioAccesorio();
+		return (this.valor + valorAccesiorios);
 	}
 	
 
@@ -54,31 +60,23 @@ public class ModeloDeAuto {
 		valor = valorActual;
 	}
 	
+
+/**
+ * Propósito: Agrega un accesorio al modelo de auto.
+ */
+
+	public void agregarAccesorio(Accesorios unAccesorio){
+		listaDeAccesiorios.add(unAccesorio);
+	}
 	
 /**
- * Propósito: Retorna false si es Base.
- * @return Boolean
- */
-	public Boolean getEquipamiento(){
-		return full;
-	}
+* Propósito: devuelve la lista de accesorios de un modelo.
+* @param ArrayList<Accesorios>
+ * @return 
+*/
 
-	
-/**
- * Propósito: Cambia el equipamiento del auto a full.
- */
-
-	public void cambiarDeBaseAFull(){
-		full = true;
-	}
-
-		
-/**
- * Propósito: Cambia el equipamiento del auto a base.
- */
-
-	public void cambiarDeFullABase(){
-		full = false;
-	}
+		public ArrayList<Accesorios> getListaDeAccesorios(){
+			return listaDeAccesiorios;
+		}
 
 }

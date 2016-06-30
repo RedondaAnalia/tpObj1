@@ -22,13 +22,13 @@ public class TestCasePlan70x30 {
 
 	@Test
 	public void testValorDeCuota() {
-		when(mockAuto.getValor()).thenReturn(100000);
+		when(mockAuto.getValor()).thenReturn((Integer) 100000);
 		assertEquals(7000,plan.valorDeCuota(mockAuto),0);
 	}
 	
 	@Test
 	public void testValorCuotaFinal(){
-		when(mockAuto.getValor()).thenReturn(100000);
+		when(mockAuto.getValor()).thenReturn((Integer) 100000);
 		assertEquals(30000,plan.cuotaFinal(mockAuto),0);
 	}
 

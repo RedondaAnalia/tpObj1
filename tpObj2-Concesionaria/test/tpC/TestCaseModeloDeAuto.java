@@ -14,11 +14,12 @@ public class TestCaseModeloDeAuto {
 		modelo= new ModeloDeAuto("March", 2016, 3, 100000);
 	}
 	
+	@SuppressWarnings("deprecation")
 	@Test
-	public void test_Valores(){
-		assertEquals((Integer)100000, modelo.getValor());
+	public void test_Valores_modelosBase(){
+		assertEquals (modelo.getValor() , (Integer)100000 );
 		modelo.setValor(50000);
-		assertEquals((Integer)50000, modelo.getValor());
+		assertEquals((Integer)50000 , modelo.getValor());
 	}
 	
 	@Test
@@ -27,13 +28,19 @@ public class TestCaseModeloDeAuto {
 	}
 	
 	@Test
-	public void test_cambiarEquipamiento(){
-		assertEquals(modelo.getEquipamiento(), false);
-		modelo.cambiarDeBaseAFull();
-		assertEquals(modelo.getEquipamiento(),true);
-		modelo.cambiarDeFullABase();
-		assertEquals(modelo.getEquipamiento(),false);
+	public void test_agregarEquipamiento(){
+		modelo.agregarAccesorio(new AccesoriosDireccionHidraulica());
+		assertEquals(modelo.getListaDeAccesorios().size(), 2);
+		
 		
 	}
-
+	@Test
+	public void test_pedirValorAlModeloFull(){
+		modelo.agregarAccesorio(new AccesoriosDireccionHidraulica());
+		modelo.agregarAccesorio(new AccesosoriosLevantaVidrios());
+		modelo.agregarAccesorio(new AccesoriosAireAcondicionado());
+		assertEquals(modelo.getValor() , (Integer)106000);
+		
+		
+	}
 }
