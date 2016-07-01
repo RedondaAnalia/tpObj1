@@ -29,13 +29,12 @@ public StateParticipante getCalidadDelParticipante() {
  * @param PlanDeAhorro
  * @param Concesionaria
  */
-	public Participante(Cliente unCliente, PlanDeAhorro unPlanDeAhorro, Concesionaria unaConcesionaria) {
+	public Participante(Cliente unCliente, PlanDeAhorro unPlanDeAhorro) {
 		cliente = unCliente;
 		this.adquirirPlanDeAhorro(unPlanDeAhorro);
 		calidadDelParticipante = new ParticipanteStd();
 		cuotasPagas = new CuotasPagas(unPlanDeAhorro.cantDeCuotas());
 		fchInscripcion = new LocalDate();
-		concesionaria = unaConcesionaria;
 	}
 	
 /**
@@ -90,7 +89,7 @@ public StateParticipante getCalidadDelParticipante() {
  * @param Cuota
  */
 	public void pagarCuota(Cuota unaCuota) {
-		cuotasPagas.pagar(concesionaria.recibirPago(unaCuota));
+		cuotasPagas.pagar(cliente.getConcesionaria().recibirPago(unaCuota));
 	}
 	
 /**

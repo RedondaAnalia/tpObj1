@@ -59,6 +59,7 @@ public class AdjudicacionPorMayorCobertura implements FormaDeAdjudicacion {
 				 return (p1.getFchInscripcion()).compareTo((p2.getFchInscripcion()));
 	  
 			 }});	
+	participantesFiltrados.get(0).stateAdjudicado();	
     return participantesFiltrados.get(0);
     }
 }

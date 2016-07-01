@@ -58,11 +58,22 @@ public class TestCaseAdjudicacionPorMayorCobertura {
 	 **** Testeo el manejo de la excepcion	
 	 */
 	@Test(expected=NoHayParticipantesException.class)
-	public void testManejoDeExcepcion() throws NoHayParticipantesException{
+	public void testManejoDeExcepcionPorListaVacia() throws NoHayParticipantesException{
+		when(unPlanCualquiera.getParticipantes()).thenReturn(new ArrayList<Participante>());
+		adjudicacion.adjudicar(unPlanCualquiera);
+	}
+	
+	/*
+	 **** Testeo el manejo de la excepcion	
+	 */
+	@Test
+	public void testManejoDeExcepcionPorNoHayAQuienAdjudicar() throws NoHayParticipantesException{
+		when(unPlanCualquiera.cantDeParticipantes()).thenReturn(3);
 		when(unPlanCualquiera.getParticipantes()).thenReturn(laListaDeParticipantes);
-		when(analiaMock.getCalidadDelParticipante()).thenReturn(new ParticipanteStd());
-		when(pabloMock.getCalidadDelParticipante()).thenReturn(new ParticipanteStd());
-		when(demianMock.getCalidadDelParticipante()).thenReturn(new ParticipanteStd());
+		when(analiaMock.getCalidadDelParticipante()).thenReturn(new ParticipanteAdjudicado());
+		when(demianMock.getCalidadDelParticipante()).thenReturn(new ParticipanteAdjudicado());
+		when(pabloMock.getCalidadDelParticipante()).thenReturn(new ParticipanteAdjudicado());
+		assertEquals(3, laListaDeParticipantes.size());
 		adjudicacion.adjudicar(unPlanCualquiera);
 	}
 
@@ -81,7 +92,6 @@ public class TestCaseAdjudicacionPorMayorCobertura {
 		when(unPlanCualquiera.getParticipantes()).thenReturn(laListaDeParticipantes);
 		when(unPlanCualquiera.cantDeParticipantes()).thenReturn(3);
 		when(unPlanCualquiera.mayorPorcentajeDePago()).thenReturn((double)70.0);
-		System.out.println(unPlanCualquiera.cantDeParticipantes());
 		assertEquals(adjudicacion.adjudicar(unPlanCualquiera), pabloMock);
     }
 	

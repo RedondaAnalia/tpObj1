@@ -32,7 +32,8 @@ public class TestCaseParticipante {
 		mockComprobante=mock(ComprobanteDePago.class);
 		when(mockPago.cantDeCuotas()).thenReturn(10);
 		when(planMock.cantDeCuotas()).thenReturn(10);
-		analiaParticipante = new Participante(analiaMock, planMock, mockConces);
+		when(analiaMock.getConcesionaria()).thenReturn(mockConces);
+		analiaParticipante = new Participante(analiaMock, planMock);
 		MockitoAnnotations.initMocks(this);	
 	}
 
@@ -54,7 +55,8 @@ public class TestCaseParticipante {
 	@Test
 	public void test_getters(){
 		analiaMock=mock(Cliente.class);
-		analiaParticipante = new Participante(analiaMock, planMock, mockConces);
+		when(analiaMock.getConcesionaria()).thenReturn(mockConces);
+		analiaParticipante = new Participante(analiaMock, planMock);
 		assertEquals(analiaMock, analiaParticipante.getCliente());
 		assertEquals(planMock, analiaParticipante.getPlan());
 		LocalDate date=new LocalDate();

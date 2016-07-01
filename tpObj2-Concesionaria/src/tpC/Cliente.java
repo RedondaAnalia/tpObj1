@@ -1,5 +1,5 @@
 /**
- * @author Anita
+ * @author Anita- Demian
  */
 package tpC;
 
@@ -11,7 +11,6 @@ import org.joda.time.LocalTime;
 
 public class Cliente {
 
-	private ArrayList<PlanDeAhorro> planes ;
 	private ArrayList<Participante> participantes;
 	private String apellido;
 	private String nombre;
@@ -38,7 +37,7 @@ public class Cliente {
 	//Precond: añoDeNacimiento debe tener 4 digitos.
 	public Cliente(String suApellido, String suNombre, Integer numDeDNI, String suDireccionPostal, String suMail,
 			int diaDeNacimiento,int mesDeNacimiento, int añoDeNacimiento,Concesionaria laConcesionaria){
-		planes= new ArrayList <PlanDeAhorro>();
+
 		participantes = new ArrayList<Participante>();
 		apellido=suApellido;
 		nombre=suNombre;
@@ -119,24 +118,36 @@ public class Cliente {
 	public String getApellido() {	
 		return apellido;
 	}
-
+	
+/**
+ * Proósito: Retorna la concesionaria de la que es cliente.
+ * @return Concesionaria
+ */
+	public Concesionaria getConcesionaria(){
+		return concesionaria;
+	}
+	
+//METODOS.
 /**
  * Propósito: Retorna la lista de planes de ahorro a los cuales esta suscripto el cliente
  * @return ArrayList<PlanDeAhorro>
  */
 	
 	public ArrayList <PlanDeAhorro> getPlanes() {
+		ArrayList<PlanDeAhorro> planes= new ArrayList<PlanDeAhorro>();
+		for (Participante p: participantes){
+			planes.add(p.getPlan());
+		}
 		return planes;
 	}
 
-	
-//METODOS.
+
 /**
  * Propósito: Agrega un nuevo Plan De Ahorro al cliente.
  */
 	public void agregarPlanDeAhorro(PlanDeAhorro unPlanDeAhorro) {
-		planes.add(unPlanDeAhorro);
-		Participante nuevoParticipante = new Participante(this , unPlanDeAhorro, concesionaria);
+	
+		Participante nuevoParticipante = new Participante(this , unPlanDeAhorro);
 		participantes.add(nuevoParticipante);
 	}
 	

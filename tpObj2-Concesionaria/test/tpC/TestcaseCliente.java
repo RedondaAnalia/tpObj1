@@ -38,7 +38,8 @@ public class TestcaseCliente {
 		assertEquals(cliente.getFchIngreso(),new LocalDate());
 		assertEquals(cliente.getFchNacimiento(), new LocalDate (1989,11,21));
 		assertEquals(cliente.getMail(),"objetosq@juan");
-		assertEquals(cliente.getNombre(),"Juan Carlos");		
+		assertEquals(cliente.getNombre(),"Juan Carlos");	
+		assertEquals(mockConces,cliente.getConcesionaria());
 	}
 	
 	@Test
