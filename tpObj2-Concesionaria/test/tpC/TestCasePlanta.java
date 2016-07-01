@@ -39,7 +39,7 @@ private Planta myPlanta;
 	
 	@Test
 	public void test2_agregarModeloYpreguntarSiPuedeFabricar(){
-		myPlanta.puedeFabricarElModelo(fordFiesta4pFull);
+		myPlanta = new Planta(new Coord(10,10), observerStock);
 		assertFalse(myPlanta.tieneModelo(fordMustang2pFull));
 		assertTrue(myPlanta.tieneModelo(fordFiesta4pFull));
 	}
