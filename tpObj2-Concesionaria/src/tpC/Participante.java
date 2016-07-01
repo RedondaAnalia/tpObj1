@@ -137,8 +137,14 @@ public StateParticipante getCalidadDelParticipante() {
  * Propósito: Marca al participante como adjudicado
  */
 	public void stateAdjudicado() {
-		new ParticipanteAdjudicado();
+		calidadDelParticipante = new ParticipanteAdjudicado();
 	}
 
+/**
+ * Propósito: Marca al participante que el auto fue entregado
+ */
+	public void stateEntregado() {
+		calidadDelParticipante = new ParticipanteEntregado();
+	}	
 	
 }

@@ -60,6 +60,9 @@ public class TestCaseAdjudicacionPorMayorCobertura {
 	@Test(expected=NoHayParticipantesException.class)
 	public void testManejoDeExcepcion() throws NoHayParticipantesException{
 		when(unPlanCualquiera.getParticipantes()).thenReturn(laListaDeParticipantes);
+		when(analiaMock.getCalidadDelParticipante()).thenReturn(new ParticipanteStd());
+		when(pabloMock.getCalidadDelParticipante()).thenReturn(new ParticipanteStd());
+		when(demianMock.getCalidadDelParticipante()).thenReturn(new ParticipanteStd());
 		adjudicacion.adjudicar(unPlanCualquiera);
 	}
 
