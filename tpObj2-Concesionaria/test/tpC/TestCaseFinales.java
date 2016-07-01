@@ -33,42 +33,55 @@ public class TestCaseFinales {
 	private PlanDeAhorro plan10;
 	private PlanDeAhorro plan11;
 	private Plan100x100 pago1;
-	private ModeloDeAuto mockAuto;
+	private ModeloDeAuto unModeloDeAuto;
 	private Seguro unSeguro;
-	private AdministracionConcesionaria mockAdministracion;
+	private AdministracionConcesionaria admin;
 	private SorteoLoteriaNacional unSorteo;
+	private Stock stock;
+	private Cliente cliente1;
+	private Cliente cliente2;
+	private Cliente cliente3;
+	private Cliente cliente4;
+	private Cliente cliente5;
+	private Cliente cliente6;
+	private Cliente cliente7;
+	private Cliente cliente8;
+	private Cliente cliente9;
+	private Cliente cliente10;
 	
 	@Before
 	public void setUp() throws Exception {
-		fabrica= mock (Fabrica.class);
-		unSeguro=mock (Seguro.class);
+		stock = new Stock();
+		fabrica= new Fabrica(stock);
+		unSeguro= new Seguro(500);
 		unSorteo= new SorteoLoteriaNacional();
-		mockAdministracion= mock (AdministracionConcesionaria.class);
+		admin= new AdministracionConcesionaria(350.0, unSeguro);
 		adjudicacion= new AdjudicacionPorSorteo(unSorteo);
-		concesionaria= new Concesionaria(fabrica, new Coord(1,1),mockAdministracion);
-		parti1= mock(Participante.class);
-		parti2= mock(Participante.class);
-		parti3= mock(Participante.class);
-		parti4= mock(Participante.class);
-		parti5= mock(Participante.class);
-		parti6= mock(Participante.class);
-		parti7= mock(Participante.class);
-		parti8= mock(Participante.class);
-		parti9= mock(Participante.class);
-		parti10= mock(Participante.class);
-		mockAuto= mock (ModeloDeAuto.class);
+		concesionaria= new Concesionaria(fabrica, new Coord(1,1),admin);
+		cliente1= new Cliente("Torres", "Diego", 1234567, "R S Peña 352", "diego.torres@unq.edu.ar ", 7, 1, 1990, concesionaria);
+		cliente2= new Cliente("Cano", "Diego", 2345678, "R S Peña 352", "diego.cano@mail.com", 1, 2, 1990, concesionaria);
+		cliente3= new Cliente("Vidal", "Nacho", 3456789, "R S Peña 352", "magovidal@gmail.com ", 1, 1, 1990, concesionaria);
+		cliente4= new Cliente("Sosa", "Juan", 3456789, "R S Peña 352", "magovidal@gmail.com ", 1, 1, 1990, concesionaria);
+		cliente5= new Cliente("Diaz", "Nicolas", 3456789, "R S Peña 352", "magovidal@gmail.com ", 1, 1, 1990, concesionaria);
+		cliente6= new Cliente("Balcarce", "Pablo", 3456789, "R S Peña 352", "magovidal@gmail.com ", 1, 1, 1990, concesionaria);
+		cliente7= new Cliente("Gonzalez", "Gustavo", 3456789, "R S Peña 352", "magovidal@gmail.com ", 1, 1, 1990, concesionaria);
+		cliente8= new Cliente("Perez", "Gabriel", 3456789, "R S Peña 352", "magovidal@gmail.com ", 1, 1, 1990, concesionaria);
+		cliente9= new Cliente("Hanks", "Alejandro", 3456789, "R S Peña 352", "magovidal@gmail.com ", 1, 1, 1990, concesionaria);
+		cliente10= new Cliente("Perez", "Alfredo", 3456789, "R S Peña 352", "magovidal@gmail.com ", 1, 1, 1990, concesionaria);
+		plan1= new PlanDeAhorro(pago1,adjudicacion,unModeloDeAuto);
+		plan2= new PlanDeAhorro(pago1,adjudicacion,unModeloDeAuto);
+		plan3= new PlanDeAhorro(pago1,adjudicacion,unModeloDeAuto);
+		plan4= new PlanDeAhorro(pago1,adjudicacion,unModeloDeAuto);
+		plan5= new PlanDeAhorro(pago1,adjudicacion,unModeloDeAuto);
+		plan6= new PlanDeAhorro(pago1,adjudicacion,unModeloDeAuto);
+		plan7= new PlanDeAhorro(pago1,adjudicacion,unModeloDeAuto);
+		plan8= new PlanDeAhorro(pago1,adjudicacion,unModeloDeAuto);
+		plan9= new PlanDeAhorro(pago1,adjudicacion,unModeloDeAuto);
+		plan10= new PlanDeAhorro(pago1,adjudicacion,unModeloDeAuto);
+		plan11= new PlanDeAhorro(pago1,adjudicacion,unModeloDeAuto);
+		unModeloDeAuto= new ModeloDeAuto("fordFiesta", 2016,3,100000);
 		pago1= new Plan100x100(6);
-		plan1= new PlanDeAhorro(pago1,adjudicacion,mockAuto);
-		plan2= new PlanDeAhorro(pago1,adjudicacion,mockAuto);
-		plan3= new PlanDeAhorro(pago1,adjudicacion,mockAuto);
-		plan4= new PlanDeAhorro(pago1,adjudicacion,mockAuto);
-		plan5= new PlanDeAhorro(pago1,adjudicacion,mockAuto);
-		plan6= new PlanDeAhorro(pago1,adjudicacion,mockAuto);
-		plan7= new PlanDeAhorro(pago1,adjudicacion,mockAuto);
-		plan8= new PlanDeAhorro(pago1,adjudicacion,mockAuto);
-		plan9= new PlanDeAhorro(pago1,adjudicacion,mockAuto);
-		plan10= new PlanDeAhorro(pago1,adjudicacion,mockAuto);
-		plan11= new PlanDeAhorro(pago1,adjudicacion,mockAuto);
+		
 	}
 
 	@Test
@@ -85,36 +98,39 @@ public class TestCaseFinales {
 		concesionaria.agregarPlan(plan10);
 		concesionaria.agregarPlan(plan11);
 		//Agrego 10 participantes al plan 1
-		plan1.inscribirParticipante(parti1);
-		plan1.inscribirParticipante(parti2);
-		plan1.inscribirParticipante(parti3);
-		plan1.inscribirParticipante(parti4);
-		plan1.inscribirParticipante(parti5);
-		plan1.inscribirParticipante(parti6);
-		plan1.inscribirParticipante(parti7);
-		plan1.inscribirParticipante(parti8);
-		plan1.inscribirParticipante(parti9);
-		plan1.inscribirParticipante(parti10);
-		//agrego 9 participantes al plan 2
-		plan2.inscribirParticipante(parti1);
-		plan2.inscribirParticipante(parti2);
-		plan2.inscribirParticipante(parti3);
-		plan2.inscribirParticipante(parti4);
-		plan2.inscribirParticipante(parti5);
-		plan2.inscribirParticipante(parti6);
-		plan2.inscribirParticipante(parti7);
-		plan2.inscribirParticipante(parti8);
-		plan2.inscribirParticipante(parti9);
+		concesionaria.agregarClienteAlPlan(cliente1, plan1);
+		concesionaria.agregarClienteAlPlan(cliente2, plan1);
+		concesionaria.agregarClienteAlPlan(cliente3, plan1);
+		concesionaria.agregarClienteAlPlan(cliente4, plan1);
+		concesionaria.agregarClienteAlPlan(cliente4, plan1);
+		concesionaria.agregarClienteAlPlan(cliente5, plan1);
+		concesionaria.agregarClienteAlPlan(cliente6, plan1);
+		concesionaria.agregarClienteAlPlan(cliente7, plan1);
+		concesionaria.agregarClienteAlPlan(cliente8, plan1);
+		concesionaria.agregarClienteAlPlan(cliente9, plan1);
+		concesionaria.agregarClienteAlPlan(cliente10, plan1);
+		//Agrego 9 participantes al plan 2
+		concesionaria.agregarClienteAlPlan(cliente1, plan2);
+		concesionaria.agregarClienteAlPlan(cliente2, plan2);
+		concesionaria.agregarClienteAlPlan(cliente3, plan2);
+		concesionaria.agregarClienteAlPlan(cliente4, plan2);
+		concesionaria.agregarClienteAlPlan(cliente4, plan2);
+		concesionaria.agregarClienteAlPlan(cliente5, plan2);
+		concesionaria.agregarClienteAlPlan(cliente6, plan2);
+		concesionaria.agregarClienteAlPlan(cliente7, plan2);
+		concesionaria.agregarClienteAlPlan(cliente8, plan2);
+		concesionaria.agregarClienteAlPlan(cliente9, plan2);
 		//Agrego 8 participantes al plan 4
-		plan4.inscribirParticipante(parti1);
-		plan4.inscribirParticipante(parti2);
-		plan4.inscribirParticipante(parti3);
-		plan4.inscribirParticipante(parti4);
-		plan4.inscribirParticipante(parti5);
-		plan4.inscribirParticipante(parti6);
-		plan4.inscribirParticipante(parti7);
-		plan4.inscribirParticipante(parti8);
-		//Agreso 7 participantes al plan 3
+		concesionaria.agregarClienteAlPlan(cliente1, plan4);
+		concesionaria.agregarClienteAlPlan(cliente2, plan4);
+		concesionaria.agregarClienteAlPlan(cliente3, plan4);
+		concesionaria.agregarClienteAlPlan(cliente4, plan4);
+		concesionaria.agregarClienteAlPlan(cliente4, plan4);
+		concesionaria.agregarClienteAlPlan(cliente5, plan4);
+		concesionaria.agregarClienteAlPlan(cliente6, plan4);
+		concesionaria.agregarClienteAlPlan(cliente7, plan4);
+		concesionaria.agregarClienteAlPlan(cliente8, plan4);
+		//Agrego 7 participantes al plan 3
 		plan3.inscribirParticipante(parti1);
 		plan3.inscribirParticipante(parti2);
 		plan3.inscribirParticipante(parti3);
@@ -174,25 +190,15 @@ public class TestCaseFinales {
 		plan1.inscribirParticipante(parti8);
 		plan1.inscribirParticipante(parti9);
 		plan1.inscribirParticipante(parti10);
-		when(parti1.getCalidadDelParticipante()).thenReturn(new ParticipanteStd());
-		when(parti2.getCalidadDelParticipante()).thenReturn(new ParticipanteStd());
-		when(parti3.getCalidadDelParticipante()).thenReturn(new ParticipanteStd());
-		when(parti4.getCalidadDelParticipante()).thenReturn(new ParticipanteStd());
-		when(parti5.getCalidadDelParticipante()).thenReturn(new ParticipanteStd());
-		when(parti6.getCalidadDelParticipante()).thenReturn(new ParticipanteStd());
-		when(parti7.getCalidadDelParticipante()).thenReturn(new ParticipanteStd());
-		when(parti8.getCalidadDelParticipante()).thenReturn(new ParticipanteStd());
-		when(parti9.getCalidadDelParticipante()).thenReturn(new ParticipanteStd());
-		when(parti10.getCalidadDelParticipante()).thenReturn(new ParticipanteStd());
 		concesionaria.adjudicar(plan1);
 		
 	}
 
-/*	@Test
-	public void test03InformacionDeStockLocal_vs_Plantas() {
-		fail("Not yet implemented");
-	}
-	
+//	@Test
+//	public void test03InformacionDeStockLocal_vs_Plantas() {
+//		assertEquals();
+//	}
+	/*
 	@Test
 	public void test04EfectuarPagosDeCuotas() {
 		fail("Not yet implemented");

@@ -184,4 +184,8 @@ public class Concesionaria {
 		deposito.add(carga);
 	}
 
+	public void agregarClienteAlPlan(Cliente unCliente, PlanDeAhorro unPlanDeAhorro){
+		unCliente.agregarPlanDeAhorro(unPlanDeAhorro);
+	}
+	
 }
