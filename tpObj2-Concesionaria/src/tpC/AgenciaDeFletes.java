@@ -16,10 +16,11 @@ public class AgenciaDeFletes {
 		cantidadDeCamiones = numeroDeCamiones;
 	}
 	
-	public Integer getCantidadDeCamiones() {
-		return cantidadDeCamiones;
-	}
-	
+	/**
+	 * Propósito: entrega el valor del flete para una distancia.
+	 * @param: double	 
+	 * @return: double
+	 */
 	public double consultarValorDelFlete(double distancia){
 		return distancia * precioPorKilometro;
 	}
@@ -30,7 +31,13 @@ public class AgenciaDeFletes {
 	public void setPrecioPorKilometro(double precioPorKilometro) {
 		this.precioPorKilometro = precioPorKilometro;
 	}
-
+	/**
+	 * Propósito: simula la accion de buscar un flete en una planta y entregarla
+	 * 			  en una concesionaria un Auto de un modelo.
+	 * @param: Planta
+	 * @param: Concesionaria
+	 * @param: ModeloDeAuto
+	 */
 	public synchronized void retirarAutoDeLaPlantaenConcesionario(Planta unaPlanta, Concesionaria destino,ModeloDeAuto modelo){
 		fletesPendientes++;
 		while(cantidadDeCamiones == 0){
@@ -54,15 +61,20 @@ public class AgenciaDeFletes {
 			}
 		}
 	}
-
+	/**
+	 * Propósito: entregar coordenadas de la agencia.
+	 * @return: Coord
+	 */
 	public Coord getUbicacion() {
 		return ubicacionFlete;
 	}
-
+	/**
+	 * Propósito: notificar regreso del flete.
+	 */
 	public synchronized void volvioVehiculo() {
 		cantidadDeCamiones++;
 		fletesPendientes--;
-		notifyAll();
+		notify();
 		
 	}
 	
