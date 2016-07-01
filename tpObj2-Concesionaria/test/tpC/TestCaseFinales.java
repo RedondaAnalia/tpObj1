@@ -34,6 +34,7 @@ public class TestCaseFinales {
 	private PlanDeAhorro plan11;
 	private Plan100x100 pago1;
 	private ModeloDeAuto unModeloDeAuto;
+	private ModeloDeAuto modeloTroncomovil;
 	private Seguro unSeguro;
 	private AdministracionConcesionaria admin;
 	private SorteoLoteriaNacional unSorteo;
@@ -48,15 +49,26 @@ public class TestCaseFinales {
 	private Cliente cliente8;
 	private Cliente cliente9;
 	private Cliente cliente10;
+	private Planta plantaPacheko;
+	private Planta plantaPilar;
+	private Planta plantaRodrigues;
+	private AgenciaDeFletes teloLlevoFletes;
 	
 	@Before
 	public void setUp() throws Exception {
 		stock = new Stock();
 		fabrica= new Fabrica(stock);
+		
 		unSeguro= new Seguro(500);
 		unSorteo= new SorteoLoteriaNacional();
+		
 		admin= new AdministracionConcesionaria(350.0, unSeguro);
 		adjudicacion= new AdjudicacionPorSorteo(unSorteo);
+		pago1= new Plan100x100(6);
+		
+		unModeloDeAuto= new ModeloDeAuto("fordFiesta", 2016,3,100000);
+		modeloTroncomovil = new ModeloDeAuto("unaMierdaDeAuto", 1050, 0, 50);
+		
 		concesionaria= new Concesionaria(fabrica, new Coord(1,1),admin);
 		cliente1= new Cliente("Torres", "Diego", 1234567, "R S Peña 352", "diego.torres@unq.edu.ar ", 7, 1, 1990, concesionaria);
 		cliente2= new Cliente("Cano", "Diego", 2345678, "R S Peña 352", "diego.cano@mail.com", 1, 2, 1990, concesionaria);
@@ -79,9 +91,23 @@ public class TestCaseFinales {
 		plan9= new PlanDeAhorro(pago1,adjudicacion,unModeloDeAuto);
 		plan10= new PlanDeAhorro(pago1,adjudicacion,unModeloDeAuto);
 		plan11= new PlanDeAhorro(pago1,adjudicacion,unModeloDeAuto);
-		unModeloDeAuto= new ModeloDeAuto("fordFiesta", 2016,3,100000);
-		pago1= new Plan100x100(6);
 		
+		plantaPacheko = new Planta(new Coord(10,10), stock);
+		plantaPacheko.puedeFabricarElModelo(unModeloDeAuto);
+		plantaPilar = new Planta(new Coord(10,50), stock);
+		plantaPilar.puedeFabricarElModelo(unModeloDeAuto);
+		plantaPilar.puedeFabricarElModelo(modeloTroncomovil);
+		plantaRodrigues = new Planta(new Coord(10,70), stock);
+		plantaRodrigues.puedeFabricarElModelo(unModeloDeAuto);
+		plantaRodrigues.puedeFabricarElModelo(modeloTroncomovil);
+		
+		fabrica.agregarPlanta(plantaPacheko);
+		fabrica.agregarPlanta(plantaPilar);
+		fabrica.agregarPlanta(plantaRodrigues);
+		
+		teloLlevoFletes = new AgenciaDeFletes(2, new Coord(10, 1));
+		
+		admin.setFlete(teloLlevoFletes);
 	}
 
 	@Test
@@ -102,7 +128,6 @@ public class TestCaseFinales {
 		concesionaria.agregarClienteAlPlan(cliente2, plan1);
 		concesionaria.agregarClienteAlPlan(cliente3, plan1);
 		concesionaria.agregarClienteAlPlan(cliente4, plan1);
-		concesionaria.agregarClienteAlPlan(cliente4, plan1);
 		concesionaria.agregarClienteAlPlan(cliente5, plan1);
 		concesionaria.agregarClienteAlPlan(cliente6, plan1);
 		concesionaria.agregarClienteAlPlan(cliente7, plan1);
@@ -114,7 +139,6 @@ public class TestCaseFinales {
 		concesionaria.agregarClienteAlPlan(cliente2, plan2);
 		concesionaria.agregarClienteAlPlan(cliente3, plan2);
 		concesionaria.agregarClienteAlPlan(cliente4, plan2);
-		concesionaria.agregarClienteAlPlan(cliente4, plan2);
 		concesionaria.agregarClienteAlPlan(cliente5, plan2);
 		concesionaria.agregarClienteAlPlan(cliente6, plan2);
 		concesionaria.agregarClienteAlPlan(cliente7, plan2);
@@ -125,46 +149,45 @@ public class TestCaseFinales {
 		concesionaria.agregarClienteAlPlan(cliente2, plan4);
 		concesionaria.agregarClienteAlPlan(cliente3, plan4);
 		concesionaria.agregarClienteAlPlan(cliente4, plan4);
-		concesionaria.agregarClienteAlPlan(cliente4, plan4);
 		concesionaria.agregarClienteAlPlan(cliente5, plan4);
 		concesionaria.agregarClienteAlPlan(cliente6, plan4);
 		concesionaria.agregarClienteAlPlan(cliente7, plan4);
 		concesionaria.agregarClienteAlPlan(cliente8, plan4);
 		//Agrego 7 participantes al plan 3
-		plan3.inscribirParticipante(parti1);
-		plan3.inscribirParticipante(parti2);
-		plan3.inscribirParticipante(parti3);
-		plan3.inscribirParticipante(parti4);
-		plan3.inscribirParticipante(parti5);
-		plan3.inscribirParticipante(parti6);
-		plan3.inscribirParticipante(parti7);
+		concesionaria.agregarClienteAlPlan(cliente1, plan3);
+		concesionaria.agregarClienteAlPlan(cliente2, plan3);
+		concesionaria.agregarClienteAlPlan(cliente3, plan3);
+		concesionaria.agregarClienteAlPlan(cliente4, plan3);
+		concesionaria.agregarClienteAlPlan(cliente5, plan3);
+		concesionaria.agregarClienteAlPlan(cliente6, plan3);
+		concesionaria.agregarClienteAlPlan(cliente7, plan3);
 		//Agrego 6 participantes al plan 6
-		plan6.inscribirParticipante(parti1);
-		plan6.inscribirParticipante(parti2);
-		plan6.inscribirParticipante(parti3);
-		plan6.inscribirParticipante(parti4);
-		plan6.inscribirParticipante(parti5);
-		plan6.inscribirParticipante(parti6);
+		concesionaria.agregarClienteAlPlan(cliente1, plan6);
+		concesionaria.agregarClienteAlPlan(cliente2, plan6);
+		concesionaria.agregarClienteAlPlan(cliente3, plan6);
+		concesionaria.agregarClienteAlPlan(cliente4, plan6);
+		concesionaria.agregarClienteAlPlan(cliente5, plan6);
+		concesionaria.agregarClienteAlPlan(cliente6, plan6);
 		//Agrego 5 participantes al plan 5
-		plan5.inscribirParticipante(parti1);
-		plan5.inscribirParticipante(parti2);
-		plan5.inscribirParticipante(parti3);
-		plan5.inscribirParticipante(parti4);
-		plan5.inscribirParticipante(parti5);
+		concesionaria.agregarClienteAlPlan(cliente1, plan5);
+		concesionaria.agregarClienteAlPlan(cliente2, plan5);
+		concesionaria.agregarClienteAlPlan(cliente3, plan5);
+		concesionaria.agregarClienteAlPlan(cliente4, plan5);
+		concesionaria.agregarClienteAlPlan(cliente5, plan5);
 		//Agrego 4 participantes al plan 7
-		plan7.inscribirParticipante(parti1);
-		plan7.inscribirParticipante(parti2);
-		plan7.inscribirParticipante(parti3);
-		plan7.inscribirParticipante(parti4);
+		concesionaria.agregarClienteAlPlan(cliente1, plan7);
+		concesionaria.agregarClienteAlPlan(cliente2, plan7);
+		concesionaria.agregarClienteAlPlan(cliente3, plan7);
+		concesionaria.agregarClienteAlPlan(cliente4, plan7);
 		//Agrego 3 participantes al plan 8
-		plan8.inscribirParticipante(parti1);
-		plan8.inscribirParticipante(parti2);
-		plan8.inscribirParticipante(parti3);
+		concesionaria.agregarClienteAlPlan(cliente1, plan8);
+		concesionaria.agregarClienteAlPlan(cliente2, plan8);
+		concesionaria.agregarClienteAlPlan(cliente3, plan8);
 		//Agrego 2 participantes al plan 9
-		plan9.inscribirParticipante(parti10);
-		plan9.inscribirParticipante(parti3);
+		concesionaria.agregarClienteAlPlan(cliente1, plan9);
+		concesionaria.agregarClienteAlPlan(cliente2, plan9);
 		//Agrego 1 participante al plan 11
-		plan11.inscribirParticipante(parti7);
+		concesionaria.agregarClienteAlPlan(cliente1, plan11);
 		assertEquals(concesionaria.topTenPlanesSuscriptos().get(0), plan1);
 		assertEquals(concesionaria.topTenPlanesSuscriptos().get(1), plan2);
 		assertEquals(concesionaria.topTenPlanesSuscriptos().get(2), plan4);
@@ -180,32 +203,47 @@ public class TestCaseFinales {
 	@Test
 	public void test02EjecutarAdjudicaciones() throws NoHayParticipantesException {
 		concesionaria.agregarPlan(plan1);
-		plan1.inscribirParticipante(parti1);
-		plan1.inscribirParticipante(parti2);
-		plan1.inscribirParticipante(parti3);
-		plan1.inscribirParticipante(parti4);
-		plan1.inscribirParticipante(parti5);
-		plan1.inscribirParticipante(parti6);
-		plan1.inscribirParticipante(parti7);
-		plan1.inscribirParticipante(parti8);
-		plan1.inscribirParticipante(parti9);
-		plan1.inscribirParticipante(parti10);
+		concesionaria.agregarClienteAlPlan(cliente1, plan1);
+		concesionaria.agregarClienteAlPlan(cliente2, plan1);
+		concesionaria.agregarClienteAlPlan(cliente3, plan1);
+		concesionaria.agregarClienteAlPlan(cliente4, plan1);
+		concesionaria.agregarClienteAlPlan(cliente5, plan1);
+		concesionaria.agregarClienteAlPlan(cliente6, plan1);
+		concesionaria.agregarClienteAlPlan(cliente7, plan1);
+		concesionaria.agregarClienteAlPlan(cliente8, plan1);
+		concesionaria.agregarClienteAlPlan(cliente9, plan1);
+		concesionaria.agregarClienteAlPlan(cliente10, plan1);
 		concesionaria.adjudicar(plan1);
 		
 	}
 
-//	@Test
-//	public void test03InformacionDeStockLocal_vs_Plantas() {
-//		assertEquals();
-//	}
+	@Test
+	public void test03InformacionDeStockLocal_vs_Plantas() {
+		plantaPacheko.fabricarElModelo(unModeloDeAuto); 	//1
+		plantaPacheko.fabricarElModelo(unModeloDeAuto);		//2
+		plantaPacheko.fabricarElModelo(unModeloDeAuto);		//3
+		plantaPilar.fabricarElModelo(unModeloDeAuto);		//4
+		plantaPilar.fabricarElModelo(unModeloDeAuto);		//5
+		plantaPilar.fabricarElModelo(modeloTroncomovil);		//a
+		plantaPilar.fabricarElModelo(unModeloDeAuto);		//6
+		plantaPilar.fabricarElModelo(unModeloDeAuto);		//7
+		plantaPilar.fabricarElModelo(unModeloDeAuto);		//8
+		plantaPilar.fabricarElModelo(modeloTroncomovil);		//b
+		plantaPilar.fabricarElModelo(unModeloDeAuto);		//9
+		plantaRodrigues.fabricarElModelo(unModeloDeAuto);	//10
+		plantaRodrigues.fabricarElModelo(modeloTroncomovil); //c
+		assertEquals(concesionaria.getStockDelModelo(unModeloDeAuto),(Integer) 10);
+		assertEquals(concesionaria.getStockDelModelo(modeloTroncomovil),(Integer) 3);
+
+	}
 	/*
 	@Test
 	public void test04EfectuarPagosDeCuotas() {
 		fail("Not yet implemented");
-	}
+	}*/
 	
 	@Test
 	public void test05RegistrarCuponesDeAdjudicacion() {
 		fail("Not yet implemented");
-	}*/
+	}
 }
