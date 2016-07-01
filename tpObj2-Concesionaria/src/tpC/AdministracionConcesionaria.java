@@ -6,6 +6,8 @@ package tpC;
 
 import java.util.ArrayList;
 
+import org.junit.Test;
+
 public class AdministracionConcesionaria {
 
 	private double gastos;
@@ -112,4 +114,6 @@ public class AdministracionConcesionaria {
 
 		return cuponDelParticipante;
 	}
+
+
 }

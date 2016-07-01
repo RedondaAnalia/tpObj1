@@ -179,4 +179,9 @@ public class Concesionaria {
 	public void pedirAutoALaFabrica(ModeloDeAuto unModelo) throws NoHayStockException, NoExisteElModeloDelAutoException{
 		deposito.add(fabrica.enviarAutoA(this, unModelo));
 	}
+
+	public void entregarAuto(Auto carga) {
+		deposito.add(carga);
+	}
+
 }

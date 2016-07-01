@@ -109,10 +109,22 @@ public class TestCaseAdministracionConcesionaria {
 		//verify (administracion.obtenerCuponDelParticipante(otroParticipante));
 		//probar excepcion para cuando el participnte no esta 
 	}
-	/*PROBAR EXCEPCION PARA CUANDO NO HAYA PARTICIPANTES
-	@Test
-	public void test08_CapturadeExcepcion() throws NoHayCuponException{
-		assertNotNull( administracion.obtenerCuponDelParticipante(unParticipante));
-	}*/
+	
+	@Test (expected = NoHayCuponException.class)
+	public void test08_CapturadeExcepcionCuandoLaListaEstaVasia() throws NoHayCuponException{
+		administracion.obtenerCuponDelParticipante(unParticipante);
+	}
+	
+	@Test (expected = NoHayCuponException.class)
+	public void test09_CapturardeEcxceptionCuando() throws NoHayCuponException{
+		when(unParticipante.getPlan()).thenReturn(planMock);
+		when(planMock.getPlanDePago()).thenReturn(planDePagoMock);
+		when(planDePagoMock.cuotaFinal(modeloMock)).thenReturn((double) 3500);
+		when(planMock.getModelo()).thenReturn(modeloMock);
+		when(fleteMock.consultarValorDelFlete(unConcesionarioMock.distanciaAPlantaMasCercana(modeloMock))).thenReturn((double) 3000);
+		
+		administracion.generarCuponDeAdjudicacion(unParticipante, unConcesionarioMock);
+		administracion.obtenerCuponDelParticipante(otroParticipante);
+	}
 }
 
