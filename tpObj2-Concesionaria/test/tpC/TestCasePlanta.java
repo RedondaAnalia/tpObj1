@@ -26,9 +26,10 @@ private Planta myPlanta;
 		MockitoAnnotations.initMocks(this);
 		
 		myPlanta = new Planta(new Coord(10,10), observerStock);
+
 		when(unAuto.getModelo()).thenReturn(fordFiesta4pFull);
 		when(otroAuto.getModelo()).thenReturn(fordMustang2pFull);
-		
+		 
 	}
 
 	@Test
@@ -40,6 +41,7 @@ private Planta myPlanta;
 	@Test
 	public void test2_agregarModeloYpreguntarSiPuedeFabricar(){
 		myPlanta = new Planta(new Coord(10,10), observerStock);
+		myPlanta.puedeFabricarElModelo(fordFiesta4pFull);
 		assertFalse(myPlanta.tieneModelo(fordMustang2pFull));
 		assertTrue(myPlanta.tieneModelo(fordFiesta4pFull));
 	}

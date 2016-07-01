@@ -240,11 +240,20 @@ public class TestCaseFinales {
 		assertEquals(concesionaria.getStockDelModelo(modeloTroncomovil),(Integer) 3);
 
 	}
-	/*
+	
 	@Test
-	public void test04EfectuarPagosDeCuotas() {
-		fail("Not yet implemented");
-	}*/
+	public void test04EfectuarPagosDeCuotas() throws TerminoDePagarCuotasException {
+		concesionaria.agregarClienteAlPlan(cliente1, plan1);
+		Participante pagador = cliente1.getParticipantes().get(0);
+		Cuota cuotaAPagar = concesionaria.generarCuota(pagador);
+		assertEquals(pagador.getCuotasPagas(),(Integer) 0);
+		pagador.pagarCuota(cuotaAPagar);
+		assertEquals(pagador.getCuotasPagas(),(Integer) 1);
+		pagador.pagarCuota(cuotaAPagar);
+		assertEquals(pagador.getCuotasPagas(),(Integer) 2);
+		
+		
+	}
 	
 	@Test
 	public void test05RegistrarCuponesDeAdjudicacion() throws NoHayParticipantesException {
