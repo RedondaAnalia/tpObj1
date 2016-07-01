@@ -23,14 +23,14 @@ public class TestCaseConcesionaria {
 	@Mock private Seguro unSeguro;
 	@Mock private Participante mockParticipante;
 	@Mock private Cuota mockCuota;
+	@Mock private ModeloDeAuto a3Mock;
 	
 	@Before
 	public void setUp() throws Exception {
-			
+		adminMock = mock(AdministracionConcesionaria.class);	
 		peugeot = mock(Fabrica.class);
 		mockCuota= mock(Cuota.class);
 		ubicacion= mock (Coord.class);
-		los3Fanaticos= new Concesionaria(peugeot, ubicacion, adminMock);
 		pabloMock = mock(Cliente.class);
 		demianMock = mock(Cliente.class);
 		anitaMock = mock(Cliente.class);
@@ -39,6 +39,7 @@ public class TestCaseConcesionaria {
 		unSeguro = mock(Seguro.class);
 		mockParticipante=mock(Participante.class);
 		MockitoAnnotations.initMocks(this);		
+		los3Fanaticos= new Concesionaria(peugeot, ubicacion, adminMock);
 	}
 	
 	
@@ -64,23 +65,18 @@ public class TestCaseConcesionaria {
 	@Test
 	public void test3_verificoLaUbicacion(){
 
-		peugeot = mock(Fabrica.class);
-		ubicacion= mock (Coord.class);
-		los3Fanaticos= new Concesionaria(peugeot,ubicacion,adminMock);
 		assertEquals(los3Fanaticos.getUbicacion(),ubicacion);
 	}
 	
 	@Test
 	public void test4_GenerarValorDeCuota(){
 		when(adminMock.calcularCuota(mockParticipante)).thenReturn(50.0);
-		los3Fanaticos= new Concesionaria(peugeot, ubicacion, adminMock);
 		los3Fanaticos.generarValorDeCuota(mockParticipante);
 		Mockito.verify(adminMock,Mockito.times(1)).calcularCuota(mockParticipante);
 	}
 	
 	@Test
 	public void test5_generarCuota() throws TerminoDePagarCuotasException{
-		los3Fanaticos= new Concesionaria(peugeot, ubicacion, adminMock);
 		when(adminMock.imprimirCuota(mockParticipante)).thenReturn(mockCuota);
 		los3Fanaticos.generarCuota(mockParticipante);
 		Mockito.verify(adminMock,Mockito.times(1)).imprimirCuota(mockParticipante);
@@ -88,9 +84,22 @@ public class TestCaseConcesionaria {
 	
 	@Test
 	public void test6_EmisionDePagos(){
-		los3Fanaticos= new Concesionaria(peugeot, ubicacion, adminMock);
 		los3Fanaticos.recibirPago(mockCuota);
 		Mockito.verify(adminMock,Mockito.times(1)).recibirPago(mockCuota);
+	}
+	
+	@Test
+	public void test7_distanciaAPlantaMasCercana(){
+		when(peugeot.distanciaConcesionariaPlantaMasCercanaConElModelo(los3Fanaticos, a3Mock)).thenReturn(18.0);
+		System.out.println(peugeot.distanciaConcesionariaPlantaMasCercanaConElModelo(los3Fanaticos, a3Mock));
+		assertEquals(18.0, los3Fanaticos.distanciaAPlantaMasCercana(a3Mock), 0);
+	}
+	
+	@Test
+	public void test8_pedirAutoAFabrica() throws NoHayStockException, NoExisteElModeloDelAutoException{
+		assertEquals(0,los3Fanaticos.getDeposito().size(), 0);
+		los3Fanaticos.pedirAutoALaFabrica(a3Mock);
+		assertEquals(1,los3Fanaticos.getDeposito().size(), 0);
 	}
 }
 
