@@ -114,6 +114,9 @@ public class AdministracionConcesionaria {
 
 		return cuponDelParticipante;
 	}
+	public ArrayList<CuponDeAdjudicacion> obtenerTalonarioDeAdjudicados() {
+		return talonarioDeCuponesDeAdjudicacion;
+	}
 
 
 }

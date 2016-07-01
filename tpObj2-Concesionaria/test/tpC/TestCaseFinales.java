@@ -6,6 +6,8 @@ import org.junit.Before;
 import org.junit.Test;
 import static org.mockito.Mockito.*;
 
+import java.util.ArrayList;
+
 public class TestCaseFinales {
 
 	private FormaDeAdjudicacion adjudicacion;
@@ -63,7 +65,9 @@ public class TestCaseFinales {
 		unSorteo= new SorteoLoteriaNacional();
 		
 		admin= new AdministracionConcesionaria(350.0, unSeguro);
-		adjudicacion= new AdjudicacionPorSorteo(unSorteo);
+		//adjudicacion= new AdjudicacionPorSorteo(unSorteo);
+		
+		adjudicacion = new AdjudicacionPorMayorCobertura();
 		pago1= new Plan100x100(6);
 		
 		unModeloDeAuto= new ModeloDeAuto("fordFiesta", 2016,3,100000);
@@ -243,7 +247,28 @@ public class TestCaseFinales {
 	}*/
 	
 	@Test
-	public void test05RegistrarCuponesDeAdjudicacion() {
-		fail("Not yet implemented");
+	public void test05RegistrarCuponesDeAdjudicacion() throws NoHayParticipantesException {
+		concesionaria.agregarPlan(plan1);
+		concesionaria.agregarClienteAlPlan(cliente1, plan1);
+		concesionaria.agregarClienteAlPlan(cliente2, plan1);
+		concesionaria.agregarClienteAlPlan(cliente3, plan1);
+		concesionaria.agregarClienteAlPlan(cliente4, plan1);
+		concesionaria.agregarClienteAlPlan(cliente5, plan1);
+		concesionaria.agregarClienteAlPlan(cliente6, plan1);
+		concesionaria.agregarClienteAlPlan(cliente7, plan1);
+		concesionaria.agregarClienteAlPlan(cliente8, plan1);
+		concesionaria.agregarClienteAlPlan(cliente9, plan1);
+		concesionaria.agregarClienteAlPlan(cliente10, plan1);
+		concesionaria.adjudicar(plan1);
+		concesionaria.adjudicar(plan1);
+
+		ArrayList<CuponDeAdjudicacion> talonario = admin.obtenerTalonarioDeAdjudicados();
+		System.out.println(talonario);
+		CuponDeAdjudicacion cupon = talonario.get(0);
+		assertEquals(cupon.getParticipante().getCliente().getApellido(), "Torres");
+		CuponDeAdjudicacion cupon2 = talonario.get(1);
+		assertEquals(cupon2.getParticipante().getCliente().getApellido(), "Cano");
+		
+		
 	}
 }

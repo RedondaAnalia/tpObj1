@@ -1,5 +1,7 @@
 package tpC;
 
-public class StateParticipante {
-
+public abstract class StateParticipante {
+	public EstadoParticipante estado(){
+		return null;
+	}
 }
