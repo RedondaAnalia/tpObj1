@@ -9,5 +9,12 @@ public class CuponDeAdjudicacion {
 		participante = beneficiado;
 		montoParaAdjudicar = unMontoParaAdjudicar;
 	}
-
+	
+	public Participante getParticipante() {
+		return participante;
+	}
+	
+	public double getMontoParaAdjudicar() {
+		return montoParaAdjudicar;
+	}
 }

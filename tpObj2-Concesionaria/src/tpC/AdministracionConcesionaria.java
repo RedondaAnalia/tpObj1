@@ -11,10 +11,6 @@ public class AdministracionConcesionaria {
 	private double gastos;
 	private Seguro aseguradora;
 	private AgenciaDeFletes flete;
-	public void setFlete(AgenciaDeFletes flete) {
-		this.flete = flete;
-	}
-
 	private ArrayList<CuponDeAdjudicacion> talonarioDeCuponesDeAdjudicacion;
 
 /**
@@ -26,6 +22,13 @@ public class AdministracionConcesionaria {
 		gastos = gastosAdministrativos;
 		aseguradora = unaAseguradora;
 		talonarioDeCuponesDeAdjudicacion = new ArrayList<CuponDeAdjudicacion>();
+	}
+/**
+* Propósito: Cambia la agencia de Fletes
+* @param AgenciaDeFletes
+*/
+	public void setFlete(AgenciaDeFletes flete) {
+		this.flete = flete;
 	}
 	
 /**
@@ -82,7 +85,7 @@ public class AdministracionConcesionaria {
  * @param Cuota
  * @return ComprobanteDePago
  */
-	public ComprobanteDePago recibirPago(Cuota unaCuota){
+	public ComprobanteDePago recibirPago(Cuota unaCuota){ 
 		return new ComprobanteDePago(unaCuota);
 	}
 	
@@ -91,15 +94,22 @@ public class AdministracionConcesionaria {
 		talonarioDeCuponesDeAdjudicacion.add(cupon);
 	}
 
-	private double calcularMontodeAdjudicacion(Participante adjudicado,Concesionaria concesionario) {
+	public double calcularMontodeAdjudicacion(Participante adjudicado,Concesionaria concesionario) {
 		ModeloDeAuto modeloAdjudicado = adjudicado.getPlan().getModelo();
 		double valorUltimaCuota = adjudicado.getPlan().getPlanDePago().cuotaFinal(modeloAdjudicado);
-		
 		double valorDelFlete = flete.consultarValorDelFlete(concesionario.distanciaAPlantaMasCercana(modeloAdjudicado));
 		return (valorUltimaCuota + valorDelFlete);
 	}
-	public CuponDeAdjudicacion obtenerCuponDelParticipante(Participante adjudicado){
-		talonarioDeCuponesDeAdjudicacion
-		return 
+	public CuponDeAdjudicacion obtenerCuponDelParticipante(Participante adjudicado)throws NoHayCuponException{
+		CuponDeAdjudicacion cuponDelParticipante = null;
+		for (CuponDeAdjudicacion cupon : talonarioDeCuponesDeAdjudicacion)
+			if (cupon.getParticipante() == adjudicado){
+				cuponDelParticipante = cupon;
+			}
+		if (cuponDelParticipante == null){
+			throw new NoHayCuponException("No hay cupon para participante");
+		}
+
+		return cuponDelParticipante;
 	}
 }

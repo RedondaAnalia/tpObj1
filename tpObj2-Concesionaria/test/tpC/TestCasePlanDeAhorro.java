@@ -83,7 +83,8 @@ public class TestCasePlanDeAhorro {
 	}
 	
 	@Test
-	public void test_getParticipantes(){
+	public void test_getParticipantes_getPlanes(){
+		assertEquals(mockPago, planDeAhorro.getPlanDePago());
 		assertEquals(ArrayList.class, planDeAhorro.getParticipantes().getClass());
 	}
 	

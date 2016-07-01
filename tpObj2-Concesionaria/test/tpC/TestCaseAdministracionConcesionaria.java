@@ -16,6 +16,7 @@ public class TestCaseAdministracionConcesionaria {
 	@Mock private PlanDeAhorro planMock;
 	@Mock ModeloDeAuto modeloMock;
 	@Mock Participante unParticipante;
+	@Mock Participante otroParticipante;
 	@Mock Cuota mockCuota;
 	@Mock Concesionaria unConcesionarioMock;
 	@Mock AgenciaDeFletes fleteMock;
@@ -23,18 +24,23 @@ public class TestCaseAdministracionConcesionaria {
 	
 	@Before
 	public void setUp() throws Exception {
-		MockitoAnnotations.initMocks(this);
 		unConcesionarioMock = mock(Concesionaria.class);
 		unParticipante = mock(Participante.class);
+		otroParticipante = mock(Participante.class);
 		mockCuota=mock(Cuota.class);
 		planMock = mock(PlanDeAhorro.class);
 		seguroMock = mock(Seguro.class);
+		seguroMock2 = mock(Seguro.class);
+		planDePagoMock=mock(Plan70x30.class);
 		modeloMock = mock(ModeloDeAuto.class);
+		fleteMock = mock(AgenciaDeFletes.class);
+		MockitoAnnotations.initMocks(this);
+
 		administracion = new AdministracionConcesionaria(500.0, seguroMock);
 		administracion.setFlete(fleteMock);
-		
 	}
 
+	
 	@Test
 	public void test01_CargosDeAdministracionYSeguros() {
 		when(seguroMock.cuotaSeguro()).thenReturn(250.0);
@@ -64,6 +70,7 @@ public class TestCaseAdministracionConcesionaria {
 		assertEquals(Cuota.class, cuotaTest.getClass());
 		assertEquals(11, cuotaTest.getNroCuota(), 0);
 		assertEquals(1000, cuotaTest.getValorAlicuota(), 0);
+
 	}
 	
 	@Test (expected = TerminoDePagarCuotasException.class)
@@ -78,15 +85,34 @@ public class TestCaseAdministracionConcesionaria {
 	public void test05_EmisionDeRecibos(){
 		assertEquals(ComprobanteDePago.class,administracion.recibirPago(mockCuota).getClass());
 	}
+	
 	@Test
-	public void test06_generoUnCuponDeAdjudicacion(){
-		when(unConcesionarioMock.distanciaAPlantaMasCercana(modeloMock)).thenReturn((double) 100);
-		when(fleteMock.consultarValorDelFlete(100)).thenReturn((double) 3000);
+	public void test06_calcularMontoDeAdjudicacion(){
+		when(unParticipante.getPlan()).thenReturn(planMock);
+		when(planMock.getPlanDePago()).thenReturn(planDePagoMock);
+		when(planMock.getModelo()).thenReturn(modeloMock);
+		when(planDePagoMock.cuotaFinal(modeloMock)).thenReturn(100.0);		
+		when(fleteMock.consultarValorDelFlete(unConcesionarioMock.distanciaAPlantaMasCercana(modeloMock))).thenReturn(23.0);
+		assertEquals(123, administracion.calcularMontodeAdjudicacion(unParticipante, unConcesionarioMock),0);		
+	}
+	
+	@Test
+	public void test07_generoUnCuponDeAdjudicacion() throws NoHayCuponException{
+		when(unParticipante.getPlan()).thenReturn(planMock);
 		when(planMock.getPlanDePago()).thenReturn(planDePagoMock);
 		when(planDePagoMock.cuotaFinal(modeloMock)).thenReturn((double) 3500);
-		when(unParticipante.getPlan()).thenReturn(planMock);
-		administracion.generarCuponDeAdjudicacion(unParticipante, unConcesionarioMock);
+		when(planMock.getModelo()).thenReturn(modeloMock);
+		when(fleteMock.consultarValorDelFlete(unConcesionarioMock.distanciaAPlantaMasCercana(modeloMock))).thenReturn((double) 3000);
 		
+		administracion.generarCuponDeAdjudicacion(unParticipante, unConcesionarioMock);
+		assertEquals(6500.0, administracion.obtenerCuponDelParticipante(unParticipante).getMontoParaAdjudicar(), 0);
+		//verify (administracion.obtenerCuponDelParticipante(otroParticipante));
+		//probar excepcion para cuando el participnte no esta 
 	}
+	/*PROBAR EXCEPCION PARA CUANDO NO HAYA PARTICIPANTES
+	@Test
+	public void test08_CapturadeExcepcion() throws NoHayCuponException{
+		assertNotNull( administracion.obtenerCuponDelParticipante(unParticipante));
+	}*/
 }
 
