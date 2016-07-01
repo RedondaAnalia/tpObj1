@@ -29,9 +29,12 @@ public class testCaseAdjudicacionPorSorteo {
 		pabloMock = mock(Participante.class);
 		sorteo= mock(SorteoLoteriaNacional.class);
 		unPlanCualquiera = mock(PlanDeAhorro.class);
-		laListaDeParticipantes = mock(ArrayList.class);
+		laListaDeParticipantes = new ArrayList<Participante>();
 		MockitoAnnotations.initMocks(this);
 		adjudicacion = new AdjudicacionPorSorteo(sorteo);
+		laListaDeParticipantes.add(analiaMock);
+		laListaDeParticipantes.add(demianMock);
+		laListaDeParticipantes.add(pabloMock);
 	}
 
 	@Test
@@ -41,9 +44,6 @@ public class testCaseAdjudicacionPorSorteo {
 		//Y aparte ganaste :D :D :D
 		when(unPlanCualquiera.getParticipantes()).thenReturn(laListaDeParticipantes);
 		when(unPlanCualquiera.cantDeParticipantes()).thenReturn(3);
-		when(laListaDeParticipantes.get(0)).thenReturn(analiaMock);
-		when(laListaDeParticipantes.get(1)).thenReturn(demianMock);
-		when(laListaDeParticipantes.get(2)).thenReturn(pabloMock);
 		when(analiaMock.getCalidadDelParticipante()).thenReturn(new ParticipanteStd());
 		when(pabloMock.getCalidadDelParticipante()).thenReturn(new ParticipanteStd());
 		when(demianMock.getCalidadDelParticipante()).thenReturn(new ParticipanteStd());
@@ -54,9 +54,6 @@ public class testCaseAdjudicacionPorSorteo {
 	public void test2_ArmamosListaDe3ParticipantesYGanaDemian() throws NoHayParticipantesException {
 		when(unPlanCualquiera.getParticipantes()).thenReturn(laListaDeParticipantes);
 		when(unPlanCualquiera.cantDeParticipantes()).thenReturn(3);
-		when(laListaDeParticipantes.get(0)).thenReturn(analiaMock);
-		when(laListaDeParticipantes.get(1)).thenReturn(demianMock);
-		when(laListaDeParticipantes.get(2)).thenReturn(pabloMock);
 		when(sorteo.primerPremio(3)).thenReturn(1);
 		assertEquals(demianMock,adjudicacion.adjudicar(unPlanCualquiera));
 		}
@@ -65,15 +62,12 @@ public class testCaseAdjudicacionPorSorteo {
 	public void test3_ArmamosListaDe3ParticipantesYGanaPablo() throws NoHayParticipantesException {
 		when(unPlanCualquiera.getParticipantes()).thenReturn(laListaDeParticipantes);
 		when(unPlanCualquiera.cantDeParticipantes()).thenReturn(3);
-		when(laListaDeParticipantes.get(0)).thenReturn(analiaMock);
-		when(laListaDeParticipantes.get(1)).thenReturn(demianMock);
-		when(laListaDeParticipantes.get(2)).thenReturn(pabloMock);
 		when(sorteo.primerPremio(3)).thenReturn(2);		
 		assertEquals(pabloMock, adjudicacion.adjudicar(unPlanCualquiera));
 		}
 	
 	@Test(expected = NoHayParticipantesException.class)
-	public void test4_ArmamosListaDe3ParticipantesYGanaPablo() throws NoHayParticipantesException {
+	public void test4_ArmamosListaDe3ParticipantesYNoHayParticipantes() throws NoHayParticipantesException {
 		when(unPlanCualquiera.getParticipantes()).thenReturn(new ArrayList<Participante>());
 		
 		adjudicacion.adjudicar(unPlanCualquiera);
