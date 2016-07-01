@@ -66,10 +66,13 @@ public class TestCaseAdjudicacionPorMayorCobertura {
 	/*
 	 **** Testeo el manejo de la excepcion	
 	 */
-	@Test//(expected= NoHayParticipantesException.class)
+	@Test(expected= NoHayParticipantesException.class)
 	public void testManejoDeExcepcionPorNoHayAQuienAdjudicar() throws NoHayParticipantesException{
 		when(unPlanCualquiera.cantDeParticipantes()).thenReturn(3);
 		when(unPlanCualquiera.getParticipantes()).thenReturn(laListaDeParticipantes);
+		analiaMock= laListaDeParticipantes.get(0);
+		demianMock=laListaDeParticipantes.get(1);
+		pabloMock=laListaDeParticipantes.get(2);
 		when(analiaMock.getCalidadDelParticipante()).thenReturn(new ParticipanteAdjudicado());
 		when(demianMock.getCalidadDelParticipante()).thenReturn(new ParticipanteAdjudicado());
 		when(pabloMock.getCalidadDelParticipante()).thenReturn(new ParticipanteAdjudicado());
@@ -123,6 +126,9 @@ public class TestCaseAdjudicacionPorMayorCobertura {
 		when(pabloMock.getCliente()).thenReturn(mockCliente2);
 		when(mockCliente1.getFchIngreso()).thenReturn(fecha1);
 		when(mockCliente2.getFchIngreso()).thenReturn(fecha2);
+		when(analiaMock.getCalidadDelParticipante()).thenReturn(new ParticipanteStd());
+		when(demianMock.getCalidadDelParticipante()).thenReturn(new ParticipanteStd());
+		when(pabloMock.getCalidadDelParticipante()).thenReturn(new ParticipanteStd());
 		assertEquals(adjudicacion.adjudicar(unPlanCualquiera), pabloMock);
 	}
 	
@@ -153,6 +159,9 @@ public class TestCaseAdjudicacionPorMayorCobertura {
 		when(demianMock.getFchInscripcion()).thenReturn(fecha4);
 		when(pabloMock.getFchInscripcion()).thenReturn(fecha3);
 		when(analiaMock.getFchInscripcion()).thenReturn(fecha2);
+		when(analiaMock.getCalidadDelParticipante()).thenReturn(new ParticipanteStd());
+		when(demianMock.getCalidadDelParticipante()).thenReturn(new ParticipanteStd());
+		when(pabloMock.getCalidadDelParticipante()).thenReturn(new ParticipanteStd());
 		assertEquals(adjudicacion.adjudicar(unPlanCualquiera), analiaMock);
 		
 	}
