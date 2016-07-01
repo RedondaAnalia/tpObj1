@@ -50,24 +50,32 @@ public class testCaseAdjudicacionPorSorteo {
 		when(pabloMock.getCalidadDelParticipante()).thenReturn(new ParticipanteStd());
 		when(demianMock.getCalidadDelParticipante()).thenReturn(new ParticipanteStd());
 		when(sorteo.primerPremio(3)).thenReturn(0);		
-		assertEquals(analiaMock,adjudicacion.adjudicar(unPlanCualquiera));	
+		assertEquals(demianMock,adjudicacion.adjudicar(unPlanCualquiera));	
 		}
-	/*
+	
 	@Test	
 	public void test2_ArmamosListaDe3ParticipantesYGanaDemian() throws NoHayParticipantesException {
 		when(unPlanCualquiera.getParticipantes()).thenReturn(laListaDeParticipantes);
 		when(unPlanCualquiera.cantDeParticipantes()).thenReturn(3);
 		when(sorteo.primerPremio(3)).thenReturn(1);
+		when(analiaMock.getCalidadDelParticipante()).thenReturn(new ParticipanteAdjudicado());
+		when(pabloMock.getCalidadDelParticipante()).thenReturn(new ParticipanteStd());
+		when(demianMock.getCalidadDelParticipante()).thenReturn(new ParticipanteStd());
 		assertEquals(demianMock,adjudicacion.adjudicar(unPlanCualquiera));
 		
 		}
 	
 	@Test
-	public void test3_ArmamosListaDe3ParticipantesYGanaPablo() throws NoHayParticipantesException {
+	public void test3_ArmamosListaDe3ParticipantesYGanaDemian() throws NoHayParticipantesException {
 		when(unPlanCualquiera.getParticipantes()).thenReturn(laListaDeParticipantes);
+		
+		when(analiaMock.getCalidadDelParticipante()).thenReturn(new ParticipanteAdjudicado());
+		when(pabloMock.getCalidadDelParticipante()).thenReturn(new ParticipanteStd());
+		when(demianMock.getCalidadDelParticipante()).thenReturn(new ParticipanteStd());
 		when(unPlanCualquiera.cantDeParticipantes()).thenReturn(3);
+		
 		when(sorteo.primerPremio(3)).thenReturn(2);		
-		assertEquals(pabloMock, adjudicacion.adjudicar(unPlanCualquiera));
+		assertEquals(demianMock, adjudicacion.adjudicar(unPlanCualquiera));
 		}
 	
 	@Test(expected = NoHayParticipantesException.class)
@@ -77,8 +85,17 @@ public class testCaseAdjudicacionPorSorteo {
 		adjudicacion.adjudicar(unPlanCualquiera);
 		}
 	
-	@Test
-	public void test5_NoHayParticipantesSinAdjudicar(){
+	@Test(expected= NoHayParticipantesException.class)
+	public void test5_NoHayParticipantesSinAdjudicar() throws NoHayParticipantesException {
+		when(unPlanCualquiera.cantDeParticipantes()).thenReturn(3);
+		when(unPlanCualquiera.getParticipantes()).thenReturn(laListaDeParticipantes);	
 		
-	}*/
+		when(analiaMock.getCalidadDelParticipante()).thenReturn(new ParticipanteAdjudicado());
+		when(pabloMock.getCalidadDelParticipante()).thenReturn(new ParticipanteAdjudicado());
+		when(demianMock.getCalidadDelParticipante()).thenReturn(new ParticipanteEntregado());
+		
+		when(sorteo.primerPremio(3)).thenReturn(0);		
+		
+		assertEquals(demianMock,adjudicacion.adjudicar(unPlanCualquiera));	
+	}
 }

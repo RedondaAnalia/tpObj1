@@ -25,9 +25,21 @@ public class AdjudicacionPorSorteo implements FormaDeAdjudicacion{
 		if (unPlanDeAhorro.cantDeParticipantes()==0){
 			throw new NoHayParticipantesException("No hay participantes");
 		}
-		ArrayList<Participante> clone= (ArrayList<Participante>) unPlanDeAhorro.getParticipantes().clone();
+		ArrayList<Participante> clone = new ArrayList<Participante>();
 		
-		clone.stream().filter(participante->participante.getCalidadDelParticipante().getClass()== ParticipanteStd.class);
+		for (Participante participante : unPlanDeAhorro.getParticipantes()) {
+			if(participante.getCalidadDelParticipante().getClass()==ParticipanteStd.class)
+				clone.add(participante);
+		}
+		
+		/*
+		ArrayList<Participante> clone= (ArrayList<Participante>) unPlanDeAhorro.getParticipantes().clone();
+		clone.stream().filter(participante-> (participante.getCalidadDelParticipante().getClass() == ParticipanteStd.class));
+		System.out.println(ParticipanteStd.class);
+		System.out.println(clone.get(0).getCalidadDelParticipante().getClass());
+		System.out.println(clone.get(1));
+		System.out.println(clone.get(2));
+		*/
 		if (clone.size()==0){
 			throw new NoHayParticipantesException("No hay participantes para adjudicar");
 		}
