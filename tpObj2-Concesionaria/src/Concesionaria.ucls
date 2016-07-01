@@ -12,7 +12,7 @@
   </class>  
   <class id="2" language="java" name="tpC.Cliente" project="tpObj2-Concesionaria" 
     file="/tpObj2-Concesionaria/src/tpC/Cliente.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="411" y="13"/>    
+    <position height="-1" width="-1" x="524" y="13"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="false" protected="true" private="true" static="false"/>      
@@ -21,7 +21,7 @@
   </class>  
   <class id="3" language="java" name="tpC.Participante" project="tpObj2-Concesionaria" 
     file="/tpObj2-Concesionaria/src/tpC/Participante.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="697" y="14"/>    
+    <position height="-1" width="-1" x="874" y="2"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="false" protected="true" private="true" static="false"/>      
@@ -30,7 +30,7 @@
   </class>  
   <class id="4" language="java" name="tpC.PlanDeAhorro" project="tpObj2-Concesionaria" 
     file="/tpObj2-Concesionaria/src/tpC/PlanDeAhorro.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="729" y="382"/>    
+    <position height="-1" width="-1" x="979" y="384"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="false" protected="true" private="true" static="false"/>      
@@ -39,7 +39,7 @@
   </class>  
   <interface id="5" language="java" name="tpC.PlanDePago" project="tpObj2-Concesionaria" 
     file="/tpObj2-Concesionaria/src/tpC/PlanDePago.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="732" y="623"/>    
+    <position height="-1" width="-1" x="1083" y="1025"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="false" protected="true" private="true" static="false"/>      
@@ -48,7 +48,7 @@
   </interface>  
   <class id="6" language="java" name="tpC.Plan100x100" project="tpObj2-Concesionaria" 
     file="/tpObj2-Concesionaria/src/tpC/Plan100x100.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="976" y="531"/>    
+    <position height="-1" width="-1" x="978" y="683"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="false" protected="true" private="true" static="false"/>      
@@ -57,7 +57,7 @@
   </class>  
   <class id="7" language="java" name="tpC.Plan70x30" project="tpObj2-Concesionaria" 
     file="/tpObj2-Concesionaria/src/tpC/Plan70x30.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="970" y="704"/>    
+    <position height="-1" width="-1" x="1077" y="847"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="false" protected="true" private="true" static="false"/>      
@@ -66,7 +66,7 @@
   </class>  
   <class id="8" language="java" name="tpC.AdjudicacionPorMayorCobertura" project="tpObj2-Concesionaria" 
     file="/tpObj2-Concesionaria/src/tpC/AdjudicacionPorMayorCobertura.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="923" y="200"/>    
+    <position height="-1" width="-1" x="1299" y="497"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="false" protected="true" private="true" static="false"/>      
@@ -75,7 +75,7 @@
   </class>  
   <class id="9" language="java" name="tpC.AdjudicacionPorSorteo" project="tpObj2-Concesionaria" 
     file="/tpObj2-Concesionaria/src/tpC/AdjudicacionPorSorteo.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1144" y="201"/>    
+    <position height="-1" width="-1" x="1303" y="217"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="false" protected="true" private="true" static="false"/>      
@@ -84,7 +84,7 @@
   </class>  
   <class id="10" language="java" name="tpC.Fabrica" project="tpObj2-Concesionaria" 
     file="/tpObj2-Concesionaria/src/tpC/Fabrica.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="98" y="58"/>    
+    <position height="-1" width="-1" x="99" y="-55"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="false" protected="true" private="true" static="false"/>      
@@ -93,7 +93,7 @@
   </class>  
   <class id="11" language="java" name="tpC.Planta" project="tpObj2-Concesionaria" 
     file="/tpObj2-Concesionaria/src/tpC/Planta.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="74" y="397"/>    
+    <position height="-1" width="-1" x="9" y="263"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="false" protected="true" private="true" static="false"/>      
@@ -102,7 +102,7 @@
   </class>  
   <class id="12" language="java" name="tpC.ModeloDeAuto" project="tpObj2-Concesionaria" 
     file="/tpObj2-Concesionaria/src/tpC/ModeloDeAuto.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="495" y="686"/>    
+    <position height="-1" width="-1" x="728" y="981"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="false" protected="true" private="true" static="false"/>      
@@ -111,7 +111,7 @@
   </class>  
   <class id="13" language="java" name="tpC.Auto" project="tpObj2-Concesionaria" 
     file="/tpObj2-Concesionaria/src/tpC/Auto.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="495" y="927"/>    
+    <position height="-1" width="-1" x="458" y="889"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="false" protected="true" private="true" static="false"/>      
@@ -120,7 +120,7 @@
   </class>  
   <class id="14" language="java" name="tpC.Stock" project="tpObj2-Concesionaria" 
     file="/tpObj2-Concesionaria/src/tpC/Stock.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="232" y="828"/>    
+    <position height="-1" width="-1" x="222" y="851"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="false" protected="true" private="true" static="false"/>      
@@ -129,7 +129,7 @@
   </class>  
   <class id="15" language="java" name="tpC.Coord" project="tpObj2-Concesionaria" 
     file="/tpObj2-Concesionaria/src/tpC/Coord.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="239" y="618"/>    
+    <position height="-1" width="-1" x="-45" y="563"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="false" protected="true" private="true" static="false"/>      
@@ -138,7 +138,7 @@
   </class>  
   <class id="16" language="java" name="tpC.CuotasPagas" project="tpObj2-Concesionaria" 
     file="/tpObj2-Concesionaria/src/tpC/CuotasPagas.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="960" y="-18"/>    
+    <position height="-1" width="-1" x="1194" y="-80"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="false" protected="true" private="true" static="false"/>      
@@ -147,353 +147,866 @@
   </class>  
   <class id="17" language="java" name="tpC.SorteoLoteriaNacional" project="tpObj2-Concesionaria" 
     file="/tpObj2-Concesionaria/src/tpC/SorteoLoteriaNacional.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1158" y="35"/>    
+    <position height="-1" width="-1" x="1343" y="341"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="false" protected="true" private="true" static="false"/>      
       <operations public="true" package="false" protected="true" private="true" static="false"/>    
     </display>  
   </class>  
-  <dependency id="18">    
-    <end type="SOURCE" refId="9"/>    
-    <end type="TARGET" refId="4"/>  
+  <interface id="18" language="java" name="tpC.FormaDeAdjudicacion" project="tpObj2-Concesionaria" 
+    file="/tpObj2-Concesionaria/src/tpC/FormaDeAdjudicacion.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1212" y="99"/>    
+    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="false" protected="true" private="true" static="false"/>      
+      <operations public="true" package="false" protected="true" private="true" static="false"/>    
+    </display>  
+  </interface>  
+  <class id="19" language="java" name="tpC.Accesorios" project="tpObj2-Concesionaria" 
+    file="/tpObj2-Concesionaria/src/tpC/Accesorios.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="85" width="150" x="-19" y="-101"/>    
+    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="false" protected="true" private="true" static="false"/>      
+      <operations public="true" package="false" protected="true" private="true" static="false"/>    
+    </display>  
+  </class>  
+  <class id="20" language="java" name="tpC.AccesoriosAireAcondicionado" project="tpObj2-Concesionaria" 
+    file="/tpObj2-Concesionaria/src/tpC/AccesoriosAireAcondicionado.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="85" width="196" x="23" y="62"/>    
+    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="false" protected="true" private="true" static="false"/>      
+      <operations public="true" package="false" protected="true" private="true" static="false"/>    
+    </display>  
+  </class>  
+  <class id="21" language="java" name="tpC.AccesoriosBase" project="tpObj2-Concesionaria" 
+    file="/tpObj2-Concesionaria/src/tpC/AccesoriosBase.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="67" width="118" x="13" y="191"/>    
+    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="false" protected="true" private="true" static="false"/>      
+      <operations public="true" package="false" protected="true" private="true" static="false"/>    
+    </display>  
+  </class>  
+  <class id="22" language="java" name="tpC.AccesoriosDireccionHidraulica" project="tpObj2-Concesionaria" 
+    file="/tpObj2-Concesionaria/src/tpC/AccesoriosDireccionHidraulica.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="85" width="200" x="42" y="293"/>    
+    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="false" protected="true" private="true" static="false"/>      
+      <operations public="true" package="false" protected="true" private="true" static="false"/>    
+    </display>  
+  </class>  
+  <class id="23" language="java" name="tpC.AccesosoriosLevantaVidrios" project="tpObj2-Concesionaria" 
+    file="/tpObj2-Concesionaria/src/tpC/AccesosoriosLevantaVidrios.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="85" width="188" x="31" y="60"/>    
+    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="false" protected="true" private="true" static="false"/>      
+      <operations public="true" package="false" protected="true" private="true" static="false"/>    
+    </display>  
+  </class>  
+  <class id="24" language="java" name="tpC.AdministracionConcesionaria" project="tpObj2-Concesionaria" 
+    file="/tpObj2-Concesionaria/src/tpC/AdministracionConcesionaria.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="337" width="366" x="-154" y="-84"/>    
+    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="false" protected="true" private="true" static="false"/>      
+      <operations public="true" package="false" protected="true" private="true" static="false"/>    
+    </display>  
+  </class>  
+  <class id="25" language="java" name="tpC.AgenciaDeFletes" project="tpObj2-Concesionaria" 
+    file="/tpObj2-Concesionaria/src/tpC/AgenciaDeFletes.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="157" y="718"/>    
+    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="false" protected="true" private="true" static="false"/>      
+      <operations public="true" package="false" protected="true" private="true" static="false"/>    
+    </display>  
+  </class>  
+  <class id="26" language="java" name="tpC.ComprobanteDePago" project="tpObj2-Concesionaria" 
+    file="/tpObj2-Concesionaria/src/tpC/ComprobanteDePago.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="749" y="217"/>    
+    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="false" protected="true" private="true" static="false"/>      
+      <operations public="true" package="false" protected="true" private="true" static="false"/>    
+    </display>  
+  </class>  
+  <class id="27" language="java" name="tpC.Cuota" project="tpObj2-Concesionaria" 
+    file="/tpObj2-Concesionaria/src/tpC/Cuota.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="670" y="384"/>    
+    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="false" protected="true" private="true" static="false"/>      
+      <operations public="true" package="false" protected="true" private="true" static="false"/>    
+    </display>  
+  </class>  
+  <class id="28" language="java" name="tpC.CuponDeAdjudicacion" project="tpObj2-Concesionaria" 
+    file="/tpObj2-Concesionaria/src/tpC/CuponDeAdjudicacion.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="110" y="533"/>    
+    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="false" protected="true" private="true" static="false"/>      
+      <operations public="true" package="false" protected="true" private="true" static="false"/>    
+    </display>  
+  </class>  
+  <class id="29" language="java" name="tpC.Flete" project="tpObj2-Concesionaria" 
+    file="/tpObj2-Concesionaria/src/tpC/Flete.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="62" y="525"/>    
+    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="false" protected="true" private="true" static="false"/>      
+      <operations public="true" package="false" protected="true" private="true" static="false"/>    
+    </display>  
+  </class>  
+  <class id="30" language="java" name="tpC.NoExisteElModeloDelAutoException" project="tpObj2-Concesionaria" 
+    file="/tpObj2-Concesionaria/src/tpC/NoExisteElModeloDelAutoException.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="703" y="797"/>    
+    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="false" protected="true" private="true" static="false"/>      
+      <operations public="true" package="false" protected="true" private="true" static="false"/>    
+    </display>  
+  </class>  
+  <class id="31" language="java" name="tpC.NoHayCuponException" project="tpObj2-Concesionaria" 
+    file="/tpObj2-Concesionaria/src/tpC/NoHayCuponException.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="682" y="635"/>    
+    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="false" protected="true" private="true" static="false"/>      
+      <operations public="true" package="false" protected="true" private="true" static="false"/>    
+    </display>  
+  </class>  
+  <class id="32" language="java" name="tpC.NoHayParticipantesException" project="tpObj2-Concesionaria" 
+    file="/tpObj2-Concesionaria/src/tpC/NoHayParticipantesException.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="689" y="724"/>    
+    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="false" protected="true" private="true" static="false"/>      
+      <operations public="true" package="false" protected="true" private="true" static="false"/>    
+    </display>  
+  </class>  
+  <class id="33" language="java" name="tpC.ParticipanteAdjudicado" project="tpObj2-Concesionaria" 
+    file="/tpObj2-Concesionaria/src/tpC/ParticipanteAdjudicado.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="201" y="702"/>    
+    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="false" protected="true" private="true" static="false"/>      
+      <operations public="true" package="false" protected="true" private="true" static="false"/>    
+    </display>  
+  </class>  
+  <class id="34" language="java" name="tpC.ParticipanteEntregado" project="tpObj2-Concesionaria" 
+    file="/tpObj2-Concesionaria/src/tpC/ParticipanteEntregado.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="182" y="554"/>    
+    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="false" protected="true" private="true" static="false"/>      
+      <operations public="true" package="false" protected="true" private="true" static="false"/>    
+    </display>  
+  </class>  
+  <class id="35" language="java" name="tpC.ParticipanteStd" project="tpObj2-Concesionaria" 
+    file="/tpObj2-Concesionaria/src/tpC/ParticipanteStd.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="191" y="628"/>    
+    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="false" protected="true" private="true" static="false"/>      
+      <operations public="true" package="false" protected="true" private="true" static="false"/>    
+    </display>  
+  </class>  
+  <class id="36" language="java" name="tpC.Seguro" project="tpObj2-Concesionaria" 
+    file="/tpObj2-Concesionaria/src/tpC/Seguro.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="-27" y="839"/>    
+    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="false" protected="true" private="true" static="false"/>      
+      <operations public="true" package="false" protected="true" private="true" static="false"/>    
+    </display>  
+  </class>  
+  <class id="37" language="java" name="tpC.StateParticipante" project="tpObj2-Concesionaria" 
+    file="/tpObj2-Concesionaria/src/tpC/StateParticipante.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="180" y="469"/>    
+    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="false" protected="true" private="true" static="false"/>      
+      <operations public="true" package="false" protected="true" private="true" static="false"/>    
+    </display>  
+  </class>  
+  <class id="38" language="java" name="tpC.TerminoDePagarCuotasException" project="tpObj2-Concesionaria" 
+    file="/tpObj2-Concesionaria/src/tpC/TerminoDePagarCuotasException.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="692" y="546"/>    
+    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="false" protected="true" private="true" static="false"/>      
+      <operations public="true" package="false" protected="true" private="true" static="false"/>    
+    </display>  
+  </class>  
+  <dependency id="39">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="1"/>  
   </dependency>  
-  <realization id="19">    
+  <dependency id="40">    
     <end type="SOURCE" refId="7"/>    
-    <end type="TARGET" refId="5"/>  
-  </realization>  
-  <dependency id="20">    
-    <end type="SOURCE" refId="11"/>    
     <end type="TARGET" refId="12"/>  
   </dependency>  
-  <association id="21">    
-    <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="22" name="planSuscripto">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="23" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="4" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="24">    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="2"/>  
+  <dependency id="41">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="12"/>  
   </dependency>  
-  <association id="25">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="26" name="ubicacion">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="27" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="15" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="28">    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="29" name="ubicacion">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="30" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="15" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="31">    
-    <end type="SOURCE" refId="9"/>    
-    <end type="TARGET" refId="3"/>  
-  </dependency>  
-  <association id="32">    
+  <association id="42">    
     <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="33" name="planDePago">        
-        <position height="0" width="0" x="0" y="0"/>      
+      <attribute id="43" name="planDePago">        
+        <position height="0" width="0" x="351" y="402"/>      
       </attribute>      
-      <multiplicity id="34" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
+      <multiplicity id="44" minimum="0" maximum="1">        
+        <position height="0" width="0" x="351" y="402"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="5" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="35">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="36" name="planes">        
+  <association id="45">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="46" name="clientes">        
+        <position height="0" width="0" x="113" y="0"/>      
+      </attribute>      
+      <multiplicity id="47" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="113" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="48">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="49" name="concesionaria">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="37" minimum="0" maximum="2147483647">        
+      <multiplicity id="50" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="4" navigable="true"/>    
+    <end type="TARGET" refId="1" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="38">    
+  <dependency id="51">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="12"/>  
+  </dependency>  
+  <dependency id="52">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="32"/>  
+  </dependency>  
+  <dependency id="53">    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="29"/>  
+  </dependency>  
+  <dependency id="54">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <association id="55">    
     <end type="SOURCE" refId="9" navigable="false">      
-      <attribute id="39" name="sorteo">        
-        <position height="0" width="0" x="0" y="0"/>      
+      <attribute id="56" name="sorteo">        
+        <position height="0" width="0" x="185" y="306"/>      
       </attribute>      
-      <multiplicity id="40" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
+      <multiplicity id="57" minimum="0" maximum="1">        
+        <position height="0" width="0" x="185" y="306"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="17" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="41">    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="42" name="observerStock">        
-        <position height="0" width="0" x="0" y="0"/>      
+  <dependency id="58">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="15"/>  
+  </dependency>  
+  <dependency id="59">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="21"/>  
+  </dependency>  
+  <dependency id="60">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="31"/>  
+  </dependency>  
+  <association id="61">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="62" name="stock">        
+        <position height="0" width="0" x="-10" y="23"/>      
       </attribute>      
-      <multiplicity id="43" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
+      <multiplicity id="63" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-10" y="23"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="14" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="44">    
-    <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="45" name="modeloAuto">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="46" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="12" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="47">    
-    <end type="SOURCE" refId="11"/>    
-    <end type="TARGET" refId="13"/>  
-  </dependency>  
-  <realization id="48">    
+  <realization id="64">    
     <end type="SOURCE" refId="6"/>    
     <end type="TARGET" refId="5"/>  
   </realization>  
-  <association id="49">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="50" name="clientes">        
-        <position height="0" width="0" x="0" y="0"/>      
+  <dependency id="65">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <dependency id="66">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="27"/>  
+  </dependency>  
+  <association id="67">    
+    <end type="SOURCE" refId="28" navigable="false">      
+      <attribute id="68" name="participante"/>      
+      <multiplicity id="69" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="70">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="71" name="cliente">        
+        <position height="0" width="0" x="113" y="0"/>      
       </attribute>      
-      <multiplicity id="51" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
+      <multiplicity id="72" minimum="0" maximum="1">        
+        <position height="0" width="0" x="113" y="0"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="2" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <dependency id="52">    
-    <end type="SOURCE" refId="9"/>    
-    <end type="TARGET" refId="17"/>  
-  </dependency>  
-  <dependency id="53">    
-    <end type="SOURCE" refId="10"/>    
-    <end type="TARGET" refId="13"/>  
-  </dependency>  
-  <association id="54">    
-    <end type="SOURCE" refId="10" navigable="false">      
-      <attribute id="55" name="modelos">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="56" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
+  <association id="73">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="74" name="administracion"/>      
+      <multiplicity id="75" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="12" navigable="true"/>    
+    <end type="TARGET" refId="24" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <dependency id="57">    
-    <end type="SOURCE" refId="5"/>    
-    <end type="TARGET" refId="12"/>  
+  <association id="76">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="77" name="adjudicacion"/>      
+      <multiplicity id="78" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="18" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="79">    
+    <end type="SOURCE" refId="16" navigable="false">      
+      <attribute id="80" name="cuotas"/>      
+      <multiplicity id="81" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="26" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="82">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="38"/>  
   </dependency>  
-  <association id="58">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="59" name="concesionaria">        
-        <position height="0" width="0" x="0" y="0"/>      
+  <dependency id="83">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="30"/>  
+  </dependency>  
+  <association id="84">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="85" name="ubicacion">        
+        <position height="0" width="0" x="-284" y="-55"/>      
       </attribute>      
-      <multiplicity id="60" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
+      <multiplicity id="86" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-284" y="-55"/>      
       </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="15" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="87">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <association id="88">    
+    <end type="SOURCE" refId="29" navigable="false">      
+      <attribute id="89" name="destinoDescargaConcesionaria"/>      
+      <multiplicity id="90" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="1" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <dependency id="61">    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="3"/>  
+  <dependency id="91">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="4"/>  
   </dependency>  
-  <dependency id="62">    
-    <end type="SOURCE" refId="1"/>    
-    <end type="TARGET" refId="3"/>  
-  </dependency>  
-  <association id="63">    
+  <association id="92">    
     <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="64" name="cuotasPagas">        
-        <position height="0" width="0" x="0" y="0"/>      
+      <attribute id="93" name="cuotasPagas">        
+        <position height="0" width="0" x="234" y="-62"/>      
       </attribute>      
-      <multiplicity id="65" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
+      <multiplicity id="94" minimum="0" maximum="1">        
+        <position height="0" width="0" x="234" y="-62"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="16" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <dependency id="66">    
-    <end type="SOURCE" refId="6"/>    
+  <dependency id="95">    
+    <end type="SOURCE" refId="25"/>    
     <end type="TARGET" refId="12"/>  
   </dependency>  
-  <dependency id="67">    
-    <end type="SOURCE" refId="10"/>    
-    <end type="TARGET" refId="15"/>  
-  </dependency>  
-  <dependency id="68">    
-    <end type="SOURCE" refId="1"/>    
-    <end type="TARGET" refId="12"/>  
-  </dependency>  
-  <association id="69">    
-    <end type="SOURCE" refId="10" navigable="false">      
-      <attribute id="70" name="stock">        
-        <position height="0" width="0" x="0" y="0"/>      
+  <association id="96">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="97" name="planes">        
+        <position height="0" width="0" x="250" y="2"/>      
       </attribute>      
-      <multiplicity id="71" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
+      <multiplicity id="98" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="250" y="2"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="99">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="12"/>  
+  </dependency>  
+  <dependency id="100">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="34"/>  
+  </dependency>  
+  <generalization id="101">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="19"/>  
+  </generalization>  
+  <dependency id="102">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="26"/>  
+  </dependency>  
+  <generalization id="103">    
+    <end type="SOURCE" refId="33"/>    
+    <end type="TARGET" refId="37"/>  
+  </generalization>  
+  <association id="104">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="105" name="participantes">        
+        <position height="0" width="0" x="177" y="-12"/>      
+      </attribute>      
+      <multiplicity id="106" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="177" y="-12"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="107">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="108" name="modeloAuto">        
+        <position height="0" width="0" x="233" y="295"/>      
+      </attribute>      
+      <multiplicity id="109" minimum="0" maximum="1">        
+        <position height="0" width="0" x="233" y="295"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="110">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="12"/>  
+  </dependency>  
+  <dependency id="111">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="30"/>  
+  </dependency>  
+  <association id="112">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="113" name="observerStock">        
+        <position height="0" width="0" x="-10" y="23"/>      
+      </attribute>      
+      <multiplicity id="114" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-10" y="23"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="14" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="72">    
-    <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="73" name="participantes">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="74" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
+  <association id="115">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="116" name="deposito"/>      
+      <multiplicity id="117" minimum="0" maximum="2147483647"/>    
     </end>    
-    <end type="TARGET" refId="3" navigable="true"/>    
+    <end type="TARGET" refId="13" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="75">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="76" name="participantes">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="77" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
+  <generalization id="118">    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="19"/>  
+  </generalization>  
+  <association id="119">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="120" name="calidadDelParticipante"/>      
+      <multiplicity id="121" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="3" navigable="true"/>    
+    <end type="TARGET" refId="37" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <dependency id="78">    
+  <association id="122">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="123" name="stock">        
+        <position height="0" width="0" x="-10" y="23"/>      
+      </attribute>      
+      <multiplicity id="124" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-10" y="23"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="14" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="125">    
     <end type="SOURCE" refId="10"/>    
-    <end type="TARGET" refId="1"/>  
+    <end type="TARGET" refId="30"/>  
   </dependency>  
-  <association id="79">    
-    <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="80" name="cliente">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="81" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
+  <dependency id="126">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="35"/>  
+  </dependency>  
+  <dependency id="127">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="32"/>  
+  </dependency>  
+  <generalization id="128">    
+    <end type="SOURCE" refId="34"/>    
+    <end type="TARGET" refId="37"/>  
+  </generalization>  
+  <association id="129">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="130" name="flete"/>      
+      <multiplicity id="131" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="2" navigable="true"/>    
+    <end type="TARGET" refId="25" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <dependency id="82">    
-    <end type="SOURCE" refId="7"/>    
+  <dependency id="132">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <association id="133">    
+    <end type="SOURCE" refId="29" navigable="false">      
+      <attribute id="134" name="destinoCargaPlanta"/>      
+      <multiplicity id="135" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="136">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="2"/>  
+  </dependency>  
+  <dependency id="137">    
+    <end type="SOURCE" refId="6"/>    
     <end type="TARGET" refId="12"/>  
   </dependency>  
-  <dependency id="83">    
-    <end type="SOURCE" refId="14"/>    
-    <end type="TARGET" refId="12"/>  
+  <dependency id="138">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="33"/>  
   </dependency>  
-  <association id="84">    
-    <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="85" name="concesionaria">        
+  <dependency id="139">    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="11"/>  
+  </dependency>  
+  <dependency id="140">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="13"/>  
+  </dependency>  
+  <association id="141">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="142" name="concesionaria">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="86" minimum="0" maximum="1">        
+      <multiplicity id="143" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="1" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <dependency id="87">    
+  <dependency id="144">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="12"/>  
+  </dependency>  
+  <dependency id="145">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="26"/>  
+  </dependency>  
+  <dependency id="146">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <realization id="147">    
     <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="18"/>  
+  </realization>  
+  <generalization id="148">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="19"/>  
+  </generalization>  
+  <association id="149">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="150" name="talonarioDeCuponesDeAdjudicacion"/>      
+      <multiplicity id="151" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="28" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="152">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="32"/>  
+  </dependency>  
+  <association id="153">    
+    <end type="SOURCE" refId="25" navigable="false">      
+      <attribute id="154" name="ubicacionFlete"/>      
+      <multiplicity id="155" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="15" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="156">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="26"/>  
+  </dependency>  
+  <dependency id="157">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="32"/>  
+  </dependency>  
+  <dependency id="158">    
+    <end type="SOURCE" refId="29"/>    
+    <end type="TARGET" refId="15"/>  
+  </dependency>  
+  <association id="159">    
+    <end type="SOURCE" refId="29" navigable="false">      
+      <attribute id="160" name="agencia"/>      
+      <multiplicity id="161" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="25" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="162">    
+    <end type="SOURCE" refId="24"/>    
     <end type="TARGET" refId="4"/>  
   </dependency>  
-  <association id="88">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="89" name="planes">        
-        <position height="0" width="0" x="0" y="0"/>      
+  <association id="163">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="164" name="participantes">        
+        <position height="0" width="0" x="177" y="-12"/>      
       </attribute>      
-      <multiplicity id="90" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
+      <multiplicity id="165" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="177" y="-12"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="166">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <association id="167">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="168" name="ubicacion">        
+        <position height="0" width="0" x="-284" y="-55"/>      
+      </attribute>      
+      <multiplicity id="169" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-284" y="-55"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="15" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="170">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <dependency id="171">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="17"/>  
+  </dependency>  
+  <dependency id="172">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="32"/>  
+  </dependency>  
+  <association id="173">    
+    <end type="SOURCE" refId="29" navigable="false">      
+      <attribute id="174" name="carga"/>      
+      <multiplicity id="175" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="176">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="177" name="aseguradora"/>      
+      <multiplicity id="178" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="36" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="179">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="5"/>  
+  </realization>  
+  <association id="180">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="181" name="planSuscripto">        
+        <position height="0" width="0" x="250" y="2"/>      
+      </attribute>      
+      <multiplicity id="182" minimum="0" maximum="1">        
+        <position height="0" width="0" x="250" y="2"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="4" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="91">    
+  <dependency id="183">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="38"/>  
+  </dependency>  
+  <association id="184">    
     <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="92" name="stock">        
-        <position height="0" width="0" x="0" y="0"/>      
+      <attribute id="185" name="fabrica">        
+        <position height="0" width="0" x="1" y="-113"/>      
       </attribute>      
-      <multiplicity id="93" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="14" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="94">    
-    <end type="SOURCE" refId="13" navigable="false">      
-      <attribute id="95" name="modelo">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="96" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="12" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="97">    
-    <end type="SOURCE" refId="10" navigable="false">      
-      <attribute id="98" name="plantas">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="99" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="11" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="100">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="101" name="fabrica">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="102" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
+      <multiplicity id="186" minimum="0" maximum="1">        
+        <position height="0" width="0" x="1" y="-113"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="10" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
+  <dependency id="187">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="37"/>  
+  </dependency>  
+  <dependency id="188">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="1"/>  
+  </dependency>  
+  <association id="189">    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="190" name="listaDeAccesiorios"/>      
+      <multiplicity id="191" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="19" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="192">    
+    <end type="SOURCE" refId="35"/>    
+    <end type="TARGET" refId="37"/>  
+  </generalization>  
+  <dependency id="193">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <dependency id="194">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="37"/>  
+  </dependency>  
+  <dependency id="195">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="27"/>  
+  </dependency>  
+  <dependency id="196">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <realization id="197">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="18"/>  
+  </realization>  
+  <dependency id="198">    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="1"/>  
+  </dependency>  
+  <association id="199">    
+    <end type="SOURCE" refId="27" navigable="false">      
+      <attribute id="200" name="participante"/>      
+      <multiplicity id="201" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="202">    
+    <end type="SOURCE" refId="29" navigable="false">      
+      <attribute id="203" name="modeloARetirar"/>      
+      <multiplicity id="204" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="205">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="206" name="modelos">        
+        <position height="0" width="0" x="233" y="295"/>      
+      </attribute>      
+      <multiplicity id="207" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="233" y="295"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="208">    
+    <end type="SOURCE" refId="26" navigable="false">      
+      <attribute id="209" name="cuota"/>      
+      <multiplicity id="210" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="27" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="211">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="27"/>  
+  </dependency>  
+  <dependency id="212">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="35"/>  
+  </dependency>  
+  <dependency id="213">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="35"/>  
+  </dependency>  
+  <dependency id="214">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="13"/>  
+  </dependency>  
+  <association id="215">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="216" name="plantas">        
+        <position height="0" width="0" x="-65" y="-134"/>      
+      </attribute>      
+      <multiplicity id="217" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="-65" y="-134"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="218">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="219" name="modelo">        
+        <position height="0" width="0" x="233" y="295"/>      
+      </attribute>      
+      <multiplicity id="220" minimum="0" maximum="1">        
+        <position height="0" width="0" x="233" y="295"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="221">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="19"/>  
+  </generalization>  
+  <dependency id="222">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="12"/>  
+  </dependency>  
   <classifier-display autosize="true" stereotype="true" package="false" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
     <attributes public="true" package="false" protected="true" private="true" static="false"/>    

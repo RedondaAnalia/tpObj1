@@ -28,8 +28,7 @@ public class TestCaseCuotasPagas {
 		cuotasPagas.pagar(unaCuotaPagaMock);
 		cuotasPagas.pagar(unaCuotaPagaMock);
 		cuotasPagas.pagar(unaCuotaPagaMock);
-		assertTrue(cuotasPagas.porcentajePago() == 5.0);
-		assertFalse(cuotasPagas.porcentajePago() != 5.0);
+		assertEquals(5, cuotasPagas.porcentajePago(),0);
 	}
 	
 	@Test
@@ -40,8 +39,7 @@ public class TestCaseCuotasPagas {
 		cuotasPagas.pagar(unaCuotaPagaMock);
 		cuotasPagas.pagar(unaCuotaPagaMock);
 		cuotasPagas.pagar(unaCuotaPagaMock);
-		assertTrue(cuotasPagas.getCantCuotasPagas() == 6);
-		assertFalse(cuotasPagas.getCantCuotasPagas() != 6);
+		assertEquals(6,cuotasPagas.getCantCuotasPagas(),0);
 	}
 	
 	@Test
@@ -50,7 +48,7 @@ public class TestCaseCuotasPagas {
 		cuotasPagas.pagar(unaCuotaPagaMock);
 		cuotasPagas.pagar(unaCuotaPagaMock);
 		cuotasPagas.pagar(unaCuotaPagaMock);
-		System.out.println(cuotasPagas.getComprobantesDePago());
+		assertEquals(4,cuotasPagas.getComprobantesDePago().size());
 	}	
 	
 }

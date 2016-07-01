@@ -88,11 +88,13 @@ public class TestCaseFabrica {
 	public void test2_distanciaEntreUnaFabricaYUnaPlanta() {
 		assertEquals((double) 4000,ford.distanciaConcesionariaPlanta(los3fanaticos,plantaVarela), 0);
 	}
+	
 	@Test
 	public void test3_buscarFabricaMasCercanaQuePuedaFabricarUnModelo() {
 		Planta laPlantaMasCercana = ford.plantaMasCercana(los3fanaticos, fordMustang2pFull);
 		assertEquals(laPlantaMasCercana, plantaPuertoMadryn);
 	}
+	
 	@Test
 	public void test4_fabricarUnModeloDeAutoDeUnaPlantaCercana() {
 		ford.fabricar(los3fanaticos, fordMustang2pFull);
