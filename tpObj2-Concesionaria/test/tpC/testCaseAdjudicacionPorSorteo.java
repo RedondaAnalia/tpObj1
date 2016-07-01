@@ -44,6 +44,9 @@ public class testCaseAdjudicacionPorSorteo {
 		when(laListaDeParticipantes.get(0)).thenReturn(analiaMock);
 		when(laListaDeParticipantes.get(1)).thenReturn(demianMock);
 		when(laListaDeParticipantes.get(2)).thenReturn(pabloMock);
+		when(analiaMock.getCalidadDelParticipante()).thenReturn(new ParticipanteStd());
+		when(pabloMock.getCalidadDelParticipante()).thenReturn(new ParticipanteStd());
+		when(demianMock.getCalidadDelParticipante()).thenReturn(new ParticipanteStd());
 		when(sorteo.primerPremio(3)).thenReturn(0);		
 		assertEquals(analiaMock,adjudicacion.adjudicar(unPlanCualquiera));	
 		}
@@ -71,7 +74,8 @@ public class testCaseAdjudicacionPorSorteo {
 	
 	@Test(expected = NoHayParticipantesException.class)
 	public void test4_ArmamosListaDe3ParticipantesYGanaPablo() throws NoHayParticipantesException {
-		when(unPlanCualquiera.getParticipantes()).thenReturn(new ArrayList<Participante>());	
+		when(unPlanCualquiera.getParticipantes()).thenReturn(new ArrayList<Participante>());
+		
 		adjudicacion.adjudicar(unPlanCualquiera);
 		}
 }

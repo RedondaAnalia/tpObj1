@@ -71,5 +71,23 @@ public class TestCaseParticipante {
 		
 	}
 	
+	@Test
+	public void test_valorDelAuto(){
+		analiaParticipante.adquirirPlanDeAhorro(planMock);
+		when(mockModeloDeAuto.getValor()).thenReturn(350000);
+		when(planMock.getModelo()).thenReturn(mockModeloDeAuto);
+		assertEquals(analiaParticipante.getPlan().getModelo().getValor(),350000,0);
+	}
+	
+	@Test
+	public void test_estadosDelParticipante(){
+		assertEquals(ParticipanteStd.class ,analiaParticipante.getCalidadDelParticipante().getClass());
+		analiaParticipante.stateAdjudicado();
+		assertEquals(ParticipanteAdjudicado.class ,analiaParticipante.getCalidadDelParticipante().getClass());
+		analiaParticipante.stateEntregado();
+		assertEquals(ParticipanteEntregado.class ,analiaParticipante.getCalidadDelParticipante().getClass());
+		
+	}
+	
 
 }
