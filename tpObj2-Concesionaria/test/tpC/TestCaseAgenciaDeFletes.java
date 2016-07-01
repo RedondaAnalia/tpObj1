@@ -56,4 +56,9 @@ public class TestCaseAgenciaDeFletes {
 		moveIT.retirarAutoDeLaPlantaenConcesionario(plantaMadrynMock,concesionariaMock, unModeloMock);
 		Mockito.verify(concesionariaMock, Mockito.times(5)).entregarAuto(lamborginiMock);
 	}
+	//tener paciencia a este ultimo 15 seg aprox
+	//tuve una dificultad al momento de testear la opcion concurrente.. ya que si bien pueden varios 
+	//camiones ir a buscar a distintos destinos, cuando se uso el flete no puedo seguir operando, eso 
+	// se debe a que para testearlo tuve que hacer una barrera para esperar los resultados de todos los
+	// thread
 }
