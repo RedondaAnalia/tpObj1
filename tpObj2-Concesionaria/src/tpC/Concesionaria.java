@@ -43,6 +43,14 @@ public class Concesionaria {
 	}
 	
 /**
+ * Propósito: Retorna la lista de autos para entregar que hay en la concesionaria
+ * @return ArrayList<Auto>
+ */
+	public ArrayList<Auto> getDeposito() {
+		return deposito;
+	}
+		
+/**
  * Propósito: Agregar un cliente nuevo a la concesionaria
  * @param String (para Apellido)
  * @param String (para Nombre)
@@ -161,13 +169,14 @@ public class Concesionaria {
 	public double distanciaAPlantaMasCercana(ModeloDeAuto unModelo){
 		return fabrica.distanciaConcesionariaPlantaMasCercanaConElModelo(this, unModelo);
 	}
-	/**
-	 * Propósito: Almacenar autos en la concesionaria para ser entregados
-	 * @param ModeloDeAuto	
-	 * @throws NoExisteElModeloDelAutoException 
-	 * @throws NoHayStockException 
-	 */
-		public void pedirAutoALaFabrica(ModeloDeAuto unModelo) throws NoHayStockException, NoExisteElModeloDelAutoException{
-			deposito.add(fabrica.enviarAutoA(this, unModelo));
-		}
+	
+/**
+ * Propósito: Almacenar autos en la concesionaria para ser entregados
+ * @param ModeloDeAuto	
+ * @throws NoExisteElModeloDelAutoException 
+ * @throws NoHayStockException 
+ */
+	public void pedirAutoALaFabrica(ModeloDeAuto unModelo) throws NoHayStockException, NoExisteElModeloDelAutoException{
+		deposito.add(fabrica.enviarAutoA(this, unModelo));
+	}
 }
