@@ -57,7 +57,7 @@ private Planta myPlanta;
 		myPlanta.puedeFabricarElModelo(fordFiesta4pFull);
 		myPlanta.retirarAutoModelo(fordFiesta4pFull);
 	}
-	
+	 
 	@Test
 	public void test5_retirarAuto()throws NoHayStockException,NoExisteElModeloDelAutoException{
 		myPlanta.puedeFabricarElModelo(fordFiesta4pFull);

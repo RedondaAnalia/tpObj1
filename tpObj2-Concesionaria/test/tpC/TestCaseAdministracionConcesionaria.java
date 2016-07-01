@@ -17,16 +17,22 @@ public class TestCaseAdministracionConcesionaria {
 	@Mock ModeloDeAuto modeloMock;
 	@Mock Participante unParticipante;
 	@Mock Cuota mockCuota;
+	@Mock Concesionaria unConcesionarioMock;
+	@Mock AgenciaDeFletes fleteMock;
+	@Mock Plan70x30 planDePagoMock;
 	
 	@Before
 	public void setUp() throws Exception {
 		MockitoAnnotations.initMocks(this);
+		unConcesionarioMock = mock(Concesionaria.class);
 		unParticipante = mock(Participante.class);
 		mockCuota=mock(Cuota.class);
 		planMock = mock(PlanDeAhorro.class);
 		seguroMock = mock(Seguro.class);
 		modeloMock = mock(ModeloDeAuto.class);
 		administracion = new AdministracionConcesionaria(500.0, seguroMock);
+		administracion.setFlete(fleteMock);
+		
 	}
 
 	@Test
@@ -72,6 +78,15 @@ public class TestCaseAdministracionConcesionaria {
 	public void test05_EmisionDeRecibos(){
 		assertEquals(ComprobanteDePago.class,administracion.recibirPago(mockCuota).getClass());
 	}
-
+	@Test
+	public void test06_generoUnCuponDeAdjudicacion(){
+		when(unConcesionarioMock.distanciaAPlantaMasCercana(modeloMock)).thenReturn((double) 100);
+		when(fleteMock.consultarValorDelFlete(100)).thenReturn((double) 3000);
+		when(planMock.getPlanDePago()).thenReturn(planDePagoMock);
+		when(planDePagoMock.cuotaFinal(modeloMock)).thenReturn((double) 3500);
+		when(unParticipante.getPlan()).thenReturn(planMock);
+		administracion.generarCuponDeAdjudicacion(unParticipante, unConcesionarioMock);
+		
+	}
 }
 

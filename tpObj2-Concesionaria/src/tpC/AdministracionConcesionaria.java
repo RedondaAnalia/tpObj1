@@ -11,6 +11,10 @@ public class AdministracionConcesionaria {
 	private double gastos;
 	private Seguro aseguradora;
 	private AgenciaDeFletes flete;
+	public void setFlete(AgenciaDeFletes flete) {
+		this.flete = flete;
+	}
+
 	private ArrayList<CuponDeAdjudicacion> talonarioDeCuponesDeAdjudicacion;
 
 /**
@@ -85,13 +89,17 @@ public class AdministracionConcesionaria {
 	public void generarCuponDeAdjudicacion(Participante adjudicado,Concesionaria concesionario){
 		CuponDeAdjudicacion cupon = new CuponDeAdjudicacion(adjudicado, calcularMontodeAdjudicacion(adjudicado,concesionario)); 
 		talonarioDeCuponesDeAdjudicacion.add(cupon);
-		
 	}
 
 	private double calcularMontodeAdjudicacion(Participante adjudicado,Concesionaria concesionario) {
 		ModeloDeAuto modeloAdjudicado = adjudicado.getPlan().getModelo();
 		double valorUltimaCuota = adjudicado.getPlan().getPlanDePago().cuotaFinal(modeloAdjudicado);
+		
 		double valorDelFlete = flete.consultarValorDelFlete(concesionario.distanciaAPlantaMasCercana(modeloAdjudicado));
 		return (valorUltimaCuota + valorDelFlete);
+	}
+	public CuponDeAdjudicacion obtenerCuponDelParticipante(Participante adjudicado){
+		talonarioDeCuponesDeAdjudicacion
+		return 
 	}
 }
